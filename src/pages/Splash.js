@@ -1,12 +1,14 @@
 import React from 'react'
-import {ActivityIndicator, AsyncStorage, Text, View, Image} from 'react-native'
+import {ActivityIndicator, AsyncStorage, Text, View, Image, StyleSheet} from 'react-native'
+import Video from 'react-native-video'
+
+import lights from '../lights.mp4'
 
 class Splash extends React.Component {
   static navigationOptions = {
          header: null,
          drawerLabel: () => null
   }
-
   constructor () {
     super()
     this.state = {
@@ -19,7 +21,10 @@ class Splash extends React.Component {
       backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center'}}>
-        <Image style={{ width: 320, height: 300, backgroundColor: 'white'}} source={require('../../assets/img/splash.png')} />
+      <Video
+        source={lights}
+        resizeMode='cover'
+        style={StyleSheet.absoluteFill} />
       </View>)
   }
 }
