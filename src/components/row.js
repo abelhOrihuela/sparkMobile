@@ -4,28 +4,52 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Switch
+  Switch,
+  TextInput
 } from 'react-native'
 
 export default class Row extends Component {
   render () {
+
+    let textComponent = (  <TouchableOpacity style={styles.textWrap} onLongPress={() => this.props.onToggleEdit(true)}>
+        <Text style={[styles.text, this.props.complete && styles.complete]} >
+          {
+            this.props.text
+          }
+        </Text>
+      </TouchableOpacity>)
+
+    let editingComponent = (<View style={[styles.textWrap]}>
+        <TextInput
+          onChangeText={this.props.onUpdate}
+          autoFocus
+          value={this.props.text}
+          style={[styles.input]}
+          multiline />
+      </View>
+    )
+    let removeButton = (<TouchableOpacity onPress={this.props.onRemove}>
+      <Text style={[styles.destroy]}>
+        X
+      </Text>
+    </TouchableOpacity>)
+    let doneButton = (<TouchableOpacity onPress={() => this.props.onToggleEdit(false)}>
+      <Text style={[styles.destroy]}>
+        Done
+      </Text>
+    </TouchableOpacity>)
+
     return (
       <View style={styles.container}>
         <Switch
           value={this.props.complete}
           onValueChange={this.props.onComplete} />
-        <View style={styles.textWrap}>
-          <Text style={[styles.text, this.props.complete && styles.complete]}>
-            {
-              this.props.text
-            }
-          </Text>
-        </View>
-        <TouchableOpacity onPress={this.props.onRemove}>
-          <Text style={[styles.destroy]}>
-            X
-          </Text>
-        </TouchableOpacity>
+          {
+            this.props.editing ? editingComponent : textComponent
+          }
+          {
+            this.props.editing ? doneButton : removeButton
+          }
       </View>
     )
   }
@@ -37,6 +61,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between'
+  },
+  input: {
+    height: 100,
+    flex: 1,
+    fontSize: 24,
+    padding: 0,
+    color: '#4D4D4D'
   },
   textWrap: {
     flex: 1,

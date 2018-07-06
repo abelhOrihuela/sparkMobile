@@ -6,7 +6,8 @@ import {
   Platform,
   FlatList,
   Keyboard,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from 'react-native'
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -35,6 +36,20 @@ class Todo extends Component {
     this.handleToggleComplete = this.handleToggleComplete.bind(this)
     this.handleOnToggleAllComplete = this.handleOnToggleAllComplete.bind(this)
     this.handleRemoveItem = this.handleRemoveItem.bind(this)
+    this.handleClearComplete = this.handleClearComplete.bind(this)
+    this.handleToggleEditing = this.handleToggleEditing.bind(this)
+    this.handleUpdateText = this.handleUpdateText.bind(this)
+  }
+
+  componentWillMount() {
+    AsyncStorage.getItem("items").then((json) => {
+      try {
+        const items = JSON.parse(json);
+        this.setSource(items);
+      } catch(e) {
+        console.log('e', e);
+      }
+    })
   }
 
   handleAddItem () {
@@ -54,13 +69,14 @@ class Todo extends Component {
     this.setSource(newItems, {value: ''})
   }
 
-  setSource (items, otherState = {}) {
+  async setSource (items, otherState = {}) {
     let newItems = filterItems(items, this.state.filter)
     this.setState({
       items: [...newItems],
       datasource: items,
       ...otherState
     })
+    AsyncStorage.setItem("items", JSON.stringify(items));
   }
 
   handleOnToggleAllComplete () {
@@ -96,6 +112,37 @@ class Todo extends Component {
     this.setSource(this.state.datasource, {filter: filter})
   }
 
+  handleClearComplete () {
+    let newItems = filterItems(this.state.items, 'ACTIVE');
+    this.setSource(newItems)
+  }
+
+  handleUpdateText (key, text) {
+    const newItems = this.state.items.map((item) => {
+      if (item.key !== key) return item;
+
+      return {
+        ...item,
+        text
+      }
+    })
+
+    this.setSource(newItems)
+  }
+
+  handleToggleEditing (key, editing) {
+    const newItems = this.state.items.map((item) => {
+      if (item.key !== key) return item;
+
+      return {
+        ...item,
+        editing
+      }
+    })
+
+    this.setSource(newItems)
+  }
+
   render () {
     let {value} = this.state
     return (
@@ -122,12 +169,15 @@ class Todo extends Component {
             renderItem={({item}) => (<Row
               key={item.key}
               onRemove={() => this.handleRemoveItem(item.key)}
+              onUpdate={(text) => this.handleUpdateText(item.key, text)}
+              onToggleEdit={(editing) => this.handleToggleEditing(item.key, editing)}
               {...item}
               onComplete={(complete) => this.handleToggleComplete(item.key, complete)} />)
             } />
         </View>
         <Footer
           count={filterItems(this.state.datasource, 'ACTIVE').length}
+          onClearComplete={this.handleClearComplete}
           onFilter={this.handleFilter} filter={this.state.filter} />
       </View>
     )

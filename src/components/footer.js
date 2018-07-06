@@ -8,7 +8,6 @@ import {
 
 export default class Footer extends Component {
   render () {
-    console.log('filter', this.props)
     const {filter} = this.props
     return (
       <View style={styles.container}>
@@ -24,6 +23,9 @@ export default class Footer extends Component {
             <Text>Completed</Text>
           </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={this.props.onClearComplete}>
+          <Text>Clear completed</Text>
+        </TouchableOpacity>
       </View>
     )
   }
