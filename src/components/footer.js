@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   filters: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   filter: {
     padding: 8,
