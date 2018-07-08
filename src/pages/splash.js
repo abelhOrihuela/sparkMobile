@@ -17,7 +17,7 @@ class Splash extends React.Component {
 
   componentDidMount () {
     setTimeout(() => {
-          this.props.navigation.navigate('Todo')
+          this.props.navigation.navigate('Dashboard')
     }, 500)
   }
 
