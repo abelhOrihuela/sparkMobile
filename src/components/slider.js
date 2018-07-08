@@ -7,8 +7,23 @@ import {
   Dimensions,
   Animated
 } from 'react-native'
-import Moment from './moment'
-const {width, height} = Dimensions.get('window')
+import Slide from './slide'
+const {width} = Dimensions.get('window')
+
+const getInterpolate = (animatedScroll, i, imageLength) => {
+  const inputRange = [
+    (i - 1) * width,
+    i * width,
+    (i + 1) * width
+  ]
+  const outputRange = i === 0 ? [0, 0, 150] : [0, 0, 150]
+
+  return animatedScroll.interpolate({
+    inputRange,
+    outputRange,
+    extrapolate: 'clamp'
+  })
+}
 export default class Slider extends Component {
   constructor (props) {
     super(props)
@@ -17,7 +32,6 @@ export default class Slider extends Component {
     }
   }
   render () {
-    console.log('props', this.props)
     return (
       <View style={styles.container}>
         <ScrollView
@@ -36,8 +50,11 @@ export default class Slider extends Component {
             ])
           }>
           {
-            this.props.images.map((item, i) => {
-              return (<Moment key={i} {...item} />)
+            this.props.images.map((image, i) => {
+              return (<Slide
+                key={i}
+                translateX={getInterpolate(this.state.animatedScroll, i, this.props.images.length)}
+                {...image} />)
             })
           }
         </ScrollView>

@@ -1,16 +1,16 @@
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
-import { TouchableHighlight, View, Image } from 'react-native'
+import { TouchableHighlight, View, Text, Image } from 'react-native'
 import Drawer from './drawer.js'
 
 const Aplication = StackNavigator({
   DrawerStack: {screen: Drawer, initialRouteName: 'Splash'}}, { navigationOptions: ({navigation}) => ({
   headerStyle: {
-    backgroundColor: '#4A4A5A',
+    backgroundColor: '#000',
     paddingLeft: 10,
     paddingRight: 10
   },
-  title: 'Aleph',
+  title: 'Spark',
   headerTintColor: 'white',
   headerLeft: <View>
     <TouchableHighlight
@@ -20,7 +20,11 @@ const Aplication = StackNavigator({
         } else {
           navigation.navigate('DrawerClose')
         }
-      }} />
+      }}>
+      <Image
+        style={{ width: 30, height: 30, backgroundColor: '#000' }}
+        source={require('./menu.png')} />
+    </TouchableHighlight>
   </View>
 })
 }
