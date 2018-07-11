@@ -19,7 +19,7 @@ export default class Moment extends Component {
     this.handlePress = this.handlePress.bind(this)
   }
 
-  componentDidMount () {
+  componentWillMount () {
     this.bgFadeInterpolate = this.state.scale.interpolate({
       inputRange: [0.9, 1],
       outputRange: ['rgba(0, 0, 0, .3)', 'rgba(0, 0, 0, 0)']
@@ -30,8 +30,8 @@ export default class Moment extends Component {
     })
 
     this.calloutTranslate = this.state.scale.interpolate({
-      inputRange: [0.9, 0.1],
-      outputRange: [0, 150]
+      inputRange: [0.9, 1],
+      outputRange: [0, 100]
     })
   }
 
@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
   container: {
     width: width,
     height: height,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: 'black'
   },
   image: {
     flex: 1,
