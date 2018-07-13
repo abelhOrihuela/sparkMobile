@@ -1,22 +1,15 @@
 import React, { Component } from 'react'
 import {
   View,
-  StyleSheet
+  StyleSheet,
+  Text
 } from 'react-native'
 
-import Slider from '../components/slider'
-
-const images = [
-  {image: require('../images/drink1.jpg'), title: 'Drink 1'},
-  {image: require('../images/drink2.jpg'), title: 'Drink 2'},
-  {image: require('../images/drink3.jpg'), title: 'Drink 3'},
-  {image: require('../images/drink4.jpg'), title: 'Drink 4'}
-]
 export default class Dashboard extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Slider images={images} />
+        <View style={[styles.heartLeft]}></View>
       </View>
     )
   }
@@ -25,5 +18,13 @@ export default class Dashboard extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  heartLeft: {
+    height: 100,
+    width: 200,
+    backgroundColor: 'red',
+    transform: [
+      {rotate: '45deg'}
+    ]
   }
 })

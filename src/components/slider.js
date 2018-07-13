@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text,
   StyleSheet,
   ScrollView,
   Dimensions,
@@ -26,6 +25,16 @@ const getInterpolate = (animatedScroll, i, imageLength) => {
     extrapolate: 'clamp'
   })
 }
+/*
+const images = [
+  {image: require('../images/drink1.jpg'), title: 'Drink 1'},
+  {image: require('../images/drink2.jpg'), title: 'Drink 2'},
+  {image: require('../images/drink3.jpg'), title: 'Drink 3'},
+  {image: require('../images/drink4.jpg'), title: 'Drink 4'}
+]
+<Slider images={images} />
+*/
+
 export default class Slider extends Component {
   constructor (props) {
     super(props)
