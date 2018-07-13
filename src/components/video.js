@@ -3,9 +3,11 @@ import {
   View,
   Text,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Animated
 } from 'react-native'
 import Video from 'react-native-video'
+import Icon from 'react-native-vector-icons/FontAwesome'
 const {width} = Dimensions.get('window')
 
 export default class VideoContainer extends Component {
@@ -13,14 +15,14 @@ export default class VideoContainer extends Component {
     super(props)
     this.state = {
       error: false,
-      errorMessage: ''
+      errorMessage: '',
+      buffering: false,
+      animated: new Animated.Value(0)
     }
   }
 
   handleError = (meta) => {
-    console.log('meta', meta);
     const {error: { code }} = meta
-
     let errorMessage = 'An error ocurred playing this video'
 
     switch (code) {
@@ -35,19 +37,66 @@ export default class VideoContainer extends Component {
     });
   }
 
+  handleLoadStart = (e) => {
+    this.triggerBufferAnimation()
+  }
+
+  triggerBufferAnimation = () => {
+    this.loopingAnimation = Animated.loop(
+      Animated.timing(this.state.animated, {
+        toValue: 1,
+        duration: 350
+      })
+    ).start()
+  }
+
+  handleOnBuffer = (meta) => {
+    meta.isBuffering && this.triggerBufferAnimation()
+
+    if (this.loopingAnimation && !meta.isBuffering) {
+      this.loopingAnimation.stopAnimation()
+    }
+
+    this.setState({
+      buffering: meta.isBuffering
+    })
+  }
+
   render () {
-    const {error, errorMessage} = this.state
+    const {error, errorMessage, buffering} = this.state
     const height = width * 0.5625
+
+    console.log('buffering', buffering);
+    const interpolatedAnimation = this.state.animated.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '360deg']
+    })
+
+    const rotateStyle = {
+      transform: [
+        {rotate: interpolatedAnimation}
+      ]
+    }
     return (
       <View style={styles.container}>
         <View style={error ? styles.error : undefined }>
           <Video source={{uri: this.props.url}}
             resizeMode='contain'
             onError={this.handleError}
-            style={{height: height, width: '100%'}} />
+            style={{height: height, width: '100%'}}
+            onLoadStart={this.handleLoadStart}
+            onBuffer={this.handleOnBuffer} />
           {
             error && (<View style={[styles.videoCover]}>
+                <Icon name='exclamation-triangle' size={30} color='red' />
                 <Text>{errorMessage}</Text>
+            </View>)
+          }
+          {
+            buffering && (<View style={[styles.videoCover]}>
+              <Animated.View style={[rotateStyle]}>
+                <Icon name='circle-o-notch' size={30} color='#FFF' />
+              </Animated.View>
             </View>)
           }
         </View>
@@ -68,9 +117,9 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)'
+    // backgroundColor: 'rgba(255, 255, 255, 0.9)'
   },
   error: {
-    backgroundColor: "#000",
+    backgroundColor: '#000',
   }
 })
