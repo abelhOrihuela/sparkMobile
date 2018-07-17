@@ -37,7 +37,7 @@ export default class VideoContainer extends Component {
     });
   }
 
-  handleLoadStart = (e) => {
+  handleLoadStart = () => {
     this.triggerBufferAnimation()
   }
 
@@ -66,7 +66,6 @@ export default class VideoContainer extends Component {
     const {error, errorMessage, buffering} = this.state
     const height = width * 0.5625
 
-    console.log('buffering', buffering);
     const interpolatedAnimation = this.state.animated.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg']
