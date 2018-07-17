@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import {
   View,
-  StyleSheet
+  StyleSheet,
+  Text
 } from 'react-native'
 
-import Slider from '../components/slider'
+import VideoAutoplay from '../components/video-autoplay'
 
-const images = [
-  {image: require('../images/drink1.jpg'), title: 'Drink 1'},
-  {image: require('../images/drink2.jpg'), title: 'Drink 2'},
-  {image: require('../images/drink3.jpg'), title: 'Drink 3'},
-  {image: require('../images/drink4.jpg'), title: 'Drink 4'}
-]
 export default class Dashboard extends Component {
   render () {
+    // let url = 'https://player.vimeo.com/external/207277102.hd.mp4?s=6939b93ae3554679b57f5e7fa831eef712a74b3c&profile_id=119&oauth2_token_id=57447761'
+    let url = 'https://vimeo.com/245128891'
     return (
       <View style={styles.container}>
-        <Slider images={images} />
+        <VideoAutoplay />
       </View>
     )
   }

@@ -2,8 +2,6 @@ import React from 'react'
 import {ActivityIndicator, AsyncStorage, Text, View, Image, StyleSheet} from 'react-native'
 import Video from 'react-native-video'
 
-import lights from '../lights.mp4'
-
 class Splash extends React.Component {
   static navigationOptions = {
          header: null,
