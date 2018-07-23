@@ -28,10 +28,9 @@ stylesheet.textbox.error.marginBottom = 5
 class BaseForm extends Component {
   onPress = (e) => {
     const value = this._form.getValue();
-    console.log('value', value);
-
-    this.props.onSuccess(e)
-
+    if (value) {
+      this.props.onSuccess(e)
+    }
   }
 
   onChange = (e) => {
@@ -61,7 +60,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#FFF',
   },
   buttonText: {
     fontSize: 18,

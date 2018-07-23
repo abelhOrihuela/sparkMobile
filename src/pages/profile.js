@@ -10,7 +10,6 @@ import {
   TouchableHighlight
 } from 'react-native'
 import t from 'tcomb-form-native'
-const Form = t.form.Form
 
 class Profile extends Component {
   constructor(props) {
@@ -45,10 +44,6 @@ class Profile extends Component {
 
   handleSucces = (e) => {
   
-  }
-
-  onPress = () => {
-    const value = this._form.getValue();
   }
 
   render() {
