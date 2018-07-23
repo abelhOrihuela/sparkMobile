@@ -24,8 +24,6 @@ stylesheet.textboxView.normal.borderBottomWidth = 1
 stylesheet.textboxView.error.borderBottomWidth = 1
 stylesheet.textbox.normal.marginBottom = 5
 stylesheet.textbox.error.marginBottom = 5
-stylesheet.formGroup.backgroundColor = 'transparent'
-
 
 class BaseForm extends Component {
   onPress = (e) => {
