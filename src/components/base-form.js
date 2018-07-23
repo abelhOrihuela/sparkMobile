@@ -24,14 +24,15 @@ stylesheet.textboxView.normal.borderBottomWidth = 1
 stylesheet.textboxView.error.borderBottomWidth = 1
 stylesheet.textbox.normal.marginBottom = 5
 stylesheet.textbox.error.marginBottom = 5
+stylesheet.formGroup.backgroundColor = 'transparent'
+
 
 class BaseForm extends Component {
   onPress = (e) => {
     const value = this._form.getValue();
-    console.log('value', value);
-
-    this.props.onSuccess(e)
-
+    if (value) {
+      this.props.onSuccess(e)
+    }
   }
 
   onChange = (e) => {
@@ -61,7 +62,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#FFF',
   },
   buttonText: {
     fontSize: 18,
