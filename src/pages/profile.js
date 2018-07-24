@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BaseForm from '../components/base-form'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {
   StyleSheet,
@@ -12,6 +13,15 @@ import {
 import t from 'tcomb-form-native'
 
 class Profile extends Component {
+  static navigationOptions = {
+    drawerIcon: () => (
+      <Icon name='user' size={20} color='#000' />
+    ),
+
+    drawerLabel: () => {
+      return 'Profile'           
+    },
+  }
   constructor(props) {
     super(props)
     this.state = {
