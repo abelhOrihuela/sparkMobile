@@ -1,14 +1,12 @@
 import React from 'react'
-import {ActivityIndicator, AsyncStorage, Text, View, Image, StyleSheet} from 'react-native'
-import Video from 'react-native-video'
-
-import lights from '../lights.mp4'
+import {AsyncStorage, Text, View, StyleSheet} from 'react-native'
 
 class Splash extends React.Component {
   static navigationOptions = {
          header: null,
          drawerLabel: () => null
   }
+
   constructor () {
     super()
     this.state = {
@@ -17,10 +15,9 @@ class Splash extends React.Component {
 
   componentDidMount () {
     setTimeout(() => {
-          this.props.navigation.navigate('Dashboard')
-    }, 500)
+          this.props.navigation.navigate('Login')
+    }, 1000)
   }
-
 
   render () {
     return (
@@ -36,25 +33,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  flipCard: {
-    width: 200,
-    height: 200,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'blue',
-    backfaceVisibility: 'hidden',
-  },
-  flipCardBack: {
-    backgroundColor: "red",
-    position: "absolute",
-    top: 0,
-  },
-  flipText: {
-    width: 90,
-    fontSize: 20,
-    color: 'white',
-    fontWeight: 'bold',
   }
 })
 
