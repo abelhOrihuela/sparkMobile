@@ -19,9 +19,10 @@ class Profile extends Component {
     ),
 
     drawerLabel: () => {
-      return 'Profile'           
+      return 'Profile'
     },
   }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -53,16 +54,16 @@ class Profile extends Component {
   }
 
   handleSucces = (e) => {
-  
+
   }
 
   render() {
-    const User = t.struct({
+    const User = {
       name: t.String,
       email: t.String,
       telephone: t.String,
       address: t.maybe(t.String)
-    })
+    }
 
     return (
       <View style={styles.container}>

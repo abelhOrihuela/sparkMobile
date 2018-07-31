@@ -12,6 +12,7 @@ import {
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Row from '../components/row'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const filterItems = (items, filter) => {
   return items.filter((item) => {
@@ -22,6 +23,16 @@ const filterItems = (items, filter) => {
 }
 
 class Todo extends Component {
+  static navigationOptions = {
+    title: 'Todo',
+    drawerIcon: () => (
+      <Icon name='list' size={20} color='#000' />
+    ),
+
+    drawerLabel: () => {
+      return 'Todo'
+    },
+  }
   constructor (props) {
     super(props)
     this.state = {
