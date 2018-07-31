@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
   StyleSheet,
   View,
@@ -26,31 +26,32 @@ stylesheet.textbox.normal.marginBottom = 5
 stylesheet.textbox.error.marginBottom = 5
 
 class BaseForm extends Component {
-  onPress = (e) => {
-    const value = this._form.getValue();
+  onPress (e) {
+    const value = this._form.getValue()
     if (value) {
-      this.props.onSuccess(e)
+      this.props.onSuccess(value)
     }
   }
 
-  onChange = (e) => {
+  onChange (e) {
     this.props.onChange(e)
   }
 
   render () {
+    const Model = t.struct(this.props.type)
+
     return (
       <View style={styles.container}>
-        <Form type={this.props.type}
+        <Form type={Model}
           ref={c => (this._form = c)}
           options={{...this.props.options, ...stylesheet}}
           value={this.props.value}
           onChange={this.props.onChange} />
-          { 
-            <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
-              <Text style={styles.buttonText}>Save</Text>
-            </TouchableHighlight>
-            
-          }
+        {
+          <TouchableHighlight style={styles.button} onPress={(e) => this.onPress(e)} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText}>Save</Text>
+          </TouchableHighlight>
+        }
       </View>
     )
   }
@@ -59,7 +60,7 @@ class BaseForm extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   buttonText: {
     fontSize: 18,
@@ -78,13 +79,12 @@ const styles = StyleSheet.create({
   }
 })
 
-
 BaseForm.propTypes = {
   type: PropTypes.object.isRequired,
   value: PropTypes.object.isRequired,
   options: PropTypes.object,
   onChange: PropTypes.func.isRequired,
-  onSuccess: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired
 }
 
 export default BaseForm

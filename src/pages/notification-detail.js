@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
 class NotificationDetail extends Component {
-    static navigationOptions = {
-        header: null
-    }
-    
-  render() {
+  render () {
     return (
       <View>
         <Text> textInComponent </Text>

@@ -1,19 +1,32 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, FlatList, StyleSheet, Platform } from 'react-native'
+import { Text, View, TouchableOpacity,TouchableHighlight, FlatList, StyleSheet, Platform, Modal } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios'
 
 class Notifications extends Component {
     static navigationOptions = {
-        header: null
+      title: 'Notifications',
+      drawerIcon: () => (
+        <Icon name='bell' size={20} color='#000' />
+      ),
+
+      drawerLabel: () => {
+        return 'Notifications'
+      },
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            notifications: []
+            notifications: [],
+            modalVisible: false
         }
     }
-    
+
+    setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
     componentWillMount () {
         this.loadNotifications()
     }
@@ -30,12 +43,10 @@ class Notifications extends Component {
     }
 
     showDetail (e, item) {
-        console.log('====================================')
-        console.log(e.target)
-        console.log(item)
-        console.log('====================================')
-        this.props.navigation.navigate('NotificationDetail')
-
+        this.props.navigation.push('NotificationDetail')
+        // this.setState({
+        //   modalVisible: !this.state.modalVisible
+        // })
     }
 
     render () {
@@ -58,9 +69,30 @@ class Notifications extends Component {
                     <Text>Hola</Text>
                     </TouchableOpacity>)
                 } />
+
+                <Modal
+        animationType="slide"
+        transparent={true}
+        visible={this.state.modalVisible}
+        onRequestClose={() => {
+          alert('Modal has been closed.');
+        }}>
+        <View style={{marginTop: 22}}>
+          <View>
+            <Text>Hello World!</Text>
+
+            <TouchableHighlight
+              onPress={() => {
+                this.setModalVisible(!this.state.modalVisible);
+              }}>
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
         </View>
         )
-        
+
     }
 }
 
@@ -68,12 +100,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F5F5F5',
-        opacity: 0.5,
-        ...Platform.select({
-            ios: {
-                paddingTop: 30
-            }
-        })
+        opacity: 0.5
     },
     content: {
         flex: 10

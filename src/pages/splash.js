@@ -14,9 +14,20 @@ class Splash extends React.Component {
   }
 
   componentDidMount () {
-    setTimeout(() => {
-          this.props.navigation.navigate('Login')
-    }, 1000)
+    this.load()
+  }
+
+  async load () {
+    let user = await AsyncStorage.getItem('user')
+    if (user) {
+      setTimeout(() => {
+        this.props.navigation.navigate('Dashboard')
+      }, 1000)
+    } else {
+      setTimeout(() => {
+        this.props.navigation.navigate('Login')
+      }, 1000)
+    }
   }
 
   render () {
