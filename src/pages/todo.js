@@ -24,15 +24,15 @@ const filterItems = (items, filter) => {
 
 class Todo extends Component {
   static navigationOptions = {
+    title: 'Todo',
     drawerIcon: () => (
       <Icon name='list' size={20} color='#000' />
     ),
 
     drawerLabel: () => {
-      return 'To-do'
+      return 'Todo'
     },
   }
-
   constructor (props) {
     super(props)
     this.state = {

@@ -17,11 +17,11 @@ const Aplication = StackNavigator({
   }
 }, { navigationOptions: ({navigation}) => ({
   headerStyle: {
-    backgroundColor: '#000',
+    backgroundColor: '#2771A2',
     paddingLeft: 10,
     paddingRight: 10
   },
-  title: 'Spark',
+  title: 'AlchemyCode',
   headerTintColor: 'white',
   headerLeft: <View>
     <TouchableHighlight
@@ -33,7 +33,7 @@ const Aplication = StackNavigator({
         }
       }}>
       <Image
-        style={{ width: 30, height: 30, backgroundColor: '#000' }}
+        style={{ width: 30, height: 30, backgroundColor: '#2771A2' }}
         source={require('./menu.png')} />
     </TouchableHighlight>
   </View>

@@ -8,13 +8,14 @@ import VideoContainer from '../components/video'
 
 export default class Dashboard extends Component {
   static navigationOptions = {
+    title: 'Home',
     drawerIcon: () => (
-      <Icon name='dashboard' size={20} color='#000' />
+      <Icon name='home' size={20} color='#000' />
     ),
 
     drawerLabel: () => {
-      return 'Dashboard'
-    },
+      return 'Home'
+    }
   }
 
   render () {

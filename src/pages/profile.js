@@ -19,9 +19,10 @@ class Profile extends Component {
     ),
 
     drawerLabel: () => {
-      return 'Profile'           
+      return 'Profile'
     },
   }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -53,7 +54,7 @@ class Profile extends Component {
   }
 
   handleSucces = (e) => {
-  
+
   }
 
   render() {
