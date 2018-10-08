@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import VideoContainer from '../components/video'
+import api from '../core/api'
 
 export default class Dashboard extends Component {
   static navigationOptions = {
@@ -15,6 +16,33 @@ export default class Dashboard extends Component {
 
     drawerLabel: () => {
       return 'Home'
+    }
+  }
+  constructor (props){
+    super(props)
+    this.state = {
+      order: null
+    }
+  }
+
+  componentWillMount() {
+    this.load()
+  }
+
+  async load () {
+    try {
+      let body = await api.get('/customers/orders/active')
+      this.setState({
+        order: body.data
+      }, this.loadView)
+    } catch (e) {
+      alert('Error', e.message)
+    }
+  }
+
+  loadView () {
+    if (this.state.order) {
+      
     }
   }
 
