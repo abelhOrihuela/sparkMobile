@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   AsyncStorage
 } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Row from '../components/row'
@@ -22,6 +23,16 @@ const filterItems = (items, filter) => {
 }
 
 class Todo extends Component {
+  static navigationOptions = {
+    drawerIcon: () => (
+      <Icon name='list' size={20} color='#000' />
+    ),
+
+    drawerLabel: () => {
+      return 'To-do'
+    },
+  }
+
   constructor (props) {
     super(props)
     this.state = {

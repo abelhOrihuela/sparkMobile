@@ -13,10 +13,36 @@ class Splash extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
+    this.loadInitialState()
+  }
+
+  /*
+  loadInitialState () {
     setTimeout(() => {
           this.props.navigation.navigate('Login')
     }, 1000)
+  }
+  */
+
+  async loadInitialState() {
+    try {
+      const value = await AsyncStorage.getItem('user')
+      if (value !== null) {
+        this.me()
+      } else {
+        setTimeout(() => {
+          this.props.navigation.navigate('Login')
+        }, 500)
+      }
+    } catch (error) {
+    }
+  }
+
+  me () {
+    setTimeout(() => {
+      this.props.navigation.navigate('Dashboard')
+    }, 500)
   }
 
   render () {

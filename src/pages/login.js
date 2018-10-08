@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, StyleSheet, Dimensions, Image } from 'react-native'
+import { Text, View, ScrollView, StyleSheet, Dimensions, Image, AsyncStorage } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import Video from 'react-native-video'
@@ -46,15 +46,16 @@ export class Login extends Component {
         })
     }
 
-    handleSucces = (data) => {
+    handleSucces = async (data) => {
+      await AsyncStorage.setItem('user', JSON.stringify(data))
       this.props.navigation.navigate('Dashboard')
     }
     
     render () {
-        const User = t.struct({
+        const User = {
             email: t.String,
             password: t.String
-          })
+          }
         
         
         return (

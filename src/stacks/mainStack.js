@@ -1,20 +1,20 @@
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
-import { TouchableHighlight, View, Text, Image } from 'react-native'
+import { TouchableHighlight, View, Image } from 'react-native'
 import Drawer from './drawer.js'
 import Login from '../pages/login'
 import Splash from '../pages/splash'
 
 const Aplication = StackNavigator({
   Splash: {
-    screen: Splash,
+    screen: Splash
   },
   Login: {
-    screen: Login,
+    screen: Login
   },
   DrawerStack: {
-    screen: Drawer, initialRouteName: 'Splash',
-  },
+    screen: Drawer, initialRouteName: 'Splash'
+  }
 }, { navigationOptions: ({navigation}) => ({
   headerStyle: {
     backgroundColor: '#000',

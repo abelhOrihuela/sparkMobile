@@ -29,7 +29,7 @@ class BaseForm extends Component {
   onPress = (e) => {
     const value = this._form.getValue();
     if (value) {
-      this.props.onSuccess(e)
+      this.props.onSuccess(value)
     }
   }
 
@@ -38,9 +38,11 @@ class BaseForm extends Component {
   }
 
   render () {
+
+    const Object = t.struct(this.props.type)
     return (
       <View style={styles.container}>
-        <Form type={this.props.type}
+        <Form type={Object}
           ref={c => (this._form = c)}
           options={{...this.props.options, ...stylesheet}}
           value={this.props.value}
