@@ -16,7 +16,7 @@ export default class Dashboard extends Component {
   static navigationOptions = {
     title: 'Home',
     drawerIcon: () => (
-      <Icon name='home' size={20} color='#000' />
+      <Icon name='home' size={20} color='#2771A2' />
     ),
 
     drawerLabel: () => {

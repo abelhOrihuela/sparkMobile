@@ -30,13 +30,13 @@ export class Login extends Component {
         fields: {
           email: {
             label: null,
-            placeholder: 'Correo electronico',
-            error: 'Insert a valid name'
+            placeholder: 'Correo electrónico',
+            error: 'Correo electrónico no valido'
           },
           password: {
             label: null,
             placeholder: 'Contraseña',
-            error: 'Insert a valid name',
+            error: 'Contraseña no valida',
             secureTextEntry: true
           }
         }
@@ -63,7 +63,6 @@ export class Login extends Component {
       await AsyncStorage.setItem('user', JSON.stringify(body.data.user))
       await AsyncStorage.setItem('jwt', body.data.jwt)
       this.props.navigation.navigate('Dashboard')
-
     } catch (error) {
       alert('Error', error.message)
     }
@@ -106,9 +105,9 @@ export class Login extends Component {
           <View style={styles.section}>
             {content}
           </View>
-          <TouchableOpacity style={styles.btn} onPress={() =>
-            this.resetPassword()
-         }>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => this.resetPassword()}>
             <Text style={styles.fontBlue16}>¿Olvidaste tu constraseña?</Text>
           </TouchableOpacity>
         </ScrollView>

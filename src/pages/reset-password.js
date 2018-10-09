@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator } from 'react-native'
+import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, TouchableOpacity } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import background from '../bg.png'
@@ -7,6 +7,7 @@ import logo from '../logo.png'
 import people from '../people.png'
 import api from '../core/api'
 const {height, width} = Dimensions.get('window')
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 export class ResetPassword extends Component {
   static navigationOptions = {
@@ -22,15 +23,15 @@ export class ResetPassword extends Component {
     this.state = {
       loading: false,
       value: {
-        email: 'abel+c1@commonsense.io'
+        email: ''
       },
       options: {
         auto: 'none',
         fields: {
           email: {
             label: null,
-            placeholder: 'Correo electronico',
-            error: 'Insert a valid name'
+            placeholder: 'Correo electrónico',
+            error: 'Correo electrónico no valido'
           }
         }
       }
@@ -58,6 +59,10 @@ export class ResetPassword extends Component {
     })
   }
 
+  handleBack (data) {
+    this.props.navigation.navigate('Login')
+  }
+
   render () {
     const User = {
       email: t.String
@@ -75,6 +80,13 @@ export class ResetPassword extends Component {
 
     return (<View style={styles.container}>
       <Image source={background} style={[StyleSheet.absoluteFill, styles.background]} />
+        <View
+          style={styles.sectionSpaceBetween}>
+          <TouchableOpacity onPress={() => this.handleBack()}>
+            <Icon name='arrow-left' size={20} color='#2771A2' style={[styles.fontBlue18, styles.marginSides]}/>
+          </TouchableOpacity>
+          <Text style={[styles.fontBlue18, styles.marginSides]}>Recupera tu contraseña</Text>
+        </View>
         <View style={styles.section}>
           <Text style={[styles.fontBlack14]}>Ingresa tu correo electrónico para recibir las instrucciones de recuperación de contraseña.</Text>
         </View>
@@ -101,6 +113,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 10
   },
+  sectionSpaceBetween: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 10
+  },
   imagePeople: {
     width: width-80,
     height: 230
@@ -109,10 +127,22 @@ const styles = StyleSheet.create({
     color: '#2771A2',
     fontSize: 16
   },
+  fontBlue18: {
+    color: '#2771A2',
+    fontSize: 18
+  },
   fontBlack14: {
     color: '#000000',
     fontSize: 14,
     textAlign: 'center'
+  },
+  btn: {
+    alignItems: 'center',
+    margin: 10
+  },
+  marginSides: {
+    marginLeft: 10,
+    marginRight: 10
   }
 })
 

@@ -15,7 +15,7 @@ import t from 'tcomb-form-native'
 class Profile extends Component {
   static navigationOptions = {
     drawerIcon: () => (
-      <Icon name='user' size={20} color='#000' />
+      <Icon name='user' size={20} color='#2771A2' />
     ),
 
     drawerLabel: () => {

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 class Logout extends Component {
     static navigationOptions = {
         drawerIcon: () => (
-            <Icon name='power-off' size={20} color='#000' />
+            <Icon name='power-off' size={20} color='#2771A2' />
         ),
 
         drawerLabel: () => {

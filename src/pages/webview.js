@@ -14,7 +14,7 @@ const {width} = Dimensions.get('window')
 class ViewPage extends Component {
   static navigationOptions = {
     drawerIcon: () => (
-      <Icon name='file' size={20} color='#000' />
+      <Icon name='file' size={20} color='#2771A2' />
     ),
 
     drawerLabel: () => {

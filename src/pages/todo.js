@@ -26,7 +26,7 @@ class Todo extends Component {
   static navigationOptions = {
     title: 'Todo',
     drawerIcon: () => (
-      <Icon name='list' size={20} color='#000' />
+      <Icon name='list' size={20} color='#2771A2' />
     ),
 
     drawerLabel: () => {
