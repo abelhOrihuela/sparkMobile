@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation'
 import { TouchableHighlight, View, Image } from 'react-native'
 import Drawer from './drawer.js'
 import Login from '../pages/login'
+import ResetPassword from '../pages/reset-password'
 import Splash from '../pages/splash'
 
 const Aplication = StackNavigator({
@@ -11,6 +12,9 @@ const Aplication = StackNavigator({
   },
   Login: {
     screen: Login
+  },
+  ResetPassword: {
+    screen: ResetPassword
   },
   DrawerStack: {
     screen: Drawer, initialRouteName: 'Splash'

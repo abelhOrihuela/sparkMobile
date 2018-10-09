@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator } from 'react-native'
+import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableHighlight } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import background from '../bg.png'
@@ -50,6 +50,10 @@ export class Login extends Component {
     })
   }
 
+  resetPassword (e) {
+    this.props.navigation.navigate('ResetPassword')
+  }
+
   async handleSubmit (data) {
     this.setState({
       loading: true
@@ -86,21 +90,28 @@ export class Login extends Component {
 
     return (<View style={styles.container}>
       <Image source={background} style={[StyleSheet.absoluteFill, styles.background]} />
-        <View style={styles.section}>
-          <Image source={logo} />
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
-        </View>
-        <View style={styles.section}>
-          <Image source={people} style={styles.imagePeople} resizeMode='contain' />
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
-        </View>
-        <View style={styles.section}>
-          {content}
-        </View>
+        <ScrollView>
+          <View style={styles.section}>
+            <Image source={logo} />
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
+          </View>
+          <View style={styles.section}>
+            <Image source={people} style={styles.imagePeople} resizeMode='contain' />
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
+          </View>
+          <View style={styles.section}>
+            {content}
+          </View>
+          <TouchableHighlight style={styles.section} onPress={() =>
+            this.resetPassword()
+         }>
+            <Text style={styles.fontBlue16}>¿Olvidaste tu constraseña?</Text>
+          </TouchableHighlight>
+        </ScrollView>
       </View>)
   }
 }

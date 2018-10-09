@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import {
   View,
-  StyleSheet
+  StyleSheet,
+  Modal,
+  Text,
+  TouchableHighlight,
+  ActivityIndicator
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import VideoContainer from '../components/video'
+import ModalContainer from '../components/modal'
 import api from '../core/api'
 
 export default class Dashboard extends Component {
@@ -21,7 +26,9 @@ export default class Dashboard extends Component {
   constructor (props){
     super(props)
     this.state = {
-      order: null
+      order: null,
+      modalVisible: false,
+      loading: true
     }
   }
 
@@ -41,18 +48,40 @@ export default class Dashboard extends Component {
   }
 
   loadView () {
-    if (this.state.order) {
-      
+    let {order} = this.state
+    console.log('order ===>', order);
+    if (order.status !== 'delivered') {
+      console.log('Show modal intro');
+      this.setState({
+        loading: false,
+        modalVisible: true
+      })
+    } else {
+      this.setState({
+        loading: false
+      })
+      console.log('Redirect home');
     }
+  }
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
   }
 
   render () {
-    let url = 'https://player.vimeo.com/external/207277102.hd.mp4?s=6939b93ae3554679b57f5e7fa831eef712a74b3c&profile_id=119&oauth2_token_id=57447761'
-    // let url = 'https://www.google.com/'
+    let {loading, modalVisible} = this.state
 
+    let intro = (<ModalContainer
+      visible={modalVisible}
+      hideModal={(e) => this.setModalVisible(e)}>
+      <View style={styles.section}>
+        Bienvenido a
+      </View>
+    </ModalContainer>)
+
+    // let content = loading ? <ActivityIndicator /> : intro
     return (
       <View style={styles.container}>
-        <VideoContainer url={url} />
+        {intro}
       </View>
     )
   }
@@ -61,5 +90,10 @@ export default class Dashboard extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  section: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    margin: 10
   }
 })
