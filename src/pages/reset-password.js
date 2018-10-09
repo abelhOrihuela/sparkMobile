@@ -22,8 +22,7 @@ export class ResetPassword extends Component {
     this.state = {
       loading: false,
       value: {
-        email: 'abel+c1@commonsense.io',
-        password: 'abel1991'
+        email: 'abel+c1@commonsense.io'
       },
       options: {
         auto: 'none',
@@ -32,12 +31,6 @@ export class ResetPassword extends Component {
             label: null,
             placeholder: 'Correo electronico',
             error: 'Insert a valid name'
-          },
-          password: {
-            label: null,
-            placeholder: 'Contraseña',
-            error: 'Insert a valid name',
-            secureTextEntry: true
           }
         }
       }
@@ -55,11 +48,8 @@ export class ResetPassword extends Component {
       loading: true
     })
     try {
-      let body = await api.post('/user/login', data)
-      await AsyncStorage.setItem('user', JSON.stringify(body.data.user))
-      await AsyncStorage.setItem('jwt', body.data.jwt)
-      this.props.navigation.navigate('Dashboard')
-
+      let body = await api.post('/user/reset-password', {...data, admin: false, type: 'customer'})
+      this.props.navigation.navigate('Login')
     } catch (error) {
       alert('Error', error.message)
     }

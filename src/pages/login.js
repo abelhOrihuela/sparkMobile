@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableHighlight } from 'react-native'
+import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import background from '../bg.png'
@@ -106,11 +106,11 @@ export class Login extends Component {
           <View style={styles.section}>
             {content}
           </View>
-          <TouchableHighlight style={styles.section} onPress={() =>
+          <TouchableOpacity style={styles.btn} onPress={() =>
             this.resetPassword()
          }>
             <Text style={styles.fontBlue16}>¿Olvidaste tu constraseña?</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </ScrollView>
       </View>)
   }
@@ -143,6 +143,10 @@ const styles = StyleSheet.create({
   fontBlack14: {
     color: '#000000',
     fontSize: 14
+  },
+  btn: {
+    alignItems: 'center',
+    margin: 10
   }
 })
 

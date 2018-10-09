@@ -54,7 +54,7 @@ export default class Dashboard extends Component {
       console.log('Show modal intro');
       this.setState({
         loading: false,
-        modalVisible: true
+        modalVisible: false
       })
     } else {
       this.setState({
@@ -70,18 +70,22 @@ export default class Dashboard extends Component {
   render () {
     let {loading, modalVisible} = this.state
 
-    let intro = (<ModalContainer
+    let content = (<ModalContainer
       visible={modalVisible}
       hideModal={(e) => this.setModalVisible(e)}>
       <View style={styles.section}>
-        Bienvenido a
+        <Text>Bienvenido a</Text>
       </View>
     </ModalContainer>)
 
-    // let content = loading ? <ActivityIndicator /> : intro
+    if (loading) {
+      return <ActivityIndicator />
+    }
+
+
     return (
       <View style={styles.container}>
-        {intro}
+        {content}
       </View>
     )
   }
