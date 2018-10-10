@@ -20,16 +20,16 @@ export default class ModalContainer extends Component {
         transparent={false}
         visible={this.props.visible}
         onRequestClose={() => this.handleClose()}>
-        <View style={{backgroundColor: '#0D4E78', height: height}}>
+        <View style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          backgroundColor: '#0D4E78',
+          height: height
+        }}>
           {
             this.props.children
           }
-          <TouchableHighlight
-            onPress={() =>
-              this.props.hideModal(!this.props.visible)
-           }>
-            <Text>Hide Modal</Text>
-          </TouchableHighlight>
         </View>
       </Modal>
     )
