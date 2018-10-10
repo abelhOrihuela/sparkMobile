@@ -11,6 +11,12 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import VideoContainer from '../components/video'
 import ModalContainer from '../components/modal'
 import api from '../core/api'
+const users = [
+ {
+    name: 'brynn',
+    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+ }
+]
 
 export default class Dashboard extends Component {
   static navigationOptions = {

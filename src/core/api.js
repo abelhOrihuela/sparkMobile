@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {AsyncStorage} from 'react-native'
 
 import axios from 'axios'
-const host = 'https://9c0b3333.ngrok.io/api'
+const host = 'https://b34fa2ab.ngrok.io/api'
 
 async function get (url, body) {
   let token = await getToken()
