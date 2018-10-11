@@ -23,7 +23,7 @@ export class Login extends Component {
       loading: false,
       value: {
         email: 'abel+c1@commonsense.io',
-        password: 'abel1991'
+        password: 'Abel1991'
       },
       options: {
         auto: 'none',

@@ -13,7 +13,8 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import VideoContainer from '../components/video'
 import ModalContainer from '../components/modal'
 import api from '../core/api'
-import logo from '../logo.png'
+import logoWhite from '../logoWhite.png'
+import bg1 from '../bg1.png'
 const {height, width} = Dimensions.get('window')
 const users = [
  {
@@ -47,7 +48,7 @@ export default class Dashboard extends Component {
   }
 
   componentWillMount() {
-    this.load()
+    // this.load()
   }
 
   async load () {
@@ -103,7 +104,7 @@ export default class Dashboard extends Component {
         <Text style={styles.fontWhite18}>Bienvenido a</Text>
       </View>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Image source={logo} />
+        <Image source={logoWhite} />
       </View>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
         <Text style={styles.fontWhite16}>Bienvenido a AlcheMycode, este será tu espacio personal para conocerte y poder cambiar tu vida.</Text>
@@ -118,7 +119,7 @@ export default class Dashboard extends Component {
     let modalTwo = (<ModalContainer
       visible={modalStatus}>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Image source={logo} />
+        <Image source={logoWhite} />
       </View>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
         <Text style={styles.fontWhite18}>Estamos preparando tus resultados.</Text>
@@ -155,21 +156,15 @@ export default class Dashboard extends Component {
       <View>
         {modalOne}
         {modalTwo}
-        <Card title="CARD WITH DIVIDER">
-          {
-            users.map((u, i) => {
-              return (
-                <View key={i} style={styles.user}>
-                  <Image
-                    style={styles.image}
-                    resizeMode="cover"
-                    source={{ uri: u.avatar }}
-                  />
-                  <Text style={styles.name}>{u.name}</Text>
-                </View>
-              );
-            })
-          }
+        <View style={styles.sectionRow}>
+          <Text style={styles.fontBlue16}>¡Bienvenido!</Text>
+        </View>
+        <View style={styles.sectionRow}>
+          <Text style={styles.fontBlack14}>Revisa tus resultados, dietas o referencias médicas.</Text>
+        </View>
+        <Card containerStyle={{padding: 0, margin: 0}}  image={bg1}>
+        </Card>
+        <Card containerStyle={{padding: 0}}  image={bg1}>
         </Card>
       </View>
     )
