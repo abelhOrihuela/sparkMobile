@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   imagePeople: {
-    width: width-80,
+    width: '100%',
     height: 230
   },
   fontBlue16: {

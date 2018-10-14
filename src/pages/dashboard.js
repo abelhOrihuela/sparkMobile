@@ -4,9 +4,11 @@ import {
   StyleSheet,
   Modal,
   Image,
+  ImageBackground,
   Text,
   TouchableOpacity,
   ActivityIndicator,
+  ScrollView,
   Dimensions
 } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
@@ -14,7 +16,8 @@ import VideoContainer from '../components/video'
 import ModalContainer from '../components/modal'
 import api from '../core/api'
 import logoWhite from '../logoWhite.png'
-import bg1 from '../bg1.png'
+import people from '../people.png'
+import logo from '../logo.png'
 const {height, width} = Dimensions.get('window')
 const users = [
  {
@@ -150,8 +153,7 @@ export default class Dashboard extends Component {
     if (loading) {
       return <ActivityIndicator />
     }
-
-
+    
     return (
       <View>
         {modalOne}
@@ -162,9 +164,9 @@ export default class Dashboard extends Component {
         <View style={styles.sectionRow}>
           <Text style={styles.fontBlack14}>Revisa tus resultados, dietas o referencias médicas.</Text>
         </View>
-        <Card containerStyle={{padding: 0, margin: 0}}  image={bg1}>
+        <Card containerStyle={{padding: 0}}  image={people} wrapperStyle={{padding: 0}} featuredTitle='MY NEW ME' featuredSubtitle='Tu dieta, ejercicios, salud preventiva y hábitos personalizados.'>
         </Card>
-        <Card containerStyle={{padding: 0}}  image={bg1}>
+        <Card containerStyle={{padding: 0}}  image={people} wrapperStyle={{padding: 0}} featuredTitle='Reportes' featuredSubtitle='4 reportes disponibles'>
         </Card>
       </View>
     )
