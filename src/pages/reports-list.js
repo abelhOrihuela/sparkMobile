@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity,TouchableHighlight, FlatList, StyleSheet, Platform, Modal } from 'react-native'
+import { Text, View, TouchableOpacity,TouchableHighlight, FlatList, StyleSheet, Platform, Modal, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios'
+const {height, width} = Dimensions.get('window')
 
 class Reports extends Component {
     static navigationOptions = {
@@ -51,47 +52,26 @@ class Reports extends Component {
 
     render () {
         let { notifications } = this.state
+        let widthCard = (width / 2) -15
         return (
-        <View style={[styles.content]}>
-                <FlatList data={notifications}
-                style={styles.list}
-                keyboardShouldPersistTaps={'handled'}
-                keyExtractor={(x, i) => i}
-                ItemSeparatorComponent={() => {
-                    return (<View
-                        style={{
-                            height: 1,
-                            backgroundColor: '#CED0CE'
-                        }}
-                    />)
-                }}
-                    renderItem={({ item }) => (<TouchableOpacity onPress={(e) => this.showDetail(e, item)}>
-                    <Text>Hola</Text>
-                    </TouchableOpacity>)
-                } />
-
-                <Modal
-        animationType="slide"
-        transparent={true}
-        visible={this.state.modalVisible}
-        onRequestClose={() => {
-          alert('Modal has been closed.');
-        }}>
-        <View style={{marginTop: 22}}>
-          <View>
-            <Text>Hello World!</Text>
-
-            <TouchableHighlight
-              onPress={() => {
-                this.setModalVisible(!this.state.modalVisible);
-              }}>
-              <Text>Hide Modal</Text>
-            </TouchableHighlight>
+          <View style={[styles.sectionColumn, {margin: 10}]}>
+            <View style={{backgroundColor: 'rgba(39, 113, 162, 1)', flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
+              <Text style={{color: 'white'}}>ALCHEMY RESULTS</Text>
+              <TouchableOpacity>
+                <Icon name='plus' size={20} color='white' />
+              </TouchableOpacity>
+            </View>
+            <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', paddingTop: 10}}>
+              <View style={{width: widthCard, height: widthCard, backgroundColor: 'powderblue', marginBottom: 10}} />
+              <View style={{width: widthCard, height: widthCard, backgroundColor: 'skyblue', marginBottom: 10}} />
+              <View style={{width: widthCard, height: widthCard, backgroundColor: 'yellow', marginBottom: 10}} />
+              <View style={{width: widthCard, height: widthCard, backgroundColor: 'red', marginBottom: 10}} />
+            </View>
+            <View>
+              <Text style={{color: 'white'}}>ALCHEMY RESULTS</Text>
+            </View>
           </View>
-        </View>
-      </Modal>
-        </View>
-        )
+        );
 
     }
 }

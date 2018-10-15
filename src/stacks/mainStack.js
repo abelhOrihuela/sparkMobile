@@ -21,7 +21,7 @@ const Aplication = StackNavigator({
   }
 }, { navigationOptions: ({navigation}) => ({
   headerStyle: {
-    backgroundColor: '#2771A2',
+    backgroundColor: 'black',
     paddingLeft: 10,
     paddingRight: 10
   },
@@ -37,7 +37,7 @@ const Aplication = StackNavigator({
         }
       }}>
       <Image
-        style={{ width: 30, height: 30, backgroundColor: '#2771A2' }}
+        style={{ width: 30, height: 30, backgroundColor: 'black' }}
         source={require('./menu.png')} />
     </TouchableHighlight>
   </View>

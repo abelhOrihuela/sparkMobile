@@ -81,3 +81,51 @@ const styles = StyleSheet.create({
     //       </View>
     //     </ScrollView>
     //   </View>)
+
+
+
+
+    //
+    // <TouchableOpacity style={[styles.sectionRow, {height: 150}]} onPress={() => this.goToMynewMe()}>
+    //   <ImageBackground
+    //     style={[StyleSheet.absoluteFill, {
+    //       flex: 1,
+    //       position: 'absolute',
+    //       width: '100%',
+    //       height: '100%',
+    //       justifyContent: 'center',
+    //       backgroundColor: 'gray'
+    //     }]}
+    //     source={myNewMeBg}
+    //   >
+    //   <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
+    //     <View style={{flex: 1}}>
+    //       <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
+    //     </View>
+    //     <View style={{flex: 2, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+    //       <Text
+    //         style={{
+    //           backgroundColor: 'transparent',
+    //           textAlign: 'center',
+    //           fontSize: 20,
+    //           color: 'white'
+    //         }}
+    //       >
+    //         Reportes
+    //       </Text>
+    //       <Text
+    //         style={{
+    //           backgroundColor: 'transparent',
+    //           textAlign: 'center',
+    //           fontSize: 10,
+    //           elevation: 1
+    //         }}
+    //       >
+    //         4 reportes disponibles
+    //       </Text>
+    //     </View>
+    //   </View>
+    //   <View style={[styles.overlay, { height: 150}]} />
+    //   </ImageBackground>
+    //
+    // </TouchableOpacity>

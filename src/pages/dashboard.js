@@ -18,13 +18,11 @@ import api from '../core/api'
 import logoWhite from '../logoWhite.png'
 import people from '../people.png'
 import logo from '../logo.png'
+import myNewMeBg from '../my-new-me-fondo.jpg'
+import reportesBg from '../reportes-fondo.jpg'
+import reportesIcon from '../reportes.png'
+import mynewmeIcon from '../mynewme.png'
 const {height, width} = Dimensions.get('window')
-const users = [
- {
-    name: 'brynn',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
- }
-]
 import Orders from '../core/orders'
 
 export default class Dashboard extends Component {
@@ -51,7 +49,7 @@ export default class Dashboard extends Component {
   }
 
   componentWillMount() {
-    // this.load()
+    this.load()
   }
 
   async load () {
@@ -96,6 +94,14 @@ export default class Dashboard extends Component {
     } catch (e) {
       alert('Error', e.message)
     }
+  }
+
+  goToReports () {
+    this.props.navigation.navigate('Reports')
+  }
+
+  goToMynewMe () {
+    this.props.navigation.navigate('Reports')
   }
 
   render () {
@@ -153,23 +159,58 @@ export default class Dashboard extends Component {
     if (loading) {
       return <ActivityIndicator />
     }
-    
-    return (
-      <View>
-        {modalOne}
-        {modalTwo}
-        <View style={styles.sectionRow}>
-          <Text style={styles.fontBlue16}>¡Bienvenido!</Text>
+
+    let heightSection = 150
+
+    return (<View style={styles.sectionColumn}>
+      {modalOne}
+      {modalTwo}
+      <TouchableOpacity style={[styles.sectionRow, {height: heightSection}]} onPress={() => this.goToReports()}>
+        <ImageBackground
+          style={[StyleSheet.absoluteFill, styles.bgSection]}
+          source={reportesBg}
+        />
+      <View style={styles.section}>
+          <View style={{flex: 1, zIndex: 9999}}>
+            <Image source={reportesIcon} style={{width: '100%', height: '100%'}} />
+          </View>
+          <View style={styles.sectionTitles}>
+            <Text
+              style={styles.titleSection}
+            >
+              Reportes
+            </Text>
+            <Text style={styles.subtitleSection}>
+              4 reportes disponibles
+            </Text>
+          </View>
         </View>
-        <View style={styles.sectionRow}>
-          <Text style={styles.fontBlack14}>Revisa tus resultados, dietas o referencias médicas.</Text>
+        <View style={[styles.overlayReports, { height: heightSection}]} />
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.sectionRow, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
+        <ImageBackground
+          style={[StyleSheet.absoluteFill, styles.bgSection]}
+          source={myNewMeBg}
+        />
+      <View style={styles.section}>
+          <View style={{flex: 1, zIndex: 9999}}>
+            <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
+          </View>
+          <View style={styles.sectionTitles}>
+            <Text
+              style={styles.titleSection}
+            >
+              MY NEW ME
+            </Text>
+            <Text style={styles.subtitleSection}>
+              Tu dieta, ejercicios, salud preventiva y hábitos personalizados.
+            </Text>
+          </View>
         </View>
-        <Card containerStyle={{padding: 0}}  image={people} wrapperStyle={{padding: 0}} featuredTitle='MY NEW ME' featuredSubtitle='Tu dieta, ejercicios, salud preventiva y hábitos personalizados.'>
-        </Card>
-        <Card containerStyle={{padding: 0}}  image={people} wrapperStyle={{padding: 0}} featuredTitle='Reportes' featuredSubtitle='4 reportes disponibles'>
-        </Card>
-      </View>
-    )
+        <View style={[styles.overlayMyNewMe, { height: heightSection}]} />
+      </TouchableOpacity>
+    </View>)
+
   }
 }
 
@@ -232,5 +273,54 @@ const styles = StyleSheet.create({
   marginSides: {
     marginLeft: 10,
     marginRight: 10
+  },
+  overlayReports: {
+    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    opacity: 0.75,
+    backgroundColor: '#2771A2',
+    width: width
+  },
+  overlayMyNewMe: {
+    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    opacity: 0.75,
+    backgroundColor: '#16314E',
+    width: width
+  },
+  section: {
+    flex: 1, flexDirection: 'row', padding: 10
+  },
+  bgSection: {
+    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    backgroundColor: 'gray'
+  },
+  subtitleSection: {
+    backgroundColor: 'transparent',
+    textAlign: 'left',
+    fontSize: 10,
+    color: 'white'
+  },
+  titleSection: {
+    backgroundColor: 'transparent',
+    textAlign: 'left',
+    fontSize: 20,
+    color: 'white'
+  },
+  sectionTitles: {
+    flex: 2,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    zIndex: 9999,
+    marginLeft: 10
   }
 })
