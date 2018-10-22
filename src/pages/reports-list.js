@@ -25,8 +25,8 @@ class Reports extends Component {
     }
 
     setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
+      this.setState({modalVisible: visible})
+    }
 
     componentWillMount () {
         this.loadReports()
@@ -54,21 +54,38 @@ class Reports extends Component {
         let { notifications } = this.state
         let widthCard = (width / 2) -15
         return (
-          <View style={[styles.sectionColumn, {margin: 10}]}>
-            <View style={{backgroundColor: 'rgba(39, 113, 162, 1)', flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
-              <Text style={{color: 'white'}}>ALCHEMY RESULTS</Text>
-              <TouchableOpacity>
-                <Icon name='plus' size={20} color='white' />
-              </TouchableOpacity>
-            </View>
-            <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', paddingTop: 10}}>
-              <View style={{width: widthCard, height: widthCard, backgroundColor: 'powderblue', marginBottom: 10}} />
-              <View style={{width: widthCard, height: widthCard, backgroundColor: 'skyblue', marginBottom: 10}} />
-              <View style={{width: widthCard, height: widthCard, backgroundColor: 'yellow', marginBottom: 10}} />
-              <View style={{width: widthCard, height: widthCard, backgroundColor: 'red', marginBottom: 10}} />
-            </View>
-            <View>
-              <Text style={{color: 'white'}}>ALCHEMY RESULTS</Text>
+          <View style={{flex: 1}}>
+            <View style={[{margin: 10, flex: 1}]}>
+              <View style={{flexDirection: 'row', backgroundColor: '#2771A2', padding: 10}}>
+                <View style={{flex: 3, flexDirection: 'row', height: 50, alignItems: 'center', justifyContent: 'flex-start'}}>
+                  <Text style={{color: 'white'}}>
+                    ALCHE
+                  </Text>
+                  <Text style={{fontWeight: 'bold', color: 'white'}}>
+                    MY
+                  </Text>
+                  <Text style={{color: 'white'}}>
+                    RESULTS
+                  </Text>
+                </View>
+                <View style={{flex: 1, height: 50, justifyContent: 'center', alignItems: 'center'}}>
+                  <Icon name='plus' size={20} color='white' />
+                </View>
+              </View>
+              <View style={{flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start'}}>
+                <View style={{backgroundColor: 'red', flexDirection: 'row', flexWrap: 'wrap'}}>
+                  <View style={{flex: 2, height: 150, backgroundColor: 'yellow'}}>
+                  </View>
+                  <View style={{flex: 2, height: 150, backgroundColor: 'blue'}}>
+                  </View>
+                </View>
+                <View style={{backgroundColor: 'red', flexDirection: 'row', flexWrap: 'wrap'}}>
+                  <View style={{flex: 2, height: 150, backgroundColor: 'yellow'}}>
+                  </View>
+                  <View style={{flex: 2, height: 150, backgroundColor: 'blue'}}>
+                  </View>
+                </View>
+              </View>
             </View>
           </View>
         );
