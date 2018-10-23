@@ -15,13 +15,14 @@ import t from 'tcomb-form-native'
 class Profile extends Component {
   static navigationOptions = {
     drawerIcon: () => (
-      <Icon name='user' size={20} color='#000' />
+      <Icon name='user' size={20} color='#FFFFFF' />
     ),
 
     drawerLabel: () => {
-      return 'Profile'           
+      return 'Profile'
     },
   }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -53,7 +54,7 @@ class Profile extends Component {
   }
 
   handleSucces = (e) => {
-  
+
   }
 
   render() {

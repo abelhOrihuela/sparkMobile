@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
   StyleSheet,
   View,
@@ -11,48 +11,71 @@ const Form = t.form.Form
 
 const stylesheet = {...t.form.Form.stylesheet}
 
-stylesheet.textbox.normal.borderWidth = 0
-stylesheet.textbox.error.borderWidth = 0
-stylesheet.textbox.normal.marginBottom = 0
-stylesheet.textbox.error.marginBottom = 0
+// stylesheet.textbox.normal.borderWidth = 0
+// stylesheet.textbox.error.borderWidth = 0
+// stylesheet.textbox.normal.marginBottom = 0
+// stylesheet.textbox.error.marginBottom = 0
+// stylesheet.textboxView.normal.borderWidth = 0
+// stylesheet.textboxView.error.borderWidth = 0
+// stylesheet.textboxView.normal.borderRadius = 0
+// stylesheet.textboxView.error.borderRadius = 0
+// stylesheet.textboxView.normal.borderBottomWidth = 1
+// stylesheet.textboxView.error.borderBottomWidth = 1
 
-stylesheet.textboxView.normal.borderWidth = 0
-stylesheet.textboxView.error.borderWidth = 0
-stylesheet.textboxView.normal.borderRadius = 0
-stylesheet.textboxView.error.borderRadius = 0
-stylesheet.textboxView.normal.borderBottomWidth = 1
-stylesheet.textboxView.error.borderBottomWidth = 1
-stylesheet.textbox.normal.marginBottom = 5
-stylesheet.textbox.error.marginBottom = 5
+// stylesheet.textbox.normal.margin = 2
+// stylesheet.textboxView.normal.margin = 2
+// stylesheet.textbox.normal.padding = 2
+// stylesheet.textboxView.normal.padding = 2
+// stylesheet.textbox.normal.marginTop = 2
+// stylesheet.textboxView.normal.marginTop = 2
+// stylesheet.textbox.normal.paddingHorizontal = 2
+// stylesheet.textboxView.normal.paddingHorizontal = 2
+
+// stylesheet.textbox.error.marginBottom = 5
+let normal = {
+  height: 45,
+  backgroundColor: '#F9F9F9',
+  color: 'gray',
+  fontSize: 14,
+  borderColor:  '#ECECEC',
+  borderWidth: 1,
+  borderRadius: 0,
+  textAlign: 'center'
+}
+
+stylesheet.textbox.normal = normal
+
 
 class BaseForm extends Component {
-  onPress = (e) => {
-    const value = this._form.getValue();
+  onSubmit (e) {
+    const value = this._form.getValue()
     if (value) {
-      this.props.onSuccess(value)
+      this.props.onSubmit(value)
     }
   }
 
-  onChange = (e) => {
+  onChange (e) {
     this.props.onChange(e)
   }
 
   render () {
+    const Model = t.struct(this.props.type)
 
-    const Object = t.struct(this.props.type)
+    let label = this.props.label ? this.props.label : 'Guardar'
+    console.log('t.form.Form.stylesheet', t.form.Form.stylesheet);
     return (
       <View style={styles.container}>
-        <Form type={Object}
+        <Form type={Model}
           ref={c => (this._form = c)}
           options={{...this.props.options, ...stylesheet}}
           value={this.props.value}
-          onChange={this.props.onChange} />
-          { 
-            <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
-              <Text style={styles.buttonText}>Save</Text>
-            </TouchableHighlight>
-            
-          }
+          onChange={(e) => this.onChange(e)} />
+        {
+          <TouchableHighlight style={styles.button}
+              onPress={(e) => this.onSubmit(e)} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText}>{label}</Text>
+          </TouchableHighlight>
+        }
       </View>
     )
   }
@@ -61,7 +84,7 @@ class BaseForm extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   buttonText: {
     fontSize: 18,
@@ -69,24 +92,22 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   button: {
-    height: 36,
-    backgroundColor: '#48BBEC',
-    borderColor: '#48BBEC',
+    height: 45,
+    backgroundColor: '#2771A2',
+    borderColor: '#2771A2',
     borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 10,
+    // borderRadius: 8,
     alignSelf: 'stretch',
     justifyContent: 'center'
   }
 })
-
 
 BaseForm.propTypes = {
   type: PropTypes.object.isRequired,
   value: PropTypes.object.isRequired,
   options: PropTypes.object,
   onChange: PropTypes.func.isRequired,
-  onSuccess: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
 }
 
 export default BaseForm
