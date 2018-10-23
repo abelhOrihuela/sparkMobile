@@ -7,7 +7,7 @@ class Notifications extends Component {
     static navigationOptions = {
       title: 'Notifications',
       drawerIcon: () => (
-        <Icon name='bell' size={20} color='#2771A2' />
+        <Icon name='bell' size={20} color='#FFFFFF' />
       ),
 
       drawerLabel: () => {

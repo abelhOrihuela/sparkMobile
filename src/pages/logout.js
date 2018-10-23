@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, AsyncStorage} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
+import { NavigationActions, StackActions } from 'react-navigation'
 
 class Logout extends Component {
     static navigationOptions = {
         drawerIcon: () => (
-            <Icon name='power-off' size={20} color='#2771A2' />
+            <Icon name='power-off' size={20} color='#FFFFFF' />
         ),
 
         drawerLabel: () => {
@@ -24,7 +25,11 @@ class Logout extends Component {
 
   async logout () {
       await AsyncStorage.removeItem('user')
-      this.props.navigation.navigate('Login')
+      this.props.navigation.dispatch(NavigationActions.reset({
+          index: 0,
+          key: null,
+          actions: [NavigationActions.navigate({ routeName: 'Login' })]
+      }))
   }
 
   render() {

@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome'
-
 import {
   View,
   StyleSheet,
   Dimensions,
   WebView,
-  Animated
+  Animated,
+  ActivityIndicator,
+  AsyncStorage
 } from 'react-native'
 
 const {width} = Dimensions.get('window')
+const appHost = 'https://customers.dev.ac.commonsense.io'
 
-class ViewPage extends Component {
+class Reports extends Component {
   static navigationOptions = {
     drawerIcon: () => (
       <Icon name='file' size={20} color='#FFFFFF' />
@@ -29,11 +31,37 @@ class ViewPage extends Component {
     }
   }
 
-  render () {
-    // let url = `${APP_HOST}/report-view/${id}/${JSON.parse(token)}`
-    // let url = 'https://www.dnafit.com/'
-    let url = 'http://e17d1e44.ngrok.io/'
+  async componentWillMount() {
+    await this.getToken()
+  }
 
+  async getToken () {
+    let token = await AsyncStorage.getItem('jwt')
+    this.setState({
+      token: token,
+      loading: false
+    })
+  }
+
+  render () {
+    const { navigation } = this.props
+    const report = navigation.getParam('report', null);
+    let {loading, token} = this.state
+    let type
+
+    if (report.type === 'dna') {
+      type = 'genetics'
+    } else if (report.type === 'blood') {
+      type = 'blood'
+    } else if (report.type === 'sensibilities') {
+      type = 'sensibilities'
+    }
+
+    let url = `${appHost}/reports/${type}/${report.uuid}?token=${token}&isNative=1`
+
+    if (loading) {
+      return <ActivityIndicator />
+    }
     return (<View style={[styles.container]}>
       <WebView
         style={{width: width, height: 200, margin: 0}}
@@ -48,7 +76,7 @@ class ViewPage extends Component {
   }
 }
 
-export default ViewPage
+export default Reports
 
 const styles = StyleSheet.create({
   container: {

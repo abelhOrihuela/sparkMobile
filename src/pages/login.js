@@ -22,8 +22,8 @@ export class Login extends Component {
     this.state = {
       loading: false,
       value: {
-        email: 'abel+c1@commonsense.io',
-        password: 'Abel1991'
+        email: 'abel+c2@commonsense.io',
+        password: 'abel1991'
       },
       options: {
         auto: 'none',

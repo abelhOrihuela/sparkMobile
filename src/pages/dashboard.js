@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
   static navigationOptions = {
     title: 'Home',
     drawerIcon: () => (
-      <Icon name='home' size={20} color='#2771A2' />
+      <Icon name='home' size={20} color='#FFFFFF' />
     ),
 
     drawerLabel: () => {
@@ -44,12 +44,14 @@ export default class Dashboard extends Component {
       modalIntro: false,
       modalStatus: false,
       loading: false,
-      actions: []
+      actions: [],
+      reports: []
     }
   }
 
-  componentWillMount() {
-    this.load()
+  async componentWillMount() {
+    await this.loadReports()
+    await this.load()
   }
 
   async load () {
@@ -59,7 +61,18 @@ export default class Dashboard extends Component {
         order: body.data
       }, this.loadView)
     } catch (e) {
-      alert('Error', e.message)
+      alert('Error' + e.message)
+    }
+  }
+
+  async loadReports () {
+      try {
+      let body = await api.get('/customers/reports')
+      this.setState({
+        reports: body.data.data
+      })
+    } catch (e) {
+      alert('Error' + e.message)
     }
   }
 
@@ -92,7 +105,7 @@ export default class Dashboard extends Component {
         actions: body.data.data.data.reverse()
       })
     } catch (e) {
-      alert('Error', e.message)
+      alert('Error' + e.message)
     }
   }
 
@@ -134,18 +147,17 @@ export default class Dashboard extends Component {
         <Text style={styles.fontWhite18}>Estamos preparando tus resultados.</Text>
       </View>
       <View style={[styles.sectionColumn, styles.doubleMarginTopBottom]}>
-        {
+        { actions.length ?
           actions.map((item, index) => {
             return (<View style={[styles.sectionRow]}>
-              <Icon name='check' size={20} color='white' />
+              <Icon name='check' size={20} color='#FFFFFF' />
               <Text style={[styles.fontWhite18, styles.marginSides]}>
                 {
-                  Orders.find(l => l.key === item.data.status).label
-
+                  Orders.find(l => l.key === item.data.status) ? Orders.find(l => l.key === item.data.status).label : 'N/A'
                 }
               </Text>
             </View>)
-          })
+          }) : <View />
         }
       </View>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
@@ -165,6 +177,12 @@ export default class Dashboard extends Component {
     return (<View style={styles.sectionColumn}>
       {modalOne}
       {modalTwo}
+      <View style={[styles.sectionColumn]}>
+        <Text style={[styles.fontBlue16, {textAlign: 'center'}]}>¡Bienvenido!</Text>
+      </View>
+      <View style={styles.sectionColumn}>
+        <Text style={styles.fontBlack14}>Revisa tus resultados, dietas o referencias médicas.</Text>
+      </View>
       <TouchableOpacity style={[styles.sectionRow, {height: heightSection}]} onPress={() => this.goToReports()}>
         <ImageBackground
           style={[StyleSheet.absoluteFill, styles.bgSection]}
@@ -181,7 +199,7 @@ export default class Dashboard extends Component {
               Reportes
             </Text>
             <Text style={styles.subtitleSection}>
-              4 reportes disponibles
+              {this.state.reports.length} reportes disponibles
             </Text>
           </View>
         </View>
