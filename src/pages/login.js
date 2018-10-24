@@ -62,13 +62,23 @@ export class Login extends Component {
       let body = await api.post('/user/login', data)
       await AsyncStorage.setItem('user', JSON.stringify(body.data.user))
       await AsyncStorage.setItem('jwt', body.data.jwt)
-      this.props.navigation.navigate('Dashboard')
+      await this.me()
     } catch (error) {
       alert('Error', error.message)
     }
     this.setState({
       loading: false
     })
+  }
+
+  async me () {
+    try {
+      let body = await api.get('/user/me')
+      await AsyncStorage.setItem('me', JSON.stringify(body.data.user))
+      this.props.navigation.navigate('Dashboard')
+    } catch (error) {
+      alert('Error', error.message)
+    }
   }
 
   render () {

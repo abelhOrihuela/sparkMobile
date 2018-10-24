@@ -18,12 +18,34 @@ async function get (url, body) {
   return instance.get(`${host}${url}`, body)
 }
 
-function post (url, body) {
+async function post (url, body) {
+  let token = await getToken()
+
   const instance = axios.create({
     baseURL: host,
-    timeout: 10000
+    timeout: 10000,
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
   })
+
+  console.log('token ===>', token)
+
   return instance.post(`${host}${url}`, body)
+}
+
+async function put (url, body) {
+  let token = await getToken()
+
+  const instance = axios.create({
+    baseURL: host,
+    timeout: 10000,
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
+
+  return instance.put(`${host}${url}`, body)
 }
 
 function getToken () {
@@ -32,7 +54,8 @@ function getToken () {
 
 const api = {
   get: get,
-  post: post
+  post: post,
+  put: put
 }
 
 export default api

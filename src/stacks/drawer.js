@@ -37,7 +37,7 @@ const Drawer = DrawerNavigator({
   },
   headerMode: 'none',
   drawerBackgroundColor: '#0D4E78',
-  drawerPosition: 'right'
+  drawerPosition: 'left'
 })
 
 export default Drawer
