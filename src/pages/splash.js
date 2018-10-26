@@ -7,8 +7,8 @@ class Splash extends React.Component {
          drawerLabel: () => null
   }
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
     }
   }
@@ -29,7 +29,7 @@ class Splash extends React.Component {
       }, 1000)
     }
   }
-  
+
 
   async loadInitialState() {
     try {
