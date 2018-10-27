@@ -4,7 +4,7 @@ import Todo from '../pages/todo'
 import Profile from '../pages/profile'
 import Notifications from '../pages/notifications'
 import Reports from '../pages/reports-list'
-import ReportDetail from '../pages/reports'
+import ReportDetail from '../pages/reports-detail'
 import NotificationDetail from '../pages/notification-detail'
 import Logout from '../pages/logout'
 

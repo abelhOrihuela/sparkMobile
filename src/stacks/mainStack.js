@@ -39,7 +39,7 @@ const Aplication = StackNavigator({
             }
           }}>
           <Image
-            style={{ width: 30, height: 30, backgroundColor: '#0D4E78' }}
+            style={{ width: 30, height: 30, backgroundColor: 'white' }}
             source={require('./menu.png')} />
         </TouchableHighlight>
       </View>

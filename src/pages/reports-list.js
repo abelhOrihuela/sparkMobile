@@ -22,7 +22,7 @@ class Reports extends Component {
     static navigationOptions = {
       title: 'Reports',
       drawerIcon: () => (
-        <Icon name='bell' size={20} color='#FFFFFF' />
+        <Icon name='file' size={20} color='#FFFFFF' />
       ),
 
       drawerLabel: () => {
@@ -58,13 +58,6 @@ class Reports extends Component {
       }
     }
 
-    showDetail (e, item) {
-        // this.props.navigation.push('NotificationDetail')
-        this.setState({
-          modalVisible: !this.state.modalVisible
-        })
-    }
-
     goToReportDetail (report) {
         this.props.navigation.navigate('ReportDetail', {report})
     }
@@ -91,7 +84,7 @@ class Reports extends Component {
             title = 'Microbiota'
         }
         return (<TouchableOpacity
-            style={{flex: 1, height: 150, backgroundColor: 'white', margin: 10}}
+            style={{flex: 1, height: 150, backgroundColor: 'white'}}
             onPress={() => this.goToReportDetail(item)}>
                 <ImageBackground
                   style={[StyleSheet.absoluteFill]}
@@ -107,6 +100,8 @@ class Reports extends Component {
     }
 
     render () {
+        let { reports } = this.state
+
         let title = ( <Text style={{color: 'white'}}>
            ALCHE
          <Text style={{fontWeight: 'bold', color: 'white'}}>
@@ -114,119 +109,81 @@ class Reports extends Component {
          </Text>
            RESULTS
          </Text>)
-      return ( <ScrollView style={styles.container}>
-        <Panel title={title}>
-          <Text>
-              En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-              pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-              para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-              motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-              algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-              microbios que pueden ayudarnos a alcanzar un peso más saludable
-          </Text>
-        </Panel>
+      return (<ScrollView style={styles.container}>
+          <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
+            <Text>
+                En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
+                pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
+                para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
+                motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
+                algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
+                microbios que pueden ayudarnos a alcanzar un peso más saludable
+            </Text>
+          </Panel>
+          <View style={{flex: 1, margin: 20, overflow:'hidden'}}>
+            <FlatList
+              data={reports}
+              numColumns={2}
+              keyExtractor={(x, i) => i}
+              renderItem={this.renderItem}/>
+         </View>
       </ScrollView>)
-    }
-
-    renders () {
-        let { reports } = this.state
-
-        let widthCard = (width / 2) -15
-
-        let titleComposible  = (<View style={{flex: 3, flexDirection: 'row', height: 50, alignItems: 'center', justifyContent: 'flex-start'}}>
-          <Text style={{color: 'white'}}>
-            ALCHE
-          <Text style={{fontWeight: 'bold', color: 'white'}}>
-            MY
-          </Text>
-            RESULTS
-          </Text>
-        </View>)
-
-        return (
-            <View style={[{flex: 1}]}>
-              <Collapsible
-                  title={titleComposible}
-                  iconColor=''>
-                  <View style={{flex: 1, backgroundColor: 'red', alignItems: 'center', height: 200}}>
-                      <Text>
-                          En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-                          pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-                          para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-                          motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-                          algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-                          microbios que pueden ayudarnos a alcanzar un peso más saludable
-                      </Text>
-                  </View>
-              </Collapsible>
-
-              <FlatList
-                  data={reports}
-                  numColumns={2}
-                  keyExtractor={(x, i) => i}
-                  renderItem={this.renderItem}/>
-
-            </View>
-        )
     }
 }
 
 
-var styles = StyleSheet.create({
-  container: {
-    flex            : 1,
-    backgroundColor : '#f4f7f9',
-    paddingTop      : 30
-  },
 
-});
-
-// const styles = StyleSheet.create({
-//     overlay: {
-//         flex: 1,
-//         position: 'absolute',
-//         left: 0,
-//         top: 0,
-//         opacity: 0.75,
-//         backgroundColor: '#16314E',
-//         width: width
-//     },
-//     bloodOverlay: {
-//         flex: 1,
-//         position: 'absolute',
-//         left: 0,
-//         top: 0,
-//         opacity: 0.75,
-//         backgroundColor: '#64948A',
-//         width: width
-//     },
-//     dnaOverlay: {
-//         flex: 1,
-//         position: 'absolute',
-//         left: 0,
-//         top: 0,
-//         opacity: 0.75,
-//         backgroundColor: '#0070A8',
-//         width: width
-//     },
-//     sensibilitiesOverlay: {
-//         flex: 1,
-//         position: 'absolute',
-//         left: 0,
-//         top: 0,
-//         opacity: 0.75,
-//         backgroundColor: '#696E85',
-//         width: width
-//     },
-//     microbiomeOverlay: {
-//         flex: 1,
-//         position: 'absolute',
-//         left: 0,
-//         top: 0,
-//         opacity: 0.75,
-//         backgroundColor: '#009AA7',
-//         width: width
-//     }
-// })
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#f4f7f9',
+      paddingTop: 30
+    },
+    overlay: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0.75,
+        backgroundColor: '#16314E',
+        width: width
+    },
+    bloodOverlay: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0.75,
+        backgroundColor: '#64948A',
+        width: width
+    },
+    dnaOverlay: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0.75,
+        backgroundColor: '#0070A8',
+        width: width
+    },
+    sensibilitiesOverlay: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0.75,
+        backgroundColor: '#696E85',
+        width: width
+    },
+    microbiomeOverlay: {
+        flex: 1,
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0.75,
+        backgroundColor: '#009AA7',
+        width: width
+    }
+})
 
 export default Reports
