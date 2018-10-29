@@ -57,7 +57,7 @@ export default class Row extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 20,
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between'

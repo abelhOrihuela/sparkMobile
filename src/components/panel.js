@@ -77,7 +77,7 @@ var styles = StyleSheet.create({
   },
   title: {
     flex: 4,
-    padding: 10,
+    padding: 20,
   },
   button: {
 
@@ -87,7 +87,7 @@ var styles = StyleSheet.create({
     height: 25
   },
   body: {
-    padding: 10
+    padding: 20
   }
 })
 

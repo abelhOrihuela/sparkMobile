@@ -114,7 +114,7 @@ export default class Dashboard extends Component {
   }
 
   goToMynewMe () {
-    this.props.navigation.navigate('Reports')
+    this.props.navigation.navigate('MyNewMe')
   }
 
   render () {
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   btn: {
     borderWidth: 1,
     borderColor: '#FFFFFF',
-    padding: 10,
+    padding: 20,
     alignItems: 'center',
     margin: 10
   },
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
     width: width
   },
   section: {
-    flex: 1, flexDirection: 'row', padding: 10
+    flex: 1, flexDirection: 'row', padding: 20
   },
   bgSection: {
     flex: 1,
