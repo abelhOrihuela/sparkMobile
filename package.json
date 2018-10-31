@@ -17,6 +17,7 @@
     "react-native-elements": "^0.19.1",
     "react-native-svg": "^7.0.3",
     "react-native-svg-uri": "^1.2.3",
+    "react-native-tab-view": "^1.2.0",
     "react-native-vector-icons": "^4.6.0",
     "react-native-video": "^2.1.1",
     "react-navigation": "^1.5.11",

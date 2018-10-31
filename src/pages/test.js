@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     //     }]}
     //     source={myNewMeBg}
     //   >
-    //   <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
+    //   <View style={{flex: 1, flexDirection: 'row', padding: 20}}>
     //     <View style={{flex: 1}}>
     //       <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
     //     </View>
