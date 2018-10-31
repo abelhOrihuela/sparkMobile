@@ -66,7 +66,7 @@ export default class Dashboard extends Component {
   }
 
   async loadReports () {
-      try {
+    try {
       let body = await api.get('/customers/reports')
       this.setState({
         reports: body.data.data
@@ -120,7 +120,7 @@ export default class Dashboard extends Component {
   render () {
     let {loading, modalIntro, modalStatus, actions} = this.state
 
-    let modalOne = (<ModalContainer
+    let modalOne = modalIntro ? (<ModalContainer
       visible={modalIntro}>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
         <Text style={styles.fontWhite18}>Bienvenido a</Text>
@@ -136,9 +136,9 @@ export default class Dashboard extends Component {
         onPress={() => this.setModalVisible(!modalIntro)}>
         <Text style={styles.fontWhite16}>Continuar</Text>
       </TouchableOpacity>
-    </ModalContainer>)
+    </ModalContainer>) : <View />
 
-    let modalTwo = (<ModalContainer
+    let modalTwo = modalTwo ? (<ModalContainer
       visible={modalStatus}>
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
         <Image source={logoWhite} />
@@ -166,7 +166,7 @@ export default class Dashboard extends Component {
       <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
         <Text style={styles.fontWhite16}>(Cuando estén tus resultados, podrás acceder)</Text>
       </View>
-    </ModalContainer>)
+    </ModalContainer>) : <View />
 
     if (loading) {
       return <ActivityIndicator />
@@ -174,28 +174,30 @@ export default class Dashboard extends Component {
 
     let heightSection = 150
 
-    return (<View style={styles.sectionColumn}>
+    return (<View style={[styles.container]}>
       {modalOne}
       {modalTwo}
-      <View style={[styles.sectionColumn]}>
+      <View style={{marginTop: 20}}>
         <Text style={[styles.fontBlue16, {textAlign: 'center'}]}>¡Bienvenido!</Text>
       </View>
       <View style={styles.sectionColumn}>
-        <Text style={styles.fontBlack14}>Revisa tus resultados, dietas o referencias médicas.</Text>
+        <Text style={[styles.fontBlack14, {textAlign: 'center'}]}>Revisa tus resultados, dietas o referencias médicas.</Text>
       </View>
-      <TouchableOpacity style={[styles.sectionRow, {height: heightSection}]} onPress={() => this.goToReports()}>
+      <TouchableOpacity style={[{marginTop: 20, marginBottom: 10}, {height: heightSection}]} onPress={() => this.goToReports()}>
+
+
         <ImageBackground
           style={[StyleSheet.absoluteFill, styles.bgSection]}
           source={reportesBg}
-        />
-      <View style={styles.section}>
+          />
+        <View style={styles.section}>
           <View style={{flex: 1, zIndex: 9999}}>
             <Image source={reportesIcon} style={{width: '100%', height: '100%'}} />
           </View>
           <View style={styles.sectionTitles}>
             <Text
               style={styles.titleSection}
-            >
+              >
               Reportes
             </Text>
             <Text style={styles.subtitleSection}>
@@ -204,20 +206,22 @@ export default class Dashboard extends Component {
           </View>
         </View>
         <View style={[styles.overlayReports, { height: heightSection}]} />
+
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.sectionRow, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
+
+      <TouchableOpacity style={[{marginTop: 10, marginBottom: 10}, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
         <ImageBackground
           style={[StyleSheet.absoluteFill, styles.bgSection]}
           source={myNewMeBg}
-        />
-      <View style={styles.section}>
+          />
+        <View style={styles.section}>
           <View style={{flex: 1, zIndex: 9999}}>
             <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
           </View>
           <View style={styles.sectionTitles}>
             <Text
               style={styles.titleSection}
-            >
+              >
               MY NEW ME
             </Text>
             <Text style={styles.subtitleSection}>
@@ -235,9 +239,9 @@ export default class Dashboard extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: 'transparent'
+    backgroundColor: '#f4f7f9',
+    paddingLeft: 20,
+    paddingRight: 20
   },
   background: {
     width: width,
@@ -250,8 +254,7 @@ const styles = StyleSheet.create({
   },
   sectionColumn: {
     justifyContent: 'center',
-    flexDirection: 'column',
-    margin: 10
+    flexDirection: 'column'
   },
   imagePeople: {
     width: width-80,

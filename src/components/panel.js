@@ -67,7 +67,6 @@ class Panel extends Component {
 
 var styles = StyleSheet.create({
   container: {
-    margin: 20,
     overflow:'hidden',
     backgroundColor: 'white'
   },

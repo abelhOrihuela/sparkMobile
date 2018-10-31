@@ -18,16 +18,16 @@ import Panel from '../components/panel'
 const {height, width} = Dimensions.get('window')
 
 class Reports extends Component {
-  // static navigationOptions = {
-  //   title: 'Reports',
-  //   drawerIcon: () => (
-  //     <Icon name='file' size={20} color='#FFFFFF' />
-  //   ),
-  //
-  //   drawerLabel: () => {
-  //     return 'Reports'
-  //   },
-  // }
+  static navigationOptions = {
+    title: 'Reports',
+    drawerIcon: () => (
+      <Icon name='file' size={20} color='#FFFFFF' />
+    ),
+
+    drawerLabel: () => {
+      return 'Reports'
+    },
+  }
 
   constructor(props) {
     super(props);
@@ -109,24 +109,26 @@ class Reports extends Component {
     RESULTS
   </Text>)
   return (<ScrollView style={styles.container}>
-    <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
-      <Text>
-        En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-        pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-        para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-        motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-        algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-        microbios que pueden ayudarnos a alcanzar un peso más saludable
-      </Text>
-    </Panel>
-    <View style={{flex: 1, margin: 20, overflow:'hidden'}}>
-      <FlatList
-        data={reports}
-        numColumns={2}
-        keyExtractor={(x, i) => i}
-        renderItem={this.renderItem}/>
-    </View>
-  </ScrollView>)
+      <View style={{marginTop: 20, marginBottom: 10}}>
+        <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
+          <Text>
+            En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
+            pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
+            para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
+            motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
+            algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
+            microbios que pueden ayudarnos a alcanzar un peso más saludable
+          </Text>
+        </Panel>
+      </View>
+      <View style={{flex: 1, marginTop: 10, marginBottom: 10, overflow:'hidden'}}>
+        <FlatList
+          data={reports}
+          numColumns={2}
+          keyExtractor={(x, i) => i}
+          renderItem={this.renderItem}/>
+      </View>
+    </ScrollView>)
 }
 }
 
@@ -135,8 +137,8 @@ class Reports extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f4f7f9',
-    paddingTop: 30
+    paddingLeft: 20,
+    paddingRight: 20
   },
   overlay: {
     flex: 1,

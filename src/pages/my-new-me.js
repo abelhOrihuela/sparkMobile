@@ -108,7 +108,7 @@ let modal = (<ModalContainer
   visible={showRiskIndexModal}>
   <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
     <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
-      <Text style={[{flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo : Diabetes</Text>
+      <Text style={[{flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text></Text>
       <TouchableOpacity
         onPress={() => this.setModalVisible(!showRiskIndexModal)}>
         <Icon name='minus' size={20} color='#FFFFFF' />
@@ -118,39 +118,31 @@ let modal = (<ModalContainer
 
 </ModalContainer>)
 
-// <View style={[{backgroundColor: '#009AA7', flexDirection: 'row', alignItems: 'center', margin: 20}]}>
-//   <Text style={[{flex: 4, padding: 20, height: 70}]}>Factor de riesgo : Diabetes</Text>
-//   <TouchableOpacity
-//     style={[{flex: 1}]}
-//     onPress={() => this.setModalVisible(!showRiskIndexModal)}>
-//     <Icon name='minus' size={20} color='#FFFFFF' />
-//   </TouchableOpacity>
-// </View>
-// <View style={{backgroundColor: 'red'}}>
-//   <Text>Hola</Text>
-// </View>
-
-
 
 
 return (<ScrollView style={styles.container}>
   {modal}
-  <TouchableOpacity style={{backgroundColor: '#009AA7', flex: 1, flexDirection: 'row', margin: 20}}
-    onPress={() => this.setModalVisible(!showRiskIndexModal)}>
-    <Text>Hola</Text>
-    <Icon name='file' size={20} color='#FFFFFF' />
-  </TouchableOpacity>
-  <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
-    <Text>
-      En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-      pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-      para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-      motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-      algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-      microbios que pueden ayudarnos a alcanzar un peso más saludable
-    </Text>
-  </Panel>
-  <View style={{flex: 1, margin: 20, overflow:'hidden'}}>
+  <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20, marginBottom: 5, marginTop: 20}}>
+    <Text style={[{flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text></Text>
+    <TouchableOpacity
+      onPress={() => this.setModalVisible(!showRiskIndexModal)}>
+      <Icon name='eye' size={20} color='#FFFFFF' />
+    </TouchableOpacity>
+  </View>
+  <View style={{marginTop: 10, marginBottom: 10}}>
+    <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
+      <Text>
+        En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
+        pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
+        para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
+        motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
+        algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
+        microbios que pueden ayudarnos a alcanzar un peso más saludable
+      </Text>
+    </Panel>
+  </View>
+
+  <View style={{flex: 1, overflow:'hidden', marginTop: 10, marginBottom: 10}}>
     <FlatList
       data={takeActions}
       numColumns={2}
@@ -167,7 +159,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f4f7f9',
-    // paddingTop: 30
+    paddingLeft: 20,
+    paddingRight: 20
   },
   overlay: {
     flex: 1,
