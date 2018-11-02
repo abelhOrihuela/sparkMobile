@@ -98,32 +98,66 @@ export class Login extends Component {
       onSubmit={(e) => this.handleSubmit(e)}
     />)
 
-    return (<View style={styles.login.container}>
-      <Image source={background} style={[StyleSheet.absoluteFill, styles.login.background]} />
-        <ScrollView>
-          <View style={styles.login.section}>
-            <Image source={logo} />
-          </View>
-          <View style={styles.login.section}>
-            <Text style={styles.login.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
-          </View>
-          <View style={styles.login.section}>
-            <Image source={people} style={styles.login.imagePeople} resizeMode='contain' />
-          </View>
-          <View style={styles.login.section}>
-            <Text style={styles.login.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
-          </View>
-          <View style={styles.login.section}>
-            {content}
-          </View>
-          <TouchableOpacity
-            style={styles.login.btn}
-            onPress={() => this.resetPassword()}>
-            <Text style={styles.login.fontBlue16}>¿Olvidaste tu constraseña?</Text>
-          </TouchableOpacity>
-        </ScrollView>
-      </View>)
+    return (<View>
+      <Image source={background} style={[StyleSheet.absoluteFill, stylesLogin.background]} />
+      <ScrollView>
+        <View style={stylesLogin.section}>
+          <Image source={logo} />
+        </View>
+        <View style={stylesLogin.section}>
+          <Text style={stylesLogin.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
+        </View>
+        <View style={stylesLogin.section}>
+          <Image source={people} style={stylesLogin.imagePeople} resizeMode='contain' />
+        </View>
+        <View style={stylesLogin.section}>
+          <Text style={stylesLogin.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
+        </View>
+        <View style={stylesLogin.section}>
+          {content}
+        </View>
+        <TouchableOpacity
+          style={stylesLogin.btn}
+          onPress={() => this.resetPassword()}>
+          <Text style={stylesLogin.fontBlue16}>¿Olvidaste tu constraseña?</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>)
   }
 }
+
+const stylesLogin = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 20,
+    backgroundColor: 'transparent'
+  },
+  background: {
+    width: width,
+    height: height
+  },
+  section: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    margin: 10
+  },
+  imagePeople: {
+    width: '100%',
+    height: 230
+  },
+  fontBlue16: {
+    color: '#2771A2',
+    fontSize: 16
+  },
+  fontBlack14: {
+    color: '#000000',
+    fontSize: 14
+  },
+  btn: {
+    alignItems: 'center',
+    margin: 10
+  }
+})
 
 export default Login

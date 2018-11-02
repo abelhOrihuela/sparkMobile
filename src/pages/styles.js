@@ -6,39 +6,6 @@ import {
 const {height, width} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  login: {
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      padding: 20,
-      backgroundColor: 'transparent'
-    },
-    background: {
-      width: width,
-      height: height
-    },
-    section: {
-      justifyContent: 'center',
-      flexDirection: 'row',
-      margin: 10
-    },
-    imagePeople: {
-      width: '100%',
-      height: 230
-    },
-    fontBlue16: {
-      color: '#2771A2',
-      fontSize: 16
-    },
-    fontBlack14: {
-      color: '#000000',
-      fontSize: 14
-    },
-    btn: {
-      alignItems: 'center',
-      margin: 10
-    }
-  },
   page: {
     flex: 1
   },
@@ -68,6 +35,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column',
     margin: 10
+  },
+  alignItemsCenter: {
+    alignItems: 'center'
   },
   imagePeople: {
     width: width - 80,
