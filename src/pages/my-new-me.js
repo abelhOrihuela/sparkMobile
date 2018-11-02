@@ -17,11 +17,11 @@ import ejercicioBg from '../ejercicio-fondo.jpg'
 const {width} = Dimensions.get('window')
 
 const takeActions = [
-  {title: 'NUTRICIÓN', img: nutritionBg, icon: iconBlood, style: 'nutritionOverlay'},
-  {title: 'EJERCICIO', img: ejercicioBg, icon: iconBlood, style: 'exerciseOverlay'},
-  {title: 'SALUD Y SUPLEMENTACIÓN', img: suplementacionBg, icon: iconBlood, style: 'suplementationOverlay'},
-  {title: 'LONGEVIDAD', img: longevidadBg, icon: iconBlood, style: 'longevityOverlay'},
-  {title: 'HÁBITOS DE VIDA', img: estilodevidaBg, icon: iconBlood, style: 'lifestyleOverlay'}
+  {title: 'NUTRICIÓN', img: nutritionBg, icon: iconBlood, style: 'nutritionOverlay', section: 'Nutrition'},
+  {title: 'EJERCICIO', img: ejercicioBg, icon: iconBlood, style: 'exerciseOverlay', section: 'Exercise'},
+  {title: 'SALUD Y SUPLEMENTACIÓN', img: suplementacionBg, icon: iconBlood, style: 'suplementationOverlay', section: 'Suplementation'},
+  {title: 'LONGEVIDAD', img: longevidadBg, icon: iconBlood, style: 'longevityOverlay', section: 'Longevity'},
+  {title: 'HÁBITOS DE VIDA', img: estilodevidaBg, icon: iconBlood, style: 'lifestyleOverlay', section: 'Lifestyle'}
 ]
 
 class MyNewMe extends Component {
@@ -60,8 +60,8 @@ class MyNewMe extends Component {
     }
   }
 
-  goToSection (report) {
-    this.props.navigation.navigate('ReportDetail', {report})
+  goToSection (item) {
+    this.props.navigation.navigate(item.section, {item})
   }
 
   renderItem ({item, index}) {
