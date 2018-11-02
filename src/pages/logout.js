@@ -25,6 +25,7 @@ class Logout extends Component {
 
   async logout () {
       await AsyncStorage.removeItem('user')
+      await AsyncStorage.removeItem('jwt')
       this.props.navigation.dispatch(NavigationActions.reset({
           index: 0,
           key: null,

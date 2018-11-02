@@ -6,6 +6,7 @@ import background from '../bg.png'
 import logo from '../logo.png'
 import people from '../people.png'
 import api from '../core/api'
+import styles from './styles'
 const {height, width} = Dimensions.get('window')
 
 export class Login extends Component {
@@ -97,66 +98,32 @@ export class Login extends Component {
       onSubmit={(e) => this.handleSubmit(e)}
     />)
 
-    return (<View style={styles.container}>
-      <Image source={background} style={[StyleSheet.absoluteFill, styles.background]} />
+    return (<View style={styles.login.container}>
+      <Image source={background} style={[StyleSheet.absoluteFill, styles.login.background]} />
         <ScrollView>
-          <View style={styles.section}>
+          <View style={styles.login.section}>
             <Image source={logo} />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
+          <View style={styles.login.section}>
+            <Text style={styles.login.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
           </View>
-          <View style={styles.section}>
-            <Image source={people} style={styles.imagePeople} resizeMode='contain' />
+          <View style={styles.login.section}>
+            <Image source={people} style={styles.login.imagePeople} resizeMode='contain' />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
+          <View style={styles.login.section}>
+            <Text style={styles.login.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
           </View>
-          <View style={styles.section}>
+          <View style={styles.login.section}>
             {content}
           </View>
           <TouchableOpacity
-            style={styles.btn}
+            style={styles.login.btn}
             onPress={() => this.resetPassword()}>
-            <Text style={styles.fontBlue16}>¿Olvidaste tu constraseña?</Text>
+            <Text style={styles.login.fontBlue16}>¿Olvidaste tu constraseña?</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>)
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: 'transparent'
-  },
-  background: {
-    width: width,
-    height: height
-  },
-  section: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-    margin: 10
-  },
-  imagePeople: {
-    width: '100%',
-    height: 230
-  },
-  fontBlue16: {
-    color: '#2771A2',
-    fontSize: 16
-  },
-  fontBlack14: {
-    color: '#000000',
-    fontSize: 14
-  },
-  btn: {
-    alignItems: 'center',
-    margin: 10
-  }
-})
 
 export default Login

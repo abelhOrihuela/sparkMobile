@@ -34,10 +34,10 @@ const stylesheet = {...t.form.Form.stylesheet}
 // stylesheet.textbox.error.marginBottom = 5
 let normal = {
   height: 45,
-  backgroundColor: '#F9F9F9',
+  backgroundColor: '#ECECEC',
   color: 'gray',
   fontSize: 14,
-  borderColor:  '#ECECEC',
+  borderColor: '#c2c2c2',
   borderWidth: 1,
   borderRadius: 0,
   textAlign: 'center'
@@ -62,7 +62,7 @@ class BaseForm extends Component {
     const Model = t.struct(this.props.type)
 
     let label = this.props.label ? this.props.label : 'Guardar'
-    console.log('t.form.Form.stylesheet', t.form.Form.stylesheet);
+    console.log('t.form.Form.stylesheet', t.form.Form.stylesheet)
     return (
       <View style={styles.container}>
         <Form type={Model}
@@ -72,7 +72,7 @@ class BaseForm extends Component {
           onChange={(e) => this.onChange(e)} />
         {
           <TouchableHighlight style={styles.button}
-              onPress={(e) => this.onSubmit(e)} underlayColor='#99d9f4'>
+            onPress={(e) => this.onSubmit(e)} underlayColor='#99d9f4'>
             <Text style={styles.buttonText}>{label}</Text>
           </TouchableHighlight>
         }
