@@ -3,7 +3,6 @@ import { View, StyleSheet, Dimensions, Image, AsyncStorage } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import background from '../background.jpg'
-
 const {height, width} = Dimensions.get('window')
 
 export class Login extends Component {
@@ -65,6 +64,7 @@ export class Login extends Component {
           style={[StyleSheet.absoluteFill, {width: width, height: height}]} />
         <View style={{height: height}}>
           <BaseForm
+            textButton='Iniciar sesion'
             type={User}
             options={this.state.options}
             value={this.state.value}

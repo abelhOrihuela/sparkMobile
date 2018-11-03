@@ -77,10 +77,10 @@ export default class VideoContainer extends Component {
       ]
     }
     return (
-      <View style={styles.container}>
-        <View style={error ? styles.error : undefined }>
+      <View style={[styles.container, this.props.style]}>
+        <View style={[error ? styles.error : undefined] }>
           <Video source={{uri: this.props.url}}
-            resizeMode='contain'
+            resizeMode='cover'
             onError={this.handleError}
             style={{height: height, width: '100%'}}
             onLoadStart={this.handleLoadStart}
@@ -106,7 +106,8 @@ export default class VideoContainer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    backgroundColor: '#EEEEEE',
+    padding: 10
   },
   videoCover: {
     alignItems: 'center',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
-    // backgroundColor: 'rgba(255, 255, 255, 0.9)'
+    backgroundColor: 'rgba(255, 255, 255, 0.9)'
   },
   error: {
     backgroundColor: '#000',

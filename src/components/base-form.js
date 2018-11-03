@@ -39,7 +39,7 @@ class BaseForm extends Component {
 
   render () {
     const Model = t.struct(this.props.type)
-
+    let text = this.props.textButton || 'Save'
     return (
       <View style={styles.container}>
         <Form type={Model}
@@ -49,7 +49,7 @@ class BaseForm extends Component {
           onChange={this.props.onChange} />
         {
           <TouchableHighlight style={styles.button} onPress={(e) => this.onPress(e)} underlayColor='#99d9f4'>
-            <Text style={styles.buttonText}>Save</Text>
+            <Text style={styles.buttonText}>{text}</Text>
           </TouchableHighlight>
         }
       </View>
