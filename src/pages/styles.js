@@ -36,6 +36,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     margin: 10
   },
+  alignItemsCenter: {
+    alignItems: 'center'
+  },
   imagePeople: {
     width: width - 80,
     height: 230
@@ -81,7 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   status: {
-    backgroundColor: '#2771A2',
+    backgroundColor: '#2771A2'
   },
   marginSides: {
     marginLeft: 10,

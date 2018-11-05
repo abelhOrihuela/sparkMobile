@@ -20,17 +20,21 @@ async function get (url, body) {
 
 async function post (url, body) {
   let token = await getToken()
-
-  const instance = axios.create({
-    baseURL: host,
-    timeout: 10000,
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  })
-
-  console.log('token ===>', token)
-
+  let instance
+  if (token) {
+    instance = axios.create({
+      baseURL: host,
+      timeout: 10000,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+  } else {
+    instance = axios.create({
+      baseURL: host,
+      timeout: 10000
+    })
+  }
   return instance.post(`${host}${url}`, body)
 }
 

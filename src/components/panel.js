@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   Animated
@@ -18,40 +17,40 @@ class Panel extends Component {
     }
   }
 
-  toggle(){
-    let initialValue = this.state.expanded? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
-    finalValue = this.state.expanded? this.state.minHeight : this.state.maxHeight + this.state.minHeight;
+  toggle () {
+    let initialValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.state.minHeight
+    let finalValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight
 
     this.setState({
       expanded: !this.state.expanded
-    });
+    })
 
-    this.state.animation.setValue(initialValue);
+    this.state.animation.setValue(initialValue)
     Animated.spring(this.state.animation, {
       toValue: finalValue
-    }).start();
+    }).start()
   }
 
-  _setMaxHeight(event){
+  _setMaxHeight (event) {
     this.setState({
-    maxHeight: event.nativeEvent.layout.height
-    });
+      maxHeight: event.nativeEvent.layout.height
+    })
   }
 
-  _setMinHeight(event){
+  _setMinHeight (event) {
     this.setState({
-    minHeight: event.nativeEvent.layout.height
-    });
+      minHeight: event.nativeEvent.layout.height
+    })
   }
 
-  render(){
+  render () {
     let icon = this.state.expanded ? 'minus' : 'plus'
     let {styleContainerTitle} = this.props || {}
     let {colorIcon} = this.props || '#FFFFFF'
 
-    return (<Animated.View style={[styles.container,{height: this.state.animation}]}>
+    return (<Animated.View style={[styles.container, {height: this.state.animation}]}>
       <View style={[styleContainerTitle, styles.titleContainer]} onLayout={this._setMinHeight.bind(this)}>
-        <View style={styles.title}>{this.state.title}</View>
+        <View style={[styles.title]}>{this.state.title}</View>
         <TouchableOpacity style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
           onPress={this.toggle.bind(this)}>
           <Icon name={icon} size={20} color={colorIcon} />
@@ -67,7 +66,7 @@ class Panel extends Component {
 
 var styles = StyleSheet.create({
   container: {
-    overflow:'hidden',
+    overflow: 'hidden',
     backgroundColor: 'white'
   },
   titleContainer: {
@@ -76,7 +75,7 @@ var styles = StyleSheet.create({
   },
   title: {
     flex: 4,
-    padding: 20,
+    marginLeft: 20
   },
   button: {
 
@@ -90,4 +89,4 @@ var styles = StyleSheet.create({
   }
 })
 
-export default Panel;
+export default Panel

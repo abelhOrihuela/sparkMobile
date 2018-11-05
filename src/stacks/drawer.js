@@ -6,7 +6,11 @@ import Notifications from '../pages/notifications'
 import Reports from '../pages/reports-list'
 import MyNewMe from '../pages/my-new-me'
 import ReportDetail from '../pages/reports-detail'
-import NotificationDetail from '../pages/notification-detail'
+import Nutrition from '../pages/nutrition'
+import Exercise from '../pages/exercise'
+import Suplementation from '../pages/suplementation'
+import Longevity from '../pages/longevity'
+import Lifestyle from '../pages/lifestyle'
 import Logout from '../pages/logout'
 
 // const StackNotifications = StackNavigator({
@@ -21,7 +25,11 @@ const StackReports = StackNavigator({
 
 const StackMyNewMe = StackNavigator({
   MyNewMe: { screen: MyNewMe },
-  ReportDetail: {screen: ReportDetail}
+  Nutrition: {screen: Nutrition},
+  Exercise: {screen: Exercise},
+  Suplementation: {screen: Suplementation},
+  Longevity: {screen: Longevity},
+  Lifestyle: {screen: Lifestyle}
 })
 
 const Drawer = DrawerNavigator({
