@@ -27,7 +27,9 @@ class Panel extends Component {
 
     this.state.animation.setValue(initialValue)
     Animated.spring(this.state.animation, {
-      toValue: finalValue
+      toValue: finalValue,
+      speed: 20,
+      bounciness: 0
     }).start()
   }
 

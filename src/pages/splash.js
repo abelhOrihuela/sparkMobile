@@ -1,5 +1,7 @@
 import React from 'react'
-import {AsyncStorage, Text, View, StyleSheet} from 'react-native'
+import {AsyncStorage, Text, View, StyleSheet, ImageBackground, Image} from 'react-native'
+import background from 'app/src/bg.png'
+import logo from 'app/src/logo.png'
 
 class Splash extends React.Component {
   static navigationOptions = {
@@ -30,21 +32,6 @@ class Splash extends React.Component {
     }
   }
 
-
-  async loadInitialState() {
-    try {
-      const value = await AsyncStorage.getItem('user')
-      if (value !== null) {
-        this.me()
-      } else {
-        setTimeout(() => {
-          this.props.navigation.navigate('Login')
-        }, 500)
-      }
-    } catch (error) {
-    }
-  }
-
   me () {
     setTimeout(() => {
       this.props.navigation.navigate('Dashboard')
@@ -53,9 +40,11 @@ class Splash extends React.Component {
 
   render () {
     return (
-      <View style={styles.container}>
-        <Text>Splash</Text>
-    </View>
+      <ImageBackground style={[StyleSheet.absoluteFill]} source={background}>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <Image source={logo} />
+        </View>
+    </ImageBackground>
     )
   }
 }
