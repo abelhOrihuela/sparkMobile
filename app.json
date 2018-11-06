@@ -1,4 +1,32 @@
 {
   "name": "sparkMobile",
-  "displayName": "sparkMobile"
+  "displayName": "sparkMobile",
+  "expo": {
+    "name": "sparkMobile",
+    "description": "This project is really great.",
+    "slug": "sparkMobile",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/img/splash.png",
+    "splash": {
+      "image": "./assets/img/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.commonsense.alchemy"
+    }
+  }
 }
