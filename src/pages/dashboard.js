@@ -189,47 +189,48 @@ export default class Dashboard extends Component {
         <ImageBackground
           style={[StyleSheet.absoluteFill, styles.bgSection]}
           source={reportesBg}
-          />
-        <View style={styles.section}>
-          <View style={{flex: 1, zIndex: 9999}}>
-            <Image source={reportesIcon} style={{width: '100%', height: '100%'}} />
+        >
+          <View style={[styles.overlayReports, { height: heightSection}]} />
+          <View style={styles.section}>
+            <View style={{flex: 1}}>
+              <Image source={reportesIcon} style={{width: '100%', height: '100%'}} />
+            </View>
+            <View style={styles.sectionTitles}>
+              <Text
+                style={styles.titleSection}
+                >
+                Reportes
+              </Text>
+              <Text style={styles.subtitleSection}>
+                {this.state.reports.length} reportes disponibles
+              </Text>
+            </View>
           </View>
-          <View style={styles.sectionTitles}>
-            <Text
-              style={styles.titleSection}
-              >
-              Reportes
-            </Text>
-            <Text style={styles.subtitleSection}>
-              {this.state.reports.length} reportes disponibles
-            </Text>
-          </View>
-        </View>
-        <View style={[styles.overlayReports, { height: heightSection}]} />
-
+        </ImageBackground>
       </TouchableOpacity>
 
       <TouchableOpacity style={[{marginTop: 10, marginBottom: 10}, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
         <ImageBackground
           style={[StyleSheet.absoluteFill, styles.bgSection]}
           source={myNewMeBg}
-          />
-        <View style={styles.section}>
-          <View style={{flex: 1, zIndex: 9999}}>
-            <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
+        >
+          <View style={[styles.overlayMyNewMe, { height: heightSection}]} />
+          <View style={styles.section}>
+            <View style={{flex: 1}}>
+              <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
+            </View>
+            <View style={styles.sectionTitles}>
+              <Text
+                style={styles.titleSection}
+                >
+                MY NEW ME
+              </Text>
+              <Text style={styles.subtitleSection}>
+                Tu dieta, ejercicios, salud preventiva y hábitos personalizados.
+              </Text>
+            </View>
           </View>
-          <View style={styles.sectionTitles}>
-            <Text
-              style={styles.titleSection}
-              >
-              MY NEW ME
-            </Text>
-            <Text style={styles.subtitleSection}>
-              Tu dieta, ejercicios, salud preventiva y hábitos personalizados.
-            </Text>
-          </View>
-        </View>
-        <View style={[styles.overlayMyNewMe, { height: heightSection}]} />
+        </ImageBackground>
       </TouchableOpacity>
     </View>)
 
