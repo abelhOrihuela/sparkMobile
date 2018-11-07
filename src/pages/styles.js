@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  textCentered: {
+    textAlign: 'center'
+  },
   container: {
     flex: 1,
     padding: 20
@@ -155,6 +158,9 @@ const styles = StyleSheet.create({
   },
   textCenter: {
     textAlign: 'center'
+  },
+  flexCentered: {
+    justifyContent: 'center'
   }
 })
 

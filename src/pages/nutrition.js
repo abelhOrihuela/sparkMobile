@@ -9,6 +9,7 @@ import iconMyPlate from 'app/src/iconMyPlate.png'
 import Collapsible from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
 import CardTips from 'app/src/components/card-tips'
+import Page from 'app/src/components/page'
 let height = 215
 import { Card } from 'react-native-elements'
 
@@ -39,35 +40,42 @@ class Nutrition extends Component {
     </View>)
     return (
       <ScrollView style={{flex: 1}}>
-        <ImageBackground style={[StyleSheet.absoluteFill, {height: height, justifyContent: 'center'}]} source={header} />
+        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
         <View style={stylesNutrition.nutritionOverlay} />
-        <View style={styles.container}>
-          <Text style={[{textAlign: 'center'}, styles.fontWhite18, stylesNutrition.title]}>NUTRICIÓN</Text>
-          <Collapsible title={title} styleContainerTitle={{backgroundColor: '#B9163B'}} colorIcon='#FFFFFF'>
+        <Page>
+          <Text style={[styles.textCentered, styles.fontWhite18, stylesNutrition.title]}>NUTRICIÓN</Text>
+          <Collapsible
+            title={title}
+            styleContainerTitle={{backgroundColor: '#B9163B'}}
+            colorIcon='#FFFFFF'>
             <Text>Para conservar o alcanzar un estado óptimo de salud, es indispensable que tu alimentación cumpla con ciertos requerimientos generales, entre los que destacan: incluir todos los macronutrimentos (hidratos de carbono, proteína, grasas) y micronutrimentos (minerales y vitaminas); ser variada y balanceada en cuanto a tipos de alimentos; contar con una adecuada densidad nutricional, y de preferencia, que predominen los alimentos no procesados y de buena calidad. También es importante que comas de acuerdo a tus gustos y bioindividualidad, que considera: tu sexo, etapa de vida, características fisiológicas y creencias personales. Los requerimientos deben adaptarse a situaciones especiales de salud o enfermedad, predisposición genética, perfil de microbiota y sensibilidades alimentarias. Para que puedas alcanzar tu máximo potencial energético, físico y mental, debemos conocer cuáles son las áreas de oportunidad que pueden optimizar tu bienestar. Los take action de alimentación están basados en los factores de riesgo que desciframos y determinamos de acuerdo a la integración de tus análisis. Recuerda que una nutrición adecuada ayudará a mejorar tu estado de salud actual y reducir el riesgo a desarrollar enfermedades. placer y aporta vitalidad.
             </Text>
           </Collapsible>
-          <View style={{top: 20, paddingBottom: 20}}>
 
 
-            <CardItemSection {...this.props}
-              icon={iconFish}
-              title='Plan de alimentación'
-              subtitle='Tu salud, en tus manos.'
-              to='AlchemyPlate'/>
+          <CardItemSection
+            style={[stylesNutrition.margin, {marginTop: 30}]}
+            {...this.props}
+            icon={iconFish}
+            title='Plan de alimentación'
+            subtitle='Tu salud, en tus manos.'
+            to='PlanAlimentation'/>
 
-            <CardItemSection {...this.props}
-              icon={iconFish}
-              title='ALCHEMYPLATE'
-              subtitle='Crea tus comidas.'
-              to='AlchemyPlate'/>
+          <CardItemSection
+            style={stylesNutrition.margin}
+            {...this.props}
+            icon={iconFish}
+            title='ALCHEMYPLATE'
+            subtitle='Crea tus comidas.'
+            to='AlchemyPlate'/>
 
-            <CardTips {...this.props}
-              img={header}
-              to='AlchemyPlate'/>
+          <CardTips
+            style={stylesNutrition.margin}
+            {...this.props}
+            img={header}
+            to='AlchemyPlate'/>
 
-          </View>
-        </View>
+        </Page>
       </ScrollView>
     )
   }
@@ -110,6 +118,9 @@ const stylesNutrition = StyleSheet.create({
     opacity: 0.5,
     backgroundColor: '#0D4E78',
     height: 150
+  },
+  margin: {
+    marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 10
   }
 })
 export default Nutrition

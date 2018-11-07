@@ -13,7 +13,7 @@ export default class CardTips extends Component {
   }
   render () {
     return (
-      <View style={[styles.card, {backgroundColor: 'white', height: 150}]}>
+      <View style={[styles.card, this.props.style, {backgroundColor: 'white', height: 150}]}>
         <ImageBackground source={this.props.img} style={{width: '100%', height: 150}}>
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
             <Text style={[styles.fontWhite18]}>Tips de nutrición</Text>
