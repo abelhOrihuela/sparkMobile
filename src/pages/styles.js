@@ -72,6 +72,15 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 14
   },
+  fontBlack16Bold: {
+    color: '#000000',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  fontGray12: {
+    color: '#7A828E',
+    fontSize: 12
+  },
   btn: {
     borderWidth: 1,
     borderColor: '#FFFFFF',
