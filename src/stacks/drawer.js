@@ -12,6 +12,9 @@ import Suplementation from '../pages/suplementation'
 import Longevity from '../pages/longevity'
 import Lifestyle from '../pages/lifestyle'
 import Logout from '../pages/logout'
+import AlchemyPlate from '../pages/alchemyplate'
+import PlanAlimentation from '../pages/plan-alimentation'
+import TipsNutrition from '../pages/tips-nutrition'
 
 // const StackNotifications = StackNavigator({
 //   Notifications: { screen: Notifications },
@@ -29,7 +32,10 @@ const StackMyNewMe = StackNavigator({
   Exercise: {screen: Exercise},
   Suplementation: {screen: Suplementation},
   Longevity: {screen: Longevity},
-  Lifestyle: {screen: Lifestyle}
+  Lifestyle: {screen: Lifestyle},
+  AlchemyPlate: {screen: AlchemyPlate},
+  PlanAlimentation: {screen: PlanAlimentation},
+  TipsNutrition: {screen: TipsNutrition}
 })
 
 const Drawer = DrawerNavigator({
