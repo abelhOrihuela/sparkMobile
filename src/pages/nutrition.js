@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView} from 'react-native';
+import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
 import icon from 'app/src/iconDna.png'
+import iconFish from 'app/src/iconFish.png'
+import iconMyPlate from 'app/src/iconMyPlate.png'
 import Collapsible from 'app/src/components/panel'
+import CardItemSection from 'app/src/components/card-item-section'
+import CardTips from 'app/src/components/card-tips'
 let height = 215
 import { Card } from 'react-native-elements'
 
 import styles from 'app/src/pages/styles'
 class Nutrition extends Component {
-    static navigationOptions = {
-        drawerIcon: () => (
-            <Icon name='power-off' size={20} color='#FFFFFF' />
-        ),
-
-        drawerLabel: () => {
-            return 'Nutrition'
-        },
+  static navigationOptions = {
+    drawerIcon: () => (
+        <Icon name='power-off' size={20} color='#FFFFFF' />
+    ),
+    drawerLabel: () => {
+        return 'Nutrition'
     }
+  }
+
   constructor(props) {
     super(props);
     this.state = {
     }
+  }
+
+  goToSection (section) {
+    this.props.navigation.navigate(section)
   }
 
   render() {
@@ -40,40 +48,28 @@ class Nutrition extends Component {
             </Text>
           </Collapsible>
           <View style={{top: 20, paddingBottom: 20}}>
-            <Card containerStyle={stylesNutrition.card}>
-              <View style={{flexDirection: 'row'}}>
-                <View style={[{flex: 2}, stylesNutrition.flexColumn]}>
-                  <Image source={icon} style={{height: 60, width: 60}}/>
-                </View>
-                <View style={[{flex: 3}, stylesNutrition.flexColumn]}>
-                  <Text style={[styles.fontBlack16Bold]}>Plan de alimentación</Text>
-                  <Text style={[styles.fontGray12]}>Tu salud, en tus manos.</Text>
-                </View>
-                <View style={[{flex: 1}, stylesNutrition.flexColumn]}>
-                  <Icon name='angle-right' size={20} color='#911E38' />
-                </View>
-              </View>
-            </Card>
-            <Card containerStyle={stylesNutrition.card}>
-              <View style={{flexDirection: 'row'}}>
 
-                <View style={[{flex: 2}, stylesNutrition.flexColumn]}>
-                  <Image source={icon} style={{height: 60, width: 60}}/>
-                </View>
-                <View style={[{flex: 3}, stylesNutrition.flexColumn]}>
-                  <Text style={[styles.fontBlack16Bold]}>Plan de alimentación</Text>
-                  <Text style={[styles.fontGray12]}>Tu salud, en tus manos.</Text>
-                </View>
-                <View style={[{flex: 1}, stylesNutrition.flexColumn]}>
-                  <Icon name='angle-right' size={20} color='#911E38' />
-                </View>
-              </View>
-            </Card>
+
+            <CardItemSection {...this.props}
+              icon={iconFish}
+              title='Plan de alimentación'
+              subtitle='Tu salud, en tus manos.'
+              to='AlchemyPlate'/>
+
+            <CardItemSection {...this.props}
+              icon={iconFish}
+              title='ALCHEMYPLATE'
+              subtitle='Crea tus comidas.'
+              to='AlchemyPlate'/>
+
+            <CardTips {...this.props}
+              img={header}
+              to='AlchemyPlate'/>
 
           </View>
         </View>
       </ScrollView>
-    );
+    )
   }
 }
 
@@ -100,10 +96,20 @@ const stylesNutrition = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
+    right: 0,
     opacity: 0.5,
     backgroundColor: '#911E38',
-    height: height,
-    width: 500
+    height: height
+  },
+  nutritionOverlayFooter: {
+    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    opacity: 0.5,
+    backgroundColor: '#0D4E78',
+    height: 150
   }
 })
 export default Nutrition

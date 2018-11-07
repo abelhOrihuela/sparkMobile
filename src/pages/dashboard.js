@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#2771A2',
-    width: width
+    right: 0
   },
   overlayMyNewMe: {
     flex: 1,
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#16314E',
-    width: width
+    right: 0
   },
   section: {
     flex: 1, flexDirection: 'row', padding: 20
