@@ -9,6 +9,11 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
+  centered: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
     padding: 20
