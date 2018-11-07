@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native'
+import { View, KeyboardAvoidingView, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native'
 import BaseForm from '../components/base-form'
 import t from 'tcomb-form-native'
 import background from '../bg.png'
-import logo from '../logo.png'
+import logo from '../images/logo.png'
 import people from '../people.png'
 import api from '../core/api'
 import styles from './styles'
@@ -98,31 +98,32 @@ export class Login extends Component {
       onSubmit={(e) => this.handleSubmit(e)}
     />)
 
-    return (<View>
+    return (<KeyboardAvoidingView
+      style={styles.centered}
+      behavior='padding'
+    >
       <Image source={background} style={[StyleSheet.absoluteFill, stylesLogin.background]} />
-      <ScrollView>
-        <View style={stylesLogin.section}>
-          <Image source={logo} />
-        </View>
-        <View style={stylesLogin.section}>
-          <Text style={stylesLogin.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
-        </View>
-        <View style={stylesLogin.section}>
-          <Image source={people} style={stylesLogin.imagePeople} resizeMode='contain' />
-        </View>
-        <View style={stylesLogin.section}>
-          <Text style={stylesLogin.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
-        </View>
-        <View style={stylesLogin.section}>
-          {content}
-        </View>
-        <TouchableOpacity
-          style={stylesLogin.btn}
-          onPress={() => this.resetPassword()}>
-          <Text style={stylesLogin.fontBlue16}>¿Olvidaste tu constraseña?</Text>
-        </TouchableOpacity>
-      </ScrollView>
-    </View>)
+      <View style={stylesLogin.section}>
+        <Image  source={logo} />
+      </View>
+      <View style={stylesLogin.section}>
+        <Text style={stylesLogin.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
+      </View>
+      <View style={stylesLogin.section}>
+        <Image source={people} style={stylesLogin.imagePeople} resizeMode='contain' />
+      </View>
+      <View style={stylesLogin.section}>
+        <Text style={stylesLogin.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
+      </View>
+      <View style={stylesLogin.section}>
+        {content}
+      </View>
+      <TouchableOpacity
+        style={stylesLogin.btn}
+        onPress={() => this.resetPassword()}>
+        <Text style={stylesLogin.fontBlue16}>¿Olvidaste tu contraseña?</Text>
+      </TouchableOpacity>
+    </KeyboardAvoidingView>)
   }
 }
 
