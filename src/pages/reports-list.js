@@ -14,6 +14,7 @@ import iconSensibilities from '../iconSensibilities.png'
 import sensibilities from '../Sensibilidades.png'
 import api from '../core/api'
 import Panel from '../components/panel'
+import Page from 'app/src/components/page'
 
 const {height, width} = Dimensions.get('window')
 
@@ -83,14 +84,14 @@ class Reports extends Component {
       title = 'Microbiota'
     }
     return (<TouchableOpacity
-      style={{flex: 1, height: 150, backgroundColor: 'white'}}
+      style={{flex: 1, height: 150, backgroundColor: 'white', margin: 10}}
       onPress={() => this.goToReportDetail(item)}>
       <ImageBackground
         style={[StyleSheet.absoluteFill]}
         source={backgroundImage}
         />
 
-      <View style={[styles[item.type +'Overlay'], { height: 200}]} />
+      <View style={[styles[item.type +'Overlay'], { height: 150}]} />
       <View style={{flex: 1, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
         <Image source={icon} style={{height: 70, width: 60}}/>
         <Text style={{color: 'white'}}>{title}</Text>
@@ -108,8 +109,8 @@ class Reports extends Component {
     </Text>
     RESULTS
   </Text>)
-  return (<ScrollView style={styles.container}>
-      <View style={{marginTop: 20, marginBottom: 10}}>
+  return (
+      <Page>
         <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
           <Text>
             En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
@@ -120,15 +121,12 @@ class Reports extends Component {
             microbios que pueden ayudarnos a alcanzar un peso más saludable
           </Text>
         </Panel>
-      </View>
-      <View style={{flex: 1, marginTop: 10, marginBottom: 10, overflow:'hidden'}}>
         <FlatList
           data={reports}
           numColumns={2}
           keyExtractor={(x, i) => i}
           renderItem={this.renderItem}/>
-      </View>
-    </ScrollView>)
+      </Page>)
 }
 }
 
@@ -136,18 +134,17 @@ class Reports extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20
+    flex: 1
   },
   overlay: {
     flex: 1,
     position: 'absolute',
     left: 0,
     top: 0,
+    bottom: 0,
     opacity: 0.75,
     backgroundColor: '#16314E',
-    width: width
+    right: 0,
   },
   bloodOverlay: {
     flex: 1,
@@ -156,7 +153,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#64948A',
-    width: width
+    right: 0,
   },
   dnaOverlay: {
     flex: 1,
@@ -165,7 +162,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#0070A8',
-    width: width
+    right: 0,
   },
   sensibilitiesOverlay: {
     flex: 1,
@@ -174,7 +171,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#696E85',
-    width: width
+    right: 0,
   },
   microbiomeOverlay: {
     flex: 1,
@@ -183,7 +180,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#009AA7',
-    width: width
+    right: 0,
   }
 })
 
