@@ -5,7 +5,7 @@ import Drawer from './drawer.js'
 import Login from '../pages/login'
 import ResetPassword from '../pages/reset-password'
 import Splash from '../pages/splash'
-import logo from '../logo.png'
+import logo from '../images/logo.png'
 
 const Aplication = StackNavigator({
   Splash: {
@@ -22,32 +22,34 @@ const Aplication = StackNavigator({
   }
 }, { navigationOptions: ({navigation}) => ({
   headerStyle: {
-    backgroundColor: 'white',
-    paddingLeft: 10,
-    paddingRight: 10
+    padding: 10
   },
-  title: 'AlchemyCode',
   headerTintColor: 'white',
-  headerTitle: (<View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
-      <View style={{flex: 1}}>
-        <TouchableHighlight
-          onPress={() => {
-            if (navigation.state.index === 0) {
-              navigation.navigate('DrawerOpen')
-            } else {
-              navigation.navigate('DrawerClose')
-            }
-          }}>
-          <Image
-            style={{ width: 30, height: 30, backgroundColor: 'white' }}
-            source={require('./menu.png')} />
-        </TouchableHighlight>
-      </View>
-      <View style={{flex: 4}}>
-        <Image style={{padding: 20}} source={logo} />
-      </View>
-    </View>),
-  headerLeft: null
+  headerTitle: (<Image style={{width: '100%'}} resizeMode='center' source={logo} />),
+  headerLeft: (<TouchableHighlight
+    onPress={() => {
+      if (navigation.state.index === 0) {
+        navigation.navigate('DrawerOpen')
+      } else {
+        navigation.navigate('DrawerClose')
+      }
+    }}>
+    <Image
+      style={{ backgroundColor: 'white' }}
+      source={require('./menu.png')} />
+  </TouchableHighlight>),
+  headerRight: (<TouchableHighlight
+    onPress={() => {
+      if (navigation.state.index === 0) {
+        navigation.navigate('DrawerOpen')
+      } else {
+        navigation.navigate('DrawerClose')
+      }
+    }}>
+    <Image
+      style={{ backgroundColor: 'white' }}
+      source={require('./menu.png')} />
+  </TouchableHighlight>)
 })
 }
 )
