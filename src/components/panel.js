@@ -69,7 +69,8 @@ class Panel extends Component {
 var styles = StyleSheet.create({
   container: {
     overflow: 'hidden',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    margin: 10
   },
   titleContainer: {
     flexDirection: 'row',

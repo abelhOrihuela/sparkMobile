@@ -15,10 +15,10 @@ export default class CardItemSection extends Component {
   }
   render () {
     return (
-      <Card containerStyle={styles.card}>
-        <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.goToSection('AlchemyPlate')}>
+      <Card containerStyle={[styles.card, this.props.style]}>
+        <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.goToSection()}>
           <View style={[{flex: 2}, styles.flexColumn]}>
-            <Image source={this.props.icon} style={{height: 100, width: 100}} />
+            <Image source={this.props.icon} style={{height: 80, width: 80}} />
           </View>
           <View style={[{flex: 3}, styles.flexColumn]}>
             <Text style={[styles.fontBlack16Bold]}>{this.props.title}</Text>
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   card: {
-    margin: 0
+    marginLeft: 0,
+    marginRight: 0
   },
   flexColumn: {
     flexDirection: 'column',

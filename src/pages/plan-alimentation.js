@@ -5,11 +5,11 @@ import {
   StyleSheet
 } from 'react-native'
 
-export default class PlanNutrition extends Component {
+export default class PlanAlimentation extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text>Im the PlanNutrition component</Text>
+        <Text>Im the PlanAlimentation component</Text>
       </View>
     )
   }
