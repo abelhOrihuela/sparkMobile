@@ -73,7 +73,7 @@ class Nutrition extends Component {
             style={stylesNutrition.margin}
             {...this.props}
             img={header}
-            to='AlchemyPlate'/>
+            to='PlanAlimentation'/>
 
         </Page>
       </ScrollView>
