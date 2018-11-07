@@ -7,6 +7,8 @@ import iconBlood from '../iconBlood.png'
 import api from '../core/api'
 import Panel from '../components/panel'
 import ModalContainer from '../components/modal'
+import Page from 'app/src/components/page'
+
 
 import nutritionBg from '../nutricion-fondo.jpg'
 import longevidadBg from '../longevidad-fondo.jpg'
@@ -66,7 +68,7 @@ class MyNewMe extends Component {
 
   renderItem ({item, index}) {
     let icon = iconBlood
-    return (<TouchableOpacity style={{flex: 1, height: 150, backgroundColor: 'white'}}
+    return (<TouchableOpacity style={{flex: 1, height: 150, backgroundColor: 'white', margin: 10}}
       onPress={() => this.goToSection(item)}>
       <ImageBackground
         style={[StyleSheet.absoluteFill]}
@@ -110,7 +112,7 @@ class MyNewMe extends Component {
       </View>
     </ModalContainer>)
 
-    return (<ScrollView style={styles.container}>
+    return (<Page>
       {modal}
       <View style={[styles.headerRiskIndex]}>
         <Text style={[styles.title]}>
@@ -122,42 +124,34 @@ class MyNewMe extends Component {
           <Icon name='eye' size={20} color='#FFFFFF' />
         </TouchableOpacity>
       </View>
-      <View style={{marginTop: 10, marginBottom: 10}}>
-        <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
-          <Text>
-            En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-            pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-            para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-            motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-            algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-            microbios que pueden ayudarnos a alcanzar un peso más saludable
-          </Text>
-        </Panel>
-      </View>
 
-      <View style={styles.flatList}>
-        <FlatList
-          data={takeActions}
-          numColumns={2}
-          keyExtractor={(x, i) => i}
-          renderItem={(item) => this.renderItem(item)} />
-      </View>
-    </ScrollView>)
+      <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
+        <Text>
+          En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
+          pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
+          para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
+          motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
+          algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
+          microbios que pueden ayudarnos a alcanzar un peso más saludable
+        </Text>
+      </Panel>
+
+      <FlatList
+        data={takeActions}
+        numColumns={2}
+        keyExtractor={(x, i) => i}
+        renderItem={(item) => this.renderItem(item)} />
+    </Page>)
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f4f7f9',
-    paddingLeft: 20,
-    paddingRight: 20
+    flex: 1
   },
   flatList: {
     flex: 1,
-    overflow: 'hidden',
-    marginTop: 10,
-    marginBottom: 10
+    overflow: 'hidden'
   },
   icons: {
     flex: 1,
@@ -170,8 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#009AA7',
     alignItems: 'center',
     height: 70,
-    marginBottom: 5,
-    marginTop: 20
+    margin: 10
   },
   title: {
     flex: 4,
@@ -184,9 +177,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     top: 0,
+    right: 0,
     opacity: 0.75,
-    backgroundColor: '#16314E',
-    width: width
+    backgroundColor: '#16314E'
   },
   nutritionOverlay: {
     flex: 1,
@@ -195,7 +188,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#911E38',
-    width: width
+    right: 0
   },
   exerciseOverlay: {
     flex: 1,
@@ -204,7 +197,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#DC6B18',
-    width: width
+    right: 0,
   },
   suplementationOverlay: {
     flex: 1,
@@ -213,7 +206,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#1E1B5D',
-    width: width
+    right: 0,
   },
   longevityOverlay: {
     flex: 1,
@@ -222,7 +215,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#715200',
-    width: width
+    right: 0,
   },
   lifestyleOverlay: {
     flex: 1,
@@ -231,7 +224,7 @@ const styles = StyleSheet.create({
     top: 0,
     opacity: 0.75,
     backgroundColor: '#535B06',
-    width: width
+    right: 0,
   }
 })
 
