@@ -59,7 +59,7 @@ class Nutrition extends Component {
             icon={iconFish}
             title='Plan de alimentación'
             subtitle='Tu salud, en tus manos.'
-            to='PlanAlimentation'/>
+            to='PlanAlimentation' />
 
           <CardItemSection
             style={stylesNutrition.margin}
@@ -67,13 +67,13 @@ class Nutrition extends Component {
             icon={iconFish}
             title='ALCHEMYPLATE'
             subtitle='Crea tus comidas.'
-            to='AlchemyPlate'/>
+            to='AlchemyPlate' />
 
           <CardTips
             style={stylesNutrition.margin}
             {...this.props}
             img={header}
-            to='PlanAlimentation'/>
+            to='TipsNutrition' />
 
         </Page>
       </ScrollView>
