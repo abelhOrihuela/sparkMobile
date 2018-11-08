@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
+  isAdamFontRegular: {
+    fontFamily: 'adam',
+    fontWeight: 'normal'
+  },
   isGinoraFontRegular: {
     fontFamily: 'ginora-regular',
     fontWeight: 'normal'
