@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
+  isGinoraFontRegular: {
+    fontFamily: 'ginora-regular',
+    fontWeight: 'normal'
+  },
   centered: {
     flex: 1,
     alignItems: 'center',
