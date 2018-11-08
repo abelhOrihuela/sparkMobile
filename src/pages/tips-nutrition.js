@@ -24,7 +24,7 @@ export default class TipsNutrition extends Component {
 
   async load () {
     try {
-      let body = await api.get('/customers/suggestions/nutrition')
+      let body = await api.get('/customers/suggestions')
       this.setState({
         items: body.data.data
       })
@@ -34,12 +34,24 @@ export default class TipsNutrition extends Component {
     }
   }
 
+  goToReportTip (suggestion) {
+    this.props.navigation.navigate('TipsDetail', {suggestion})
+  }
+
   renderItem = ({item, index}) => {
-    return (<TouchableOpacity
+    return (<TouchableOpacity onPress={() => this.goToReportTip(item)}
       style={{flex: 1, margin: 10, backgroundColor: 'white'}} >
-      <Icon name='check' size={20} color='green' />
-      <Text>{item.title}</Text>
-      <Text>{item.description}</Text>
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+            <Icon name='check' size={20} color='green' style={{margin: 10}}/>
+            <Text style={{margin: 10}}>{item.title}</Text>
+        </View>
+        <View style={{flex: 1}}>
+          <Text>{item.title}</Text>
+        </View>
+
+
+      </View>
     </TouchableOpacity>)
   }
 
@@ -47,21 +59,6 @@ export default class TipsNutrition extends Component {
     let {items} = this.state
     return (
       <Page>
-        <Text style={[{margin: 10}, styles.fontBlack16Bold]}>Aprende a vivir mejor para un sano crecimiento</Text>
-        <Text style={[{margin: 10}, styles.fontGray12]}>Aprende a vivir mejor para un sano crecimiento</Text>
-        <Text style={[{margin: 10}, styles.fontBlack14]}>
-          En su informe de nutrición aprenderá cómo sus variantes genéticas
-          individuales pueden afectar su respuesta nutricional única y
-          cómo tomar las decisiones correctas para usted. Tiempo difícil
-          para mantener un peso saludable, incluso cuando nuestra motivación
-          es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-          algunas buenas noticias: vivir en nuestras entrañas es
-          un surtido de aliados: microbios que pueden ayudarnos
-          a alcanzar un peso más saludable
-        </Text>
-        <Text style={[{margin: 10}, styles.fontBlack16Bold]}>
-          Sensibilidad en alimentos
-        </Text>
         <FlatList
           data={items}
           keyExtractor={(x, i) => i}

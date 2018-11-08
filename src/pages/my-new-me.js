@@ -27,15 +27,20 @@ const takeActions = [
 ]
 
 class MyNewMe extends Component {
-  static navigationOptions = {
-    title: 'MYNEWME',
-    drawerIcon: () => (
-      <Icon name='file' size={20} color='#FFFFFF' />
-    ),
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'MYNEWME',
+      drawerIcon: () => (
+        <Icon name='check' size={20} color='#FFFFFF' />
+      ),
 
-    drawerLabel: () => {
-      return 'MYNEWME'
-    },
+      drawerLabel: () => {
+        return 'MYNEWME'
+      },
+      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+        navigation.goBack()
+        }} />)
+    }
   }
 
   constructor (props) {
