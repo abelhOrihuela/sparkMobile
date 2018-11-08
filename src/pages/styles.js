@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 16
   },
+  fontGinora: {
+    fontFamily: 'Ginora Sans'
+  },
   fontBlue20: {
     color: '#4572A0',
     fontWeight: 'bold',
@@ -80,9 +83,19 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 14
   },
+  fontBlack14Bold: {
+    color: '#000000',
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
   fontBlack16Bold: {
     color: '#000000',
     fontSize: 16,
+    fontWeight: 'bold'
+  },
+  fontBlack20Bold: {
+    color: '#000000',
+    fontSize: 20,
     fontWeight: 'bold'
   },
   fontGray12: {
