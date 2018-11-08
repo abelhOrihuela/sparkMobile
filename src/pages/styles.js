@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   fontGinora: {
-    fontFamily: 'Ginora Sans'
   },
   fontBlue20: {
     color: '#4572A0',
