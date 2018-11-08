@@ -28,7 +28,7 @@ const StackReports = StackNavigator({
 })
 
 const StackMyNewMe = StackNavigator({
-  Dashboard: {screen: Dashboard},
+  Home: {screen: Dashboard},
   Reports: { screen: Reports },
   ReportDetail: {screen: ReportDetail},
   MyNewMe: { screen: MyNewMe },
