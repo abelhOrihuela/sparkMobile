@@ -39,18 +39,6 @@ const Aplication = StackNavigator({
     },
     headerTintColor: 'white',
     headerTitle: (<Image style={{width: '100%'}} resizeMode='center' source={logo} />),
-    headerLeft: (<View style={{flex: 1}}>
-      {navigation.state.routeName !== 'Dashboard' && (
-        <AntIcon
-          style={{ color: '#0D4E78' }}
-          name='left'
-          size={18}
-          onPress={() => {
-            navigation.goBack()
-          }}
-        />
-      )}
-    </View>),
     headerRight: (<TouchableHighlight
       underlayColor='transparent'
       onPress={() => {

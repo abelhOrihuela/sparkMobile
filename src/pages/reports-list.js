@@ -19,15 +19,20 @@ import Page from 'app/src/components/page'
 const {height, width} = Dimensions.get('window')
 
 class Reports extends Component {
-  static navigationOptions = {
-    title: 'Reports',
-    drawerIcon: () => (
-      <Icon name='file' size={20} color='#FFFFFF' />
-    ),
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Reports',
+      drawerIcon: () => (
+        <Icon name='file' size={20} color='#FFFFFF' />
+      ),
 
-    drawerLabel: () => {
-      return 'Reports'
-    },
+      drawerLabel: () => {
+        return 'Reports'
+      },
+      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+        navigation.goBack()
+        }} />)
+    }
   }
 
   constructor(props) {

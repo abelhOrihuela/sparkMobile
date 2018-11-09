@@ -24,20 +24,33 @@ export default class TipsNutrition extends Component {
 
   async load () {
     try {
-      let body = await api.get('/customers/suggestions/nutrition')
+      let body = await api.get('/customers/suggestions')
       this.setState({
         items: body.data.data
       })
-      console.log('body ====>', body.data.data)
     } catch (e) {
       alert('Error' + e.message)
     }
   }
 
+  goToReportTip (suggestion) {
+    this.props.navigation.navigate('TipsDetail', {suggestion})
+  }
+
   renderItem = ({item, index}) => {
-    return (<TouchableOpacity
+    return (<TouchableOpacity onPress={() => this.goToReportTip(item)}
       style={{flex: 1, margin: 10, backgroundColor: 'white'}} >
-      
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+            <Icon name='check' size={20} color='green' style={{margin: 10}}/>
+            <Text style={{margin: 10}}>{item.title}</Text>
+        </View>
+        <View style={{flex: 1}}>
+          <Text>{item.title}</Text>
+        </View>
+
+
+      </View>
     </TouchableOpacity>)
   }
 

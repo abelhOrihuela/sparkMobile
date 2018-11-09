@@ -15,12 +15,18 @@ import { Card } from 'react-native-elements'
 
 import styles from 'app/src/pages/styles'
 class Nutrition extends Component {
-  static navigationOptions = {
-    drawerIcon: () => (
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Nutrition',
+      drawerIcon: () => (
         <Icon name='power-off' size={20} color='#FFFFFF' />
-    ),
-    drawerLabel: () => {
+      ),
+      drawerLabel: () => {
         return 'Nutrition'
+      },
+      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+        navigation.goBack()
+        }} />)
     }
   }
 
