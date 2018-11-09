@@ -28,7 +28,6 @@ export default class TipsNutrition extends Component {
       this.setState({
         items: body.data.data
       })
-      console.log('body ====>', body.data.data)
     } catch (e) {
       alert('Error' + e.message)
     }
