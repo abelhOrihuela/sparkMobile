@@ -13,23 +13,16 @@ import {
 const {width} = Dimensions.get('window')
 const appHost = 'https://customers.dev.ac.commonsense.io'
 
-class Reports extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: 'Reports',
-      drawerIcon: () => (
-        <Icon name='file' size={20} color='#FFFFFF' />
-      ),
+class TipsDetail extends Component {
+  static navigationOptions = {
+    drawerIcon: () => (
+      <Icon name='file' size={20} color='#FFFFFF' />
+    ),
 
-      drawerLabel: () => {
-        return 'Reports'
-      },
-      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
-        navigation.goBack()
-        }} />)
-    };
+    drawerLabel: () => {
+      return 'Reportes'
+    },
   }
-
   constructor (props) {
     super(props)
     this.state = {
@@ -52,19 +45,10 @@ class Reports extends Component {
 
   render () {
     const { navigation } = this.props
-    const report = navigation.getParam('report', null);
+    const suggestion = navigation.getParam('suggestion', null);
     let {loading, token} = this.state
-    let type
 
-    if (report.type === 'dna') {
-      type = 'genetics'
-    } else if (report.type === 'blood') {
-      type = 'blood'
-    } else if (report.type === 'sensibilities') {
-      type = 'sensibilities'
-    }
-
-    let url = `${appHost}/reports/${type}/${report.uuid}?token=${token}&isNative=1`
+    let url = `${appHost}/suggestions/${suggestion.uuid}?token=${token}&isNative=1`
 
     if (loading) {
       return <ActivityIndicator />
@@ -83,7 +67,7 @@ class Reports extends Component {
   }
 }
 
-export default Reports
+export default TipsDetail
 
 const styles = StyleSheet.create({
   container: {

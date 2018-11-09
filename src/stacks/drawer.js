@@ -15,6 +15,7 @@ import Logout from '../pages/logout'
 import AlchemyPlate from '../pages/alchemyplate'
 import PlanAlimentation from '../pages/plan-alimentation'
 import TipsNutrition from '../pages/tips-nutrition'
+import TipsDetail from '../pages/tips-detail'
 
 // const StackNotifications = StackNavigator({
 //   Notifications: { screen: Notifications },
@@ -27,6 +28,9 @@ const StackReports = StackNavigator({
 })
 
 const StackMyNewMe = StackNavigator({
+  Home: {screen: Dashboard},
+  Reports: { screen: Reports },
+  ReportDetail: {screen: ReportDetail},
   MyNewMe: { screen: MyNewMe },
   Nutrition: {screen: Nutrition},
   Exercise: {screen: Exercise},
@@ -35,18 +39,20 @@ const StackMyNewMe = StackNavigator({
   Lifestyle: {screen: Lifestyle},
   AlchemyPlate: {screen: AlchemyPlate},
   PlanAlimentation: {screen: PlanAlimentation},
-  TipsNutrition: {screen: TipsNutrition}
+  TipsNutrition: {screen: TipsNutrition},
+  TipsDetail: {screen: TipsDetail}
+}, {
+  headerMode: 'none'
 })
 
 const Drawer = DrawerNavigator({
-  Dashboard: {screen: Dashboard},
-  // Todo: {screen: Todo},
+  Dashboard: {screen: StackMyNewMe},
   Profile: {screen: Profile},
-  // Notifications: {screen: StackNotifications},
-  Reports: {screen: StackReports},
-  MyNewMe: {screen: StackMyNewMe},
+  Reports: {screen: Reports},
+  MyNewMe: {screen: MyNewMe},
   Logout: {screen: Logout}
 }, {
+  headerMode: 'none',
   contentOptions: {
     activeTintColor: '#FFFFFF',
     activeBackgroundColor: 'transparent',
