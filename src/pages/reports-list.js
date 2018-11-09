@@ -15,7 +15,7 @@ import sensibilities from '../Sensibilidades.png'
 import api from '../core/api'
 import Panel from '../components/panel'
 import Page from 'app/src/components/page'
-
+import styles from './styles'
 const {height, width} = Dimensions.get('window')
 
 class Reports extends Component {
@@ -29,9 +29,11 @@ class Reports extends Component {
       drawerLabel: () => {
         return 'Reports'
       },
-      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
-        }} />)
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
     }
   }
 
@@ -96,7 +98,7 @@ class Reports extends Component {
         source={backgroundImage}
         />
 
-      <View style={[styles[item.type +'Overlay'], { height: 150}]} />
+      <View style={[stylesReports[item.type +'Overlay'], { height: 150}]} />
       <View style={{flex: 1, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
         <Image source={icon} style={{height: 70, width: 60}}/>
         <Text style={{color: 'white'}}>{title}</Text>
@@ -107,17 +109,17 @@ class Reports extends Component {
   render () {
     let { reports } = this.state
 
-    let title = ( <Text style={{color: 'white'}}>
+    let title = ( <Text style={[styles.fontWhite16, styles.isLineHeight18, styles.isAdamFontRegular]}>
     ALCHE
-    <Text style={{fontWeight: 'bold', color: 'white'}}>
+    <Text style={{fontWeight: 'bold'}}>
       MY
     </Text>
     RESULTS
   </Text>)
   return (
       <Page>
-        <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
-          <Text>
+        <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} borderColor='#2771A2' colorIcon='white'>
+          <Text style={styles.isLineHeight18, styles.isGinoraFontRegular}>
             En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
             pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
             para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
@@ -137,7 +139,7 @@ class Reports extends Component {
 
 
 
-const styles = StyleSheet.create({
+const stylesReports = StyleSheet.create({
   container: {
     flex: 1
   },

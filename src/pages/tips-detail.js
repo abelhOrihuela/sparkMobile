@@ -7,22 +7,31 @@ import {
   WebView,
   Animated,
   ActivityIndicator,
-  AsyncStorage
+  AsyncStorage,
+  TouchableOpacity
 } from 'react-native'
 
-const {width} = Dimensions.get('window')
+const {width, height} = Dimensions.get('window')
 const appHost = 'https://customers.dev.ac.commonsense.io'
 
 class TipsDetail extends Component {
-  static navigationOptions = {
-    drawerIcon: () => (
-      <Icon name='file' size={20} color='#FFFFFF' />
-    ),
-
-    drawerLabel: () => {
-      return 'Reportes'
-    },
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Nutrition',
+      drawerIcon: () => (
+        <Icon name='power-off' size={20} color='#FFFFFF' />
+      ),
+      drawerLabel: () => {
+        return 'Nutrition'
+      },
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
+        navigation.goBack()
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
+    }
   }
+
   constructor (props) {
     super(props)
     this.state = {
@@ -55,7 +64,7 @@ class TipsDetail extends Component {
     }
     return (<View style={[styles.container]}>
       <WebView
-        style={{width: width, height: 200, margin: 0}}
+        style={{width: width, height: height, margin: 0}}
         ref={(ref) => {
           this.myWebView = ref
         }}
@@ -73,7 +82,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: 'red',
-    margin: 0,
+    // margin: 0,
     padding: 0
   }
 })

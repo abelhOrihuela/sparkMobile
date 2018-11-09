@@ -50,7 +50,9 @@ class Panel extends Component {
     let {styleContainerTitle} = this.props || {}
     let {colorIcon} = this.props || '#FFFFFF'
 
-    return (<Animated.View style={[styles.container, {height: this.state.animation}]}>
+    let {borderColor} = this.props || 'white'
+
+    return (<Animated.View style={[styles.container, {height: this.state.animation, borderWidth: 1, borderColor: borderColor}]}>
       <View style={[styleContainerTitle, styles.titleContainer]} onLayout={this._setMinHeight.bind(this)}>
         <View style={[styles.title]}>{this.state.title}</View>
         <TouchableOpacity style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
