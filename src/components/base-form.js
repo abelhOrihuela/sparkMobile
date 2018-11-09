@@ -40,7 +40,9 @@ let normal = {
   borderColor: '#c2c2c2',
   borderWidth: 1,
   borderRadius: 0,
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'ginora-regular',
+  fontWeight: 'normal'
 }
 
 stylesheet.textbox.normal = normal
@@ -89,7 +91,9 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: 'white',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    fontFamily: 'ginora-regular',
+    fontWeight: 'normal'
   },
   button: {
     height: 45,

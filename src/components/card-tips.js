@@ -14,12 +14,12 @@ export default class CardTips extends Component {
   render () {
     return (
       <View style={[styles.card, this.props.style, {backgroundColor: 'white', height: 150}]}>
-        <ImageBackground source={this.props.img} style={{width: '100%', height: 150}}>
+        <ImageBackground source={this.props.img} style={{width: '100%', height: '100%'}}>
           <View style={styles.nutritionOverlayFooter} />
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={[styles.fontWhite18]}>Tips de nutrición</Text>
+            <Text style={[styles.fontWhite18, styles.isGinoraFontBold, {margin: 10}]}>Tips de nutrición</Text>
             <TouchableOpacity style={{backgroundColor: '#84ACC8'}} onPress={() => this.goToSection()}>
-              <Text style={[styles.fontWhite18, {padding: 10}]}>Conoce más</Text>
+              <Text style={[styles.fontWhite18, styles.isGinoraFontRegular, {padding: 10}]}>Conoce más</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -28,11 +28,16 @@ export default class CardTips extends Component {
   }
 }
 
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1
   },
   card: {
+    flex: 1,
     marginLeft: 0,
     marginRight: 0
   },
@@ -54,5 +59,13 @@ const styles = StyleSheet.create({
     opacity: 0.5,
     backgroundColor: '#0D4E78',
     height: 150
-  }
+  },
+  isGinoraFontRegular: {
+    fontFamily: 'ginora-regular',
+    fontWeight: 'normal'
+  },
+  isGinoraFontBold: {
+    fontFamily: 'ginora-regular',
+    fontWeight: 'bold'
+  },
 })

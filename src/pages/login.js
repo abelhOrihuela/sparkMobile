@@ -107,13 +107,13 @@ export class Login extends Component {
         <Image  source={logo} />
       </View>
       <View style={stylesLogin.section}>
-        <Text style={stylesLogin.fontBlue16}>Empieza a conocerte y siéntete mejor.</Text>
+        <Text style={[stylesLogin.fontBlue16, styles.textCentered, styles.isGinoraFontRegular]}>Estas por descubrir aspectos de tu cuerpo, mente y emociones que no se creían posibles de explorar.</Text>
       </View>
       <View style={stylesLogin.section}>
         <Image source={people} style={stylesLogin.imagePeople} resizeMode='contain' />
       </View>
       <View style={stylesLogin.section}>
-        <Text style={stylesLogin.fontBlack14}>Para iniciar la experiencia ingresa tu contraseña</Text>
+        <Text style={[stylesLogin.fontBlack14, styles.isGinoraFontRegular]}>Ingresa tu usuario y contraseña</Text>
       </View>
       <View style={stylesLogin.section}>
         {content}
@@ -121,7 +121,7 @@ export class Login extends Component {
       <TouchableOpacity
         style={stylesLogin.btn}
         onPress={() => this.resetPassword()}>
-        <Text style={stylesLogin.fontBlue16}>¿Olvidaste tu contraseña?</Text>
+        <Text style={[stylesLogin.fontBlue16, styles.isGinoraFontRegular]}>¿Olvidaste tu contraseña?</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>)
   }

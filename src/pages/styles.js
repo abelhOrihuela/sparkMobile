@@ -77,8 +77,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 16
   },
-  fontGinora: {
-  },
   fontBlue20: {
     color: '#4572A0',
     fontWeight: 'bold',
@@ -100,8 +98,7 @@ const styles = StyleSheet.create({
   },
   fontWhite16: {
     color: '#FFFFFF',
-    fontSize: 16,
-    textAlign: 'center'
+    fontSize: 16
   },
   fontBlack14: {
     color: '#000000',
@@ -235,6 +232,9 @@ const styles = StyleSheet.create({
   },
   flexCentered: {
     justifyContent: 'center'
+  },
+  isLineHeight18: {
+    lineHeight: 18
   }
 })
 

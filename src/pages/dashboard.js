@@ -20,20 +20,25 @@ import people from '../people.png'
 import logo from '../logo.png'
 import myNewMeBg from '../my-new-me-fondo.jpg'
 import reportesBg from '../reportes-fondo.jpg'
-import reportesIcon from '../reportes.png'
+import reportesIcon from '../images/reportes.png'
 import mynewmeIcon from '../mynewme.png'
 const {height, width} = Dimensions.get('window')
 import Orders from '../core/orders'
+import Page from 'app/src/components/page'
+import styles from './styles'
 
 export default class Dashboard extends Component {
-  static navigationOptions = {
-    title: 'Home',
-    drawerIcon: () => (
-      <Icon name='home' size={20} color='#FFFFFF' />
-    ),
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Home',
+      drawerIcon: () => (
+        <Icon name='home' size={20} color='#FFFFFF' />
+      ),
 
-    drawerLabel: () => {
-      return 'Home'
+      drawerLabel: () => {
+        return 'Home'
+      },
+      headerLeft: null
     }
   }
 
@@ -122,36 +127,38 @@ export default class Dashboard extends Component {
 
     let modalOne = modalIntro ? (<ModalContainer
       visible={modalIntro}>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Text style={styles.fontWhite18}>Bienvenido a</Text>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
+        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontRegular]}>Bienvenido a</Text>
       </View>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Image source={logoWhite} />
       </View>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Text style={styles.fontWhite16}>Bienvenido a AlcheMycode, este será tu espacio personal para conocerte y poder cambiar tu vida.</Text>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
+        <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>
+          Bienvenido a AlcheMycode, este será tu espacio personal para conocerte y poder cambiar tu vida.
+        </Text>
       </View>
       <TouchableOpacity
-        style={[styles.btn, styles.doubleMarginTopBottom]}
+        style={[stylesDashboard.btn, stylesDashboard.doubleMarginTopBottom]}
         onPress={() => this.setModalVisible(!modalIntro)}>
-        <Text style={styles.fontWhite16}>Continuar</Text>
+        <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>Continuar</Text>
       </TouchableOpacity>
     </ModalContainer>) : <View />
 
     let modalTwo = modalTwo ? (<ModalContainer
       visible={modalStatus}>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Image source={logoWhite} />
       </View>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Text style={styles.fontWhite18}>Estamos preparando tus resultados.</Text>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
+        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontBold]}>Estamos preparando tus resultados.</Text>
       </View>
-      <View style={[styles.sectionColumn, styles.doubleMarginTopBottom]}>
+      <View style={[stylesDashboard.sectionColumn, stylesDashboard.doubleMarginTopBottom]}>
         { actions.length ?
           actions.map((item, index) => {
-            return (<View style={[styles.sectionRow]}>
+            return (<View style={[stylesDashboard.sectionRow]}>
               <Icon name='check' size={20} color='#FFFFFF' />
-              <Text style={[styles.fontWhite18, styles.marginSides]}>
+              <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontBold, stylesDashboard.marginSides]}>
                 {
                   Orders.find(l => l.key === item.data.status) ? Orders.find(l => l.key === item.data.status).label : 'N/A'
                 }
@@ -160,11 +167,11 @@ export default class Dashboard extends Component {
           }) : <View />
         }
       </View>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Text style={styles.fontWhite16}>¡Pronto iniciarás un nuevo estilo de vida!</Text>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
+        <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>¡Pronto iniciarás un nuevo estilo de vida!</Text>
       </View>
-      <View style={[styles.sectionRow, styles.doubleMarginTopBottom]}>
-        <Text style={styles.fontWhite16}>(Cuando estén tus resultados, podrás acceder)</Text>
+      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
+        <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>(Cuando estén tus resultados, podrás acceder)</Text>
       </View>
     </ModalContainer>) : <View />
 
@@ -174,34 +181,32 @@ export default class Dashboard extends Component {
 
     let heightSection = 150
 
-    return (<View style={[styles.container]}>
+    return (<Page style={[stylesDashboard.container]}>
       {modalOne}
       {modalTwo}
-      <View style={{marginTop: 20}}>
-        <Text style={[styles.fontBlue16, {textAlign: 'center'}]}>¡Bienvenido!</Text>
+      <View style={{margin: 10}}>
+        <Text style={[stylesDashboard.fontBlue16, styles.isGinoraFontBold, {textAlign: 'center'}]}>¡Bienvenido!</Text>
       </View>
-      <View style={styles.sectionColumn}>
-        <Text style={[styles.fontBlack14, {textAlign: 'center'}]}>Revisa tus resultados, dietas o referencias médicas.</Text>
+      <View style={{margin: 10}}>
+        <Text style={[stylesDashboard.fontBlack14, styles.isGinoraFontBold, {textAlign: 'center'}]}>Revisa tus resultados, dietas o referencias médicas.</Text>
       </View>
-      <TouchableOpacity style={[{marginTop: 20, marginBottom: 10}, {height: heightSection}]} onPress={() => this.goToReports()}>
-
-
+      <TouchableOpacity style={[{margin: 10}, {height: heightSection}]} onPress={() => this.goToReports()}>
         <ImageBackground
-          style={[StyleSheet.absoluteFill, styles.bgSection]}
+          style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
           source={reportesBg}
         >
-          <View style={[styles.overlayReports, { height: heightSection}]} />
-          <View style={styles.section}>
+          <View style={[stylesDashboard.overlayReports, { height: heightSection}]} />
+          <View style={stylesDashboard.section}>
             <View style={{flex: 1}}>
-              <Image source={reportesIcon} style={{width: '100%', height: '100%'}} />
+              <Image source={reportesIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
             </View>
-            <View style={styles.sectionTitles}>
+            <View style={stylesDashboard.sectionTitles}>
               <Text
-                style={styles.titleSection}
+                style={[stylesDashboard.titleSection, styles.isGinoraFontRegular]}
                 >
                 Reportes
               </Text>
-              <Text style={styles.subtitleSection}>
+              <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
                 {this.state.reports.length} reportes disponibles
               </Text>
             </View>
@@ -209,35 +214,35 @@ export default class Dashboard extends Component {
         </ImageBackground>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[{marginTop: 10, marginBottom: 10}, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
+      <TouchableOpacity style={[{margin: 10}, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
         <ImageBackground
-          style={[StyleSheet.absoluteFill, styles.bgSection]}
+          style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
           source={myNewMeBg}
         >
-          <View style={[styles.overlayMyNewMe, { height: heightSection}]} />
-          <View style={styles.section}>
+          <View style={[stylesDashboard.overlayMyNewMe, { height: heightSection}]} />
+          <View style={stylesDashboard.section}>
             <View style={{flex: 1}}>
-              <Image source={mynewmeIcon} style={{width: '100%', height: '100%'}} />
+              <Image source={mynewmeIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
             </View>
-            <View style={styles.sectionTitles}>
+            <View style={stylesDashboard.sectionTitles}>
               <Text
-                style={styles.titleSection}
+                style={[stylesDashboard.titleSection, styles.isGinoraFontRegular]}
                 >
                 MY NEW ME
               </Text>
-              <Text style={styles.subtitleSection}>
+              <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
                 Tu dieta, ejercicios, salud preventiva y hábitos personalizados.
               </Text>
             </View>
           </View>
         </ImageBackground>
       </TouchableOpacity>
-    </View>)
+    </Page>)
 
   }
 }
 
-const styles = StyleSheet.create({
+const stylesDashboard = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f4f7f9',

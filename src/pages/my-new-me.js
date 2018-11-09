@@ -4,6 +4,11 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios'
 import blood from '../Quimica.png'
 import iconBlood from '../iconBlood.png'
+import iconNutrition from '../icon-manzana.png'
+import iconBalon from '../icon-balon.png'
+import iconCapsula from '../icon-capsula.png'
+import iconLongevidad from '../icon-longevidad.png'
+import iconEstilodeVida from '../icon-estilo-de-vida.png'
 import api from '../core/api'
 import Panel from '../components/panel'
 import ModalContainer from '../components/modal'
@@ -19,11 +24,11 @@ import ejercicioBg from '../ejercicio-fondo.jpg'
 const {width} = Dimensions.get('window')
 
 const takeActions = [
-  {title: 'NUTRICIÓN', img: nutritionBg, icon: iconBlood, style: 'nutritionOverlay', section: 'Nutrition'},
-  {title: 'EJERCICIO', img: ejercicioBg, icon: iconBlood, style: 'exerciseOverlay', section: 'Exercise'},
-  {title: 'SALUD Y SUPLEMENTACIÓN', img: suplementacionBg, icon: iconBlood, style: 'suplementationOverlay', section: 'Suplementation'},
-  {title: 'LONGEVIDAD', img: longevidadBg, icon: iconBlood, style: 'longevityOverlay', section: 'Longevity'},
-  {title: 'HÁBITOS DE VIDA', img: estilodevidaBg, icon: iconBlood, style: 'lifestyleOverlay', section: 'Lifestyle'}
+  {title: 'NUTRICIÓN', img: nutritionBg, icon: iconNutrition, style: 'nutritionOverlay', section: 'Nutrition'},
+  {title: 'EJERCICIO', img: ejercicioBg, icon: iconBalon, style: 'exerciseOverlay', section: 'Exercise'},
+  {title: 'SALUD Y SUPLEMENTACIÓN', img: suplementacionBg, icon: iconCapsula, style: 'suplementationOverlay', section: 'Suplementation'},
+  {title: 'LONGEVIDAD', img: longevidadBg, icon: iconLongevidad, style: 'longevityOverlay', section: 'Longevity'},
+  {title: 'HÁBITOS DE VIDA', img: estilodevidaBg, icon: iconEstilodeVida, style: 'lifestyleOverlay', section: 'Lifestyle'}
 ]
 
 class MyNewMe extends Component {
@@ -37,9 +42,11 @@ class MyNewMe extends Component {
       drawerLabel: () => {
         return 'MYNEWME'
       },
-      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
-        }} />)
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
     }
   }
 
@@ -72,7 +79,7 @@ class MyNewMe extends Component {
   }
 
   renderItem ({item, index}) {
-    let icon = iconBlood
+    let icon = item.icon
     return (<TouchableOpacity style={{flex: 1, height: 150, backgroundColor: 'white', margin: 10}}
       onPress={() => this.goToSection(item)}>
       <ImageBackground
@@ -82,7 +89,7 @@ class MyNewMe extends Component {
       <View style={[styles[item.style], {height: 150}]} />
       <View style={[styles.icons]}>
         <Image source={icon} style={{height: 70, width: 60}} />
-        <Text style={{color: 'white'}}>{item.title}</Text>
+        <Text style={{color: 'white', textAlign: 'center'}}>{item.title}</Text>
       </View>
     </TouchableOpacity>)
   }
@@ -130,7 +137,7 @@ class MyNewMe extends Component {
         </TouchableOpacity>
       </View>
 
-      <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} colorIcon='white'>
+      <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} borderColor='#2771A2' colorIcon='white'>
         <Text>
           En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
           pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas

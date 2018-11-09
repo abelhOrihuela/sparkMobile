@@ -7,7 +7,8 @@ import {
   WebView,
   Animated,
   ActivityIndicator,
-  AsyncStorage
+  AsyncStorage,
+  TouchableOpacity
 } from 'react-native'
 
 const {width} = Dimensions.get('window')
@@ -24,10 +25,12 @@ class Reports extends Component {
       drawerLabel: () => {
         return 'Reports'
       },
-      headerLeft: (<Icon name={'arrow-left'} size={20} color='#2771A2' onPress={ () => {
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
-        }} />)
-    };
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
+    }
   }
 
   constructor (props) {
