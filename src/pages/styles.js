@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
+  isAdamFontRegular: {
+    fontFamily: 'adam',
+    fontWeight: 'normal'
+  },
   isGinoraFontRegular: {
     fontFamily: 'ginora-regular',
     fontWeight: 'normal'
@@ -37,6 +41,16 @@ const styles = StyleSheet.create({
   background: {
     width: width,
     height: height
+  },
+  isBackgroundWhite: {
+    backgroundColor: '#fff'
+  },
+  hasShadow1: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 1
   },
   sectionRow: {
     justifyContent: 'center',
@@ -70,8 +84,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20
   },
+  isLineHeight20: {
+    lineHeight: 20
+  },
   isBold: {
     fontWeight: 'bold'
+  },
+  fontWhite20: {
+    color: '#FFFFFF',
+    fontSize: 24
   },
   fontWhite18: {
     color: '#FFFFFF',
@@ -96,6 +117,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold'
   },
+  fontBlack18Bold: {
+    color: '#000000',
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
   fontBlack20Bold: {
     color: '#000000',
     fontSize: 20,
@@ -104,6 +130,10 @@ const styles = StyleSheet.create({
   fontGray12: {
     color: '#7A828E',
     fontSize: 12
+  },
+  fontGray16: {
+    color: '#7A828E',
+    fontSize: 16
   },
   btn: {
     borderWidth: 1,
@@ -115,6 +145,12 @@ const styles = StyleSheet.create({
   doubleMarginTopBottom: {
     marginTop: 20,
     marginBottom: 20
+  },
+  isMarginSmall: {
+    margin: 10
+  },
+  isMargin: {
+    margin: 20
   },
   status: {
     backgroundColor: '#2771A2'
@@ -143,6 +179,28 @@ const styles = StyleSheet.create({
   },
   section: {
     flex: 1, flexDirection: 'row', padding: 20
+  },
+  isPaddingless: {
+    padding: 0
+  },
+  isMarginless: {
+    margin: 0
+  },
+  isMarginlessTop: {
+    marginTop: 0
+  },
+  isMarginlessBottom: {
+    marginBottom: 0
+  },
+  isOverlay: {
+    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0
+  },
+  isOpacity50: {
+    opacity: 0.5
   },
   bgSection: {
     flex: 1,
