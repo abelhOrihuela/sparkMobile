@@ -118,7 +118,11 @@ class Reports extends Component {
   </Text>)
   return (
       <Page>
-        <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} borderColor='#2771A2' colorIcon='white'>
+        <Panel
+          style={styles.isMarginSmall}
+          title={title}
+          styleContainerTitle={{backgroundColor: '#2771A2'}}
+          borderColor='#2771A2' colorIcon='white'>
           <Text style={styles.isLineHeight18, styles.isGinoraFontRegular}>
             En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
             pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas

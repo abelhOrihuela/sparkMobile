@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   card: {
-    margin: 10
+    margin: 0
   },
   flexColumn: {
     flexDirection: 'column',

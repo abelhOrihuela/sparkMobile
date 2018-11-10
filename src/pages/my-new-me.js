@@ -20,7 +20,7 @@ import longevidadBg from '../longevidad-fondo.jpg'
 import estilodevidaBg from '../estilodevida-fondo.jpg'
 import suplementacionBg from '../suplementacion-fondo.png'
 import ejercicioBg from '../ejercicio-fondo.jpg'
-
+import styles from './styles'
 const {width} = Dimensions.get('window')
 
 const takeActions = [
@@ -86,8 +86,8 @@ class MyNewMe extends Component {
         style={[StyleSheet.absoluteFill]}
         source={item.img} />
 
-      <View style={[styles[item.style], {height: 150}]} />
-      <View style={[styles.icons]}>
+      <View style={[stylesMyNewMe[item.style], {height: 150}]} />
+      <View style={[stylesMyNewMe.icons]}>
         <Image source={icon} style={{height: 70, width: 60}} />
         <Text style={{color: 'white', textAlign: 'center'}}>{item.title}</Text>
       </View>
@@ -126,8 +126,8 @@ class MyNewMe extends Component {
 
     return (<Page>
       {modal}
-      <View style={[styles.headerRiskIndex]}>
-        <Text style={[styles.title]}>
+      <View style={[stylesMyNewMe.headerRiskIndex]}>
+        <Text style={[stylesMyNewMe.title]}>
           Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text>
         </Text>
         <TouchableOpacity
@@ -137,7 +137,11 @@ class MyNewMe extends Component {
         </TouchableOpacity>
       </View>
 
-      <Panel title={title} styleContainerTitle={{backgroundColor: '#2771A2'}} borderColor='#2771A2' colorIcon='white'>
+      <Panel
+        style={styles.isMarginSmall}
+        title={title}
+        styleContainerTitle={{backgroundColor: '#2771A2'}}
+        borderColor='#2771A2' colorIcon='white'>
         <Text>
           En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
           pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
@@ -148,16 +152,18 @@ class MyNewMe extends Component {
         </Text>
       </Panel>
 
-      <FlatList
-        data={takeActions}
-        numColumns={2}
-        keyExtractor={(x, i) => i}
-        renderItem={(item) => this.renderItem(item)} />
+      <View style={styles.isMarginSmallBottom}>
+        <FlatList
+          data={takeActions}
+          numColumns={2}
+          keyExtractor={(x, i) => i}
+          renderItem={(item) => this.renderItem(item)} />
+      </View>
     </Page>)
   }
 }
 
-const styles = StyleSheet.create({
+const stylesMyNewMe = StyleSheet.create({
   container: {
     flex: 1
   },
