@@ -12,35 +12,27 @@ import api from 'app/src/core/api'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 export default class PlanAlimentation extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Nutrition',
+      drawerIcon: () => (
+        <Icon name='power-off' size={20} color='#FFFFFF' />
+      ),
+      drawerLabel: () => {
+        return 'Nutrition'
+      },
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
+        navigation.goBack()
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
+    }
+  }
   constructor (props) {
     super(props)
     this.state = {
       items: []
     }
-  }
-  componentWillMount() {
-    this.load()
-  }
-
-  async load () {
-    try {
-      let body = await api.get('/customers/suggestions/nutrition')
-      this.setState({
-        items: body.data.data
-      })
-      console.log('body ====>', body.data.data)
-    } catch (e) {
-      alert('Error' + e.message)
-    }
-  }
-
-  renderItem = ({item, index}) => {
-    return (<TouchableOpacity
-      style={{flex: 1, margin: 10, backgroundColor: 'white'}} >
-      <Icon name='check' size={20} color='green' />
-      <Text>{item.title}</Text>
-      <Text>{item.description}</Text>
-    </TouchableOpacity>)
   }
 
   render () {
