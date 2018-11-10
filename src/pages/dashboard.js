@@ -181,7 +181,7 @@ export default class Dashboard extends Component {
 
     let heightSection = 150
 
-    return (<Page style={[stylesDashboard.container]}>
+    return (<Page>
       {modalOne}
       {modalTwo}
       <View style={{margin: 10}}>
