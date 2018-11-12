@@ -25,7 +25,7 @@ export default class CardItemSection extends Component {
             <Text style={[styles.fontGray12, styles.isGinoraFontRegular]}>{this.props.subtitle}</Text>
           </View>
           <View style={[{flex: 1, margin: 10, justifyContent: 'center', alignItems: 'flex-end'}]}>
-            <Icon name='chevron-right' size={20} color='#911E38' />
+            <Icon name='chevron-right' size={20} color={this.props.colorIcon} />
           </View>
         </TouchableOpacity>
       </Card>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   card: {
-    margin: 10
+    margin: 0
   },
   flexColumn: {
     flexDirection: 'column',

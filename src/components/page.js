@@ -8,10 +8,8 @@ import {
 export default class Layout extends Component {
   render () {
     return (
-      <ScrollView style={[{backgroundColor: 'white'}]}>
-        <View style={styles.container}>
+      <ScrollView style={[styles.container, this.props.style]}>
           {this.props.children}
-        </View>
       </ScrollView>
     )
   }

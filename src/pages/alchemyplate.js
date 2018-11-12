@@ -13,7 +13,7 @@ import header from 'app/src/nutricion-fondo.jpg'
 export default class AlchemyPlate extends Component {
   render () {
     return (
-      <Page style={styles.isPaddingless}>
+      <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[{height: 85}, styles.flexCentered, styles.hasShadow1]} source={header}>
           <View style={[{ height: 85, backgroundColor: '#911E38'}, styles.isOverlay, styles.isOpacity50]} />
           <Text style={[styles.textCentered, styles.fontWhite20]}>

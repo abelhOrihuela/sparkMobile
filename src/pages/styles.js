@@ -143,6 +143,16 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20
   },
+  isMarginSmallTopBottom: {
+    marginTop: 10,
+    marginBottom: 10
+  },
+  isMarginSmallTop: {
+    marginTop: 10,
+  },
+  isMarginSmallBottom: {
+    marginBottom: 10
+  },
   isMarginSmall: {
     margin: 10
   },
