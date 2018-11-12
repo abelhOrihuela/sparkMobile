@@ -55,7 +55,7 @@ export default class AlchemyPlate extends Component {
 
         <View style={[styles.isMargin, { borderColor: '#911E38', borderWidth: 1 }]}>
           <View style={styles.flexCentered}>
-          <Image style={[{ width: '100%', height: 200 }, styles.flexCentered]} resizeMode={'cover'} source={require('app/src/images/longevidad.png')} />
+            <Image style={[{ width: '100%', height: 200 }, styles.flexCentered]} resizeMode={'cover'} source={require('app/src/images/longevidad.png')} />
           </View>
 
           <Text style={[styles.isMargin, styles.isMarginlessBottom, styles.isLineHeight20, styles.isGinoraFontRegular]}>
@@ -65,6 +65,14 @@ export default class AlchemyPlate extends Component {
           <Text style={[styles.isMargin, styles.isLineHeight20, styles.isGinoraFontRegular]}>
             <Text style={{ color: '#911E38' }}>La dieta Long Life</Text> consta de los mismos principios de una alimentación saludable; no obstante, es importante tener en cuenta que toda etapa de la vida exige de requerimientos específicos. Por eso, aparte de recomendarte un régimen de comidas equilibrado y variado queremos enfatizar en la importancia de otro tipo de nutrimentos necesarios para tu edad.
           </Text>
+
+          <Text style={[styles.isMargin, styles.isLineHeight20, styles.isGinoraFontRegular, styles.textCenter]}>
+            El consumo de agua de acuerdo a tú peso deberá de ser de aproximadamente <Text style={styles.isBold}>XX litros al día</Text>.
+          </Text>
+
+          <View style={[styles.centered, styles.isMargin]}>
+            <Image style={[{ width: 200, height: 230 }]} source={require('app/src/images/plate.png')} />
+          </View>
         </View>
       </Page>
     )
