@@ -164,7 +164,8 @@ const styles = StyleSheet.create({
     margin: 20
   },
   isMarginDoubleTopBottom: {
-    margin: 40
+    marginTop: 40,
+    marginBottom: 40
   },
   status: {
     backgroundColor: '#2771A2'
