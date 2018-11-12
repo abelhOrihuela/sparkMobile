@@ -104,7 +104,7 @@ class MyNewMe extends Component {
     let { showRiskIndexModal } = this.state
 
     let title = (<Text style={{color: 'white'}}>
-      <Text style={{color: 'white', fontWeight: 'bold'}}>
+      <Text style={[{color: 'white', fontWeight: 'bold'}, styles.isGinoraFontRegular]}>
         MY
       </Text>
     NEWME
@@ -115,7 +115,11 @@ class MyNewMe extends Component {
       visible={showRiskIndexModal}>
       <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
         <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
-          <Text style={[{flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text></Text>
+          <Text style={[styles.isGinoraFontRegular, {flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo:
+            <Text style={{color: 'white', fontWeight: 'bold'}}>
+              Diabetes
+            </Text>
+          </Text>
           <TouchableOpacity
             onPress={() => this.setModalVisible(!showRiskIndexModal)}>
             <Icon name='minus' size={20} color='#FFFFFF' />
@@ -127,7 +131,7 @@ class MyNewMe extends Component {
     return (<Page>
       {modal}
       <View style={[stylesMyNewMe.headerRiskIndex]}>
-        <Text style={[stylesMyNewMe.title]}>
+        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular]}>
           Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text>
         </Text>
         <TouchableOpacity
@@ -142,7 +146,7 @@ class MyNewMe extends Component {
         title={title}
         styleContainerTitle={{backgroundColor: '#2771A2'}}
         borderColor='#2771A2' colorIcon='white'>
-        <Text>
+        <Text style={styles.isGinoraFontRegular}>
           En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
           pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
           para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra

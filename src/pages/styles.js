@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
     fontFamily: 'ginora-regular',
     fontWeight: 'normal'
   },
+  isGinoraFontBold: {
+    fontFamily: 'ginora-regular',
+    fontWeight: 'bold'
+  },
   centered: {
     flex: 1,
     alignItems: 'center',
@@ -158,6 +162,10 @@ const styles = StyleSheet.create({
   },
   isMargin: {
     margin: 20
+  },
+  isMarginDoubleTopBottom: {
+    marginTop: 40,
+    marginBottom: 40
   },
   status: {
     backgroundColor: '#2771A2'
