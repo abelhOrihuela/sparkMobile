@@ -184,13 +184,15 @@ export default class Dashboard extends Component {
     return (<Page>
       {modalOne}
       {modalTwo}
-      <View style={{margin: 10}}>
-        <Text style={[stylesDashboard.fontBlue16, styles.isGinoraFontBold, {textAlign: 'center'}]}>¡Bienvenido!</Text>
+      <View style={styles.isMarginSmall}>
+        <Text style={[styles.fontBlue20, styles.isGinoraFontBold, {textAlign: 'center'}]}>¡Bienvenido!</Text>
       </View>
-      <View style={{margin: 10}}>
-        <Text style={[stylesDashboard.fontBlack14, styles.isGinoraFontBold, {textAlign: 'center'}]}>Revisa tus resultados, dietas o referencias médicas.</Text>
+      <View style={styles.isMarginSmall}>
+        <Text style={[stylesDashboard.fontBlack14, {textAlign: 'center'}]}>
+          Ingresa a tus reportes y a tu programa personalizado de bienestar.
+        </Text>
       </View>
-      <TouchableOpacity style={[{margin: 10}, {height: heightSection}]} onPress={() => this.goToReports()}>
+      <TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToReports()}>
         <ImageBackground
           style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
           source={reportesBg}
@@ -214,7 +216,7 @@ export default class Dashboard extends Component {
         </ImageBackground>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[{margin: 10}, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
+      <TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
         <ImageBackground
           style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
           source={myNewMeBg}
@@ -231,7 +233,7 @@ export default class Dashboard extends Component {
                 MY NEW ME
               </Text>
               <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
-                Tu dieta, ejercicios, salud preventiva y hábitos personalizados.
+                Nutrición, ejercicio, longevidad, hábitos de vida, salud y suplementación.
               </Text>
             </View>
           </View>
