@@ -15,12 +15,21 @@ import { Card } from 'react-native-elements'
 
 import styles from 'app/src/pages/styles'
 class Nutrition extends Component {
-  static navigationOptions = {
-    drawerIcon: () => (
-        <Icon name='power-off' size={20} color='#FFFFFF' />
-    ),
-    drawerLabel: () => {
-        return 'Nutrition'
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'MYNEWME',
+      drawerIcon: () => (
+        <Icon name='check' size={20} color='#FFFFFF' />
+      ),
+
+      drawerLabel: () => {
+        return 'MYNEWME'
+      },
+      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
+        navigation.goBack()
+        }}>
+        <Icon name={'arrow-left'} size={20} color='#2771A2' />
+      </TouchableOpacity>)
     }
   }
 
@@ -60,14 +69,16 @@ class Nutrition extends Component {
             {...this.props}
             icon={iconFish}
             title='Plan de alimentación'
+            colorIcon='#911E38'
             subtitle='Tu salud, en tus manos.'
             to='PlanAlimentation' />
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
             {...this.props}
-            icon={iconFish}
+            icon={iconMyPlate}
             title='ALCHEMYPLATE'
+            colorIcon='#911E38'
             subtitle='Crea tus comidas.'
             to='AlchemyPlate' />
 
@@ -75,6 +86,7 @@ class Nutrition extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={header}
+            title='Tips de nutrición'
             to='TipsNutrition' />
 
         </View>

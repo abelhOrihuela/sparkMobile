@@ -17,7 +17,9 @@ export default class CardTips extends Component {
         <ImageBackground source={this.props.img} style={{width: '100%', height: '100%'}}>
           <View style={styles.nutritionOverlayFooter} />
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={[styles.fontWhite18, styles.isGinoraFontBold, {margin: 10}]}>Tips de nutrición</Text>
+            <Text style={[styles.fontWhite18, styles.isGinoraFontBold, {margin: 10, textAlign: 'center'}]}>
+              {this.props.title}
+            </Text>
             <TouchableOpacity style={{backgroundColor: '#84ACC8'}} onPress={() => this.goToSection()}>
               <Text style={[styles.fontWhite18, styles.isGinoraFontRegular, {padding: 10}]}>Conoce más</Text>
             </TouchableOpacity>

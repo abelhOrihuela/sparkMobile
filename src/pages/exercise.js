@@ -49,45 +49,50 @@ class Exercise extends Component {
       <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
     </View>)
     return (
-      <ScrollView style={{flex: 1}}>
-        <ImageBackground style={[styles.flexCenter]} resizeMode='cover' source={header} />
-        <View style={stylesExercise.nutritionOverlay} />
-        <Page>
-          <Text style={[styles.textCentered, styles.fontWhite18, stylesExercise.title]}>NUTRICIÓN</Text>
+      <Page style={[styles.isPaddingless]}>
+        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
+        <View style={[{ height: height, backgroundColor: '#DC6B18'}, styles.isOverlay, styles.isOpacity50]} />
+        <View style={[styles.isMargin]}>
+          <Text style={[styles.textCentered, styles.fontWhite18, stylesExercise.title]}>EJERCICIO</Text>
           <Panel
-            borderColor='#B9163B'
             title={title}
-            styleContainerTitle={{backgroundColor: '#B9163B'}}
+            style={styles.isMarginSmallTopBottom}
+            styleContainerTitle={{backgroundColor: '#FF974A'}}
+            borderColor='#FF974A'
             colorIcon='#FFFFFF'>
-            <Text>Para conservar o alcanzar un estado óptimo de salud, es indispensable que tu alimentación cumpla con ciertos requerimientos generales, entre los que destacan: incluir todos los macronutrimentos (hidratos de carbono, proteína, grasas) y micronutrimentos (minerales y vitaminas); ser variada y balanceada en cuanto a tipos de alimentos; contar con una adecuada densidad nutricional, y de preferencia, que predominen los alimentos no procesados y de buena calidad. También es importante que comas de acuerdo a tus gustos y bioindividualidad, que considera: tu sexo, etapa de vida, características fisiológicas y creencias personales. Los requerimientos deben adaptarse a situaciones especiales de salud o enfermedad, predisposición genética, perfil de microbiota y sensibilidades alimentarias. Para que puedas alcanzar tu máximo potencial energético, físico y mental, debemos conocer cuáles son las áreas de oportunidad que pueden optimizar tu bienestar. Los take action de alimentación están basados en los factores de riesgo que desciframos y determinamos de acuerdo a la integración de tus análisis. Recuerda que una nutrición adecuada ayudará a mejorar tu estado de salud actual y reducir el riesgo a desarrollar enfermedades. placer y aporta vitalidad.
+            <Text>
+              Hacer ejercicio representa un factor diferencial entre vivir altamente propenso a desarrollar enfermedades o alcanzar un estado ideal de bienestar. Debes enfocar tu actividad física en función de tu estilo de vida, gustos, necesidades y genética. Acuérdate que existen muchos tipos de entrenamientos, clases y estilos de ejercicio. No te cierres solo a una forma y encuentra tu entrenamiento ideal. Realizar ejercicio de manera habitual mantiene nuestro sistema inmunológico fuerte, contribuye a metabolizar nuestros alimentos, disminuye la acumulación excesiva de grasa, mejora las condiciones cardiacas y hace más efectiva la oxigenación del cuerpo. Produce hormonas asociadas a estados de placer y bienestar y sirve para canalizar emociones; por lo que ayuda a que tengamos mejor manejo de estrés. Inclusive impacta sobre nuestra autopercepción física. De acuerdo con la categoría de riesgo que obtuvimos integrando los resultados de tu genética, microbiota, química sanguínea y hábitos de vida, generamos los siguientes take actions para que puedas sacarle el máximo provecho al ejercicio que realices. Las notas de ejercicio están orientadas a tiempos, intensidad, frecuencia y variedad de actividades físicas pensadas para mantener y mejorar tus aptitudes físicas. Ten presente que hacer ejercicio no debe de ser una actividad cansada ni desagradable, por lo contrario, si lo haces adecuadamente produce placer y aporta vitalidad.
             </Text>
           </Panel>
 
 
           <CardItemSection
-            style={[stylesExercise.margin]}
+            style={[styles.isMarginSmallTopBottom]}
             {...this.props}
             icon={iconFish}
-            title='Plan de alimentación'
-            subtitle='Tu salud, en tus manos.'
+            title='Ejercicio: '
+            colorIcon='#FF974A'
+            subtitle='Personalizado por tu factor de riesgo.'
             to='PlanAlimentation' />
 
           <CardItemSection
-            style={stylesExercise.margin}
+            style={styles.isMarginSmallTopBottom}
             {...this.props}
             icon={iconFish}
-            title='ALCHEMYPLATE'
-            subtitle='Crea tus comidas.'
+            title='Tipos de ejercicio'
+            subtitle='Personalizado por tu factor de riesgo.'
+            colorIcon='#FF974A'
             to='AlchemyPlate' />
 
           <CardTips
-            style={stylesExercise.margin}
+            style={styles.isMarginSmallTopBottom}
             {...this.props}
-            img={bgTipsExercise}
+            img={header}
+            title='Tips de ejercicio'
             to='TipsExercise' />
 
-        </Page>
-      </ScrollView>
+        </View>
+      </Page>
     )
   }
 }
@@ -110,17 +115,17 @@ const stylesExercise = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center'
   },
-  nutritionOverlay: {
+  isOverlays: {
     flex: 1,
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     opacity: 0.5,
-    backgroundColor: '#911E38',
+    backgroundColor: '#DC6B18',
     height: height
   },
-  nutritionOverlayFooter: {
+  isOverlayFooter: {
     flex: 1,
     position: 'absolute',
     top: 0,
@@ -131,7 +136,7 @@ const stylesExercise = StyleSheet.create({
     height: 150
   },
   margin: {
-    marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 10
+    marginTop: 10, marginBottom: 10
   }
 })
 export default Exercise
