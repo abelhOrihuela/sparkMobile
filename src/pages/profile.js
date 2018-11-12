@@ -20,7 +20,7 @@ import FormUser from './formUser'
 import Orders from './orders'
 
 const {height, width} = Dimensions.get('window')
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 class Profile extends Component {
   static navigationOptions = {
     drawerIcon: () => (

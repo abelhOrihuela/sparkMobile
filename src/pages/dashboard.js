@@ -25,7 +25,7 @@ import mynewmeIcon from '../mynewme.png'
 const {height, width} = Dimensions.get('window')
 import Orders from '../core/orders'
 import Page from 'app/src/components/page'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 
 export default class Dashboard extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -176,10 +176,12 @@ export default class Dashboard extends Component {
     </ModalContainer>) : <View />
 
     if (loading) {
-      return <ActivityIndicator />
+      return <ActivityIndicator size='large' />
     }
 
     let heightSection = 150
+
+    let contentVisible = this.state.reports.length > 0 ? true : false
 
     return (<Page>
       {modalOne}
@@ -192,53 +194,60 @@ export default class Dashboard extends Component {
           Ingresa a tus reportes y a tu programa personalizado de bienestar.
         </Text>
       </View>
-      <TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToReports()}>
-        <ImageBackground
-          style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
-          source={reportesBg}
-        >
-          <View style={[stylesDashboard.overlayReports, { height: heightSection}]} />
-          <View style={stylesDashboard.section}>
-            <View style={{flex: 1}}>
-              <Image source={reportesIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
-            </View>
-            <View style={stylesDashboard.sectionTitles}>
-              <Text
-                style={[stylesDashboard.titleSection, styles.isGinoraFontRegular]}
-                >
-                Reportes
-              </Text>
-              <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
-                {this.state.reports.length} reportes disponibles
-              </Text>
-            </View>
-          </View>
-        </ImageBackground>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
-        <ImageBackground
-          style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
-          source={myNewMeBg}
-        >
-          <View style={[stylesDashboard.overlayMyNewMe, { height: heightSection}]} />
-          <View style={stylesDashboard.section}>
-            <View style={{flex: 1}}>
-              <Image source={mynewmeIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
+      {
+        contentVisible && (<TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToReports()}>
+          <ImageBackground
+            style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
+            source={reportesBg}
+          >
+            <View style={[stylesDashboard.overlayReports, { height: heightSection}]} />
+            <View style={stylesDashboard.section}>
+              <View style={{flex: 1}}>
+                <Image source={reportesIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
+              </View>
+              <View style={stylesDashboard.sectionTitles}>
+                <Text
+                  style={[stylesDashboard.titleSection, styles.isGinoraFontRegular]}
+                  >
+                  REPORTES
+                </Text>
+                <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
+                  {this.state.reports.length} reportes disponibles
+                </Text>
+              </View>
             </View>
-            <View style={stylesDashboard.sectionTitles}>
-              <Text
-                style={[stylesDashboard.titleSection, styles.isGinoraFontRegular]}
-                >
-                MY NEW ME
-              </Text>
-              <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
-                Nutrición, ejercicio, longevidad, hábitos de vida, salud y suplementación.
-              </Text>
+          </ImageBackground>
+        </TouchableOpacity>)
+      }
+
+
+      {
+        contentVisible && (<TouchableOpacity style={[styles.isMarginSmall, {height: heightSection}]} onPress={() => this.goToMynewMe()}>
+          <ImageBackground
+            style={[StyleSheet.absoluteFill, stylesDashboard.bgSection]}
+            source={myNewMeBg}
+          >
+            <View style={[stylesDashboard.overlayMyNewMe, { height: heightSection}]} />
+            <View style={stylesDashboard.section}>
+              <View style={{flex: 1}}>
+                <Image source={mynewmeIcon} resizeMode='contain' style={{width: '100%', height: '100%'}} />
+              </View>
+              <View style={stylesDashboard.sectionTitles}>
+                <Text
+                  style={[stylesDashboard.titleSection, styles.isAdamFontRegular]}
+                  >
+                  <Text style={[{fontWeight: 'bold'}]}>MY</Text>
+                   NEWME
+                </Text>
+                <Text style={[stylesDashboard.subtitleSection, styles.isGinoraFontRegular]}>
+                  Nutrición, ejercicio, longevidad, hábitos de vida, salud y suplementación.
+                </Text>
+              </View>
             </View>
-          </View>
-        </ImageBackground>
-      </TouchableOpacity>
+          </ImageBackground>
+        </TouchableOpacity>)
+      }
     </Page>)
 
   }
@@ -335,7 +344,7 @@ const stylesDashboard = StyleSheet.create({
   subtitleSection: {
     backgroundColor: 'transparent',
     textAlign: 'left',
-    fontSize: 10,
+    fontSize: 14,
     color: 'white'
   },
   titleSection: {

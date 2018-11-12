@@ -47,10 +47,10 @@ class Panel extends Component {
 
   render () {
     let icon = this.state.expanded ? 'minus' : 'plus'
-    let {styleContainerTitle} = this.props || {}
+    let {styleContainerTitle, style} = this.props
     let {colorIcon} = this.props || '#FFFFFF'
 
-    return (<Animated.View style={[styles.container, {height: this.state.animation, borderWidth: 1, borderColor: this.props.borderColor}]}>
+    return (<Animated.View style={[styles.container, {height: this.state.animation, borderWidth: 1, borderColor: this.props.borderColor}, style]}>
       <View style={[styleContainerTitle, styles.titleContainer]} onLayout={this._setMinHeight.bind(this)}>
         <View style={[styles.title]}>{this.state.title}</View>
         <TouchableOpacity style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
@@ -69,8 +69,7 @@ class Panel extends Component {
 var styles = StyleSheet.create({
   container: {
     overflow: 'hidden',
-    backgroundColor: 'white',
-    margin: 10
+    backgroundColor: 'white'
   },
   titleContainer: {
     flexDirection: 'row',

@@ -15,7 +15,7 @@ import sensibilities from '../Sensibilidades.png'
 import api from '../core/api'
 import Panel from '../components/panel'
 import Page from 'app/src/components/page'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 const {height, width} = Dimensions.get('window')
 
 class Reports extends Component {
@@ -76,15 +76,15 @@ class Reports extends Component {
     if (item.type=== 'blood') {
       backgroundImage = blood
       icon = iconBlood
-      title = 'Marcadores sanguíneos'
+      title = 'MARCADORES SANGUÍNEOS'
     } else if (item.type=== 'dna') {
       backgroundImage = dna
       icon = iconDna
-      title = 'Genética'
+      title = 'GENÉTICA'
     } else if (item.type=== 'sensibilities') {
       backgroundImage = sensibilities
       icon = iconSensibilities
-      title = 'Sensibilidaes alimenticias'
+      title = 'SENSIBILIDADES ALIMENTICIAS'
     } else if (item.type=== 'microbiome') {
       backgroundImage = microbiome
       icon = iconMicrobiome
@@ -101,7 +101,7 @@ class Reports extends Component {
       <View style={[stylesReports[item.type +'Overlay'], { height: 150}]} />
       <View style={{flex: 1, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
         <Image source={icon} style={{height: 70, width: 60}}/>
-        <Text style={{color: 'white'}}>{title}</Text>
+        <Text style={{color: 'white', textAlign: 'center'}}>{title}</Text>
       </View>
     </TouchableOpacity>)
   }

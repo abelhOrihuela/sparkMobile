@@ -58,7 +58,7 @@ class Nutrition extends Component {
           </Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={{marginBottom: 30}}
             styleContainerTitle={{backgroundColor: '#B9163B'}}
             borderColor='#B9163B'
             colorIcon='#FFFFFF'>

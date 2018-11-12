@@ -60,7 +60,7 @@ class TipsDetail extends Component {
     let url = `${appHost}/suggestions/${suggestion.uuid}?token=${token}&isNative=1`
 
     if (loading) {
-      return <ActivityIndicator />
+      return <ActivityIndicator size='large' />
     }
     return (<View style={[styles.container]}>
       <WebView

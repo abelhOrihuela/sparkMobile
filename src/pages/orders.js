@@ -6,7 +6,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 import api from '../core/api'
 import { StyleSheet, View, Text, TextInput, ScrollView, TouchableHighlight, Image, Dimensions, TouchableOpacity, AsyncStorage, Animated, ActivityIndicator } from 'react-native'
 import t from 'tcomb-form-native'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 import logo from '../logo.png'
 
 class Orders extends Component {
@@ -88,7 +88,7 @@ class Orders extends Component {
     }
 
     if (this.state.loading) {
-      return <ActivityIndicator />
+      return <ActivityIndicator size='large' />
     }
 
     return (
