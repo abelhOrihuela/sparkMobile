@@ -3,15 +3,18 @@ import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollVie
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
-import bgTipsExercise from 'app/src/bg-tips-nutrition.png'
+import ejercicioBg from '../ejercicio-fondo.jpg'
+
+import bgTipsExercise from 'app/src/images/bg-tips-exercise.png'
 import icon from 'app/src/iconDna.png'
-import iconFish from 'app/src/iconFish.png'
+import iconExercise from 'app/src/icon-exercise.png'
+import iconExerciseRun from 'app/src/icon-exercise-run.png'
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
 import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
-let height = 230
+let height = 215
 import { Card } from 'react-native-elements'
 
 import styles from 'app/src/pages/styles'
@@ -50,13 +53,13 @@ class Exercise extends Component {
     </View>)
     return (
       <Page style={[styles.isPaddingless]}>
-        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
+        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={ejercicioBg} />
         <View style={[{ height: height, backgroundColor: '#DC6B18'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
           <Text style={[styles.textCentered, styles.fontWhite18, stylesExercise.title]}>EJERCICIO</Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={{marginBottom: 30}}
             styleContainerTitle={{backgroundColor: '#FF974A'}}
             borderColor='#FF974A'
             colorIcon='#FFFFFF'>
@@ -69,7 +72,7 @@ class Exercise extends Component {
           <CardItemSection
             style={[styles.isMarginSmallTopBottom]}
             {...this.props}
-            icon={iconFish}
+            icon={iconExercise}
             title='Ejercicio: '
             colorIcon='#FF974A'
             subtitle='Personalizado por tu factor de riesgo.'
@@ -78,7 +81,7 @@ class Exercise extends Component {
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
             {...this.props}
-            icon={iconFish}
+            icon={iconExerciseRun}
             title='Tipos de ejercicio'
             subtitle='Personalizado por tu factor de riesgo.'
             colorIcon='#FF974A'
@@ -87,7 +90,7 @@ class Exercise extends Component {
           <CardTips
             style={styles.isMarginSmallTopBottom}
             {...this.props}
-            img={header}
+            img={bgTipsExercise}
             title='Tips de ejercicio'
             to='TipsExercise' />
 

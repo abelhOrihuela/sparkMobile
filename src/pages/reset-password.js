@@ -69,7 +69,7 @@ export class ResetPassword extends Component {
     }
     let {loading} = this.state
 
-    let content = loading ? (<ActivityIndicator />) : (<BaseForm
+    let content = loading ? (<ActivityIndicator size='large' />) : (<BaseForm
       type={User}
       label={'Enviar link'}
       options={this.state.options}

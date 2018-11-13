@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 import Page from 'app/src/components/page'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 import api from 'app/src/core/api'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card } from 'react-native-elements'

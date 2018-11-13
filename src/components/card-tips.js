@@ -14,7 +14,7 @@ export default class CardTips extends Component {
   render () {
     return (
       <View style={[styles.card, this.props.style, {backgroundColor: 'white', height: 150}]}>
-        <ImageBackground source={this.props.img} style={{width: '100%', height: '100%'}}>
+        <ImageBackground source={this.props.img} resizeMode='cover' style={{width: '100%', height: '100%'}}>
           <View style={styles.nutritionOverlayFooter} />
           <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <Text style={[styles.fontWhite18, styles.isGinoraFontBold, {margin: 10, textAlign: 'center'}]}>

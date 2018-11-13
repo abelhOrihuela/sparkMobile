@@ -6,7 +6,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 import api from '../core/api'
 import { StyleSheet, View, Text, TextInput, ScrollView, TouchableHighlight, Dimensions, TouchableOpacity, AsyncStorage, Animated, ActivityIndicator } from 'react-native'
 import t from 'tcomb-form-native'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 
 class FormUser extends Component {
   static navigationOptions = {
@@ -47,7 +47,7 @@ class FormUser extends Component {
   }
 
   async load () {
-    let user = JSON.parse(await AsyncStorage.getItem('me'))
+    let user = JSON.parse(await AsyncStorage.getItem('me')).user
     let value = {
       email: user.email,
       name: user.name,
@@ -87,7 +87,7 @@ class FormUser extends Component {
     }
 
     if (this.state.loading) {
-      return <ActivityIndicator />
+      return <ActivityIndicator size='large' />
     }
 
     return (

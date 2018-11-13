@@ -6,7 +6,7 @@ import background from '../bg.png'
 import logo from '../images/logo.png'
 import people from '../people.png'
 import api from '../core/api'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 const {height, width} = Dimensions.get('window')
 
 export class Login extends Component {
@@ -75,7 +75,7 @@ export class Login extends Component {
   async me () {
     try {
       let body = await api.get('/user/me')
-      await AsyncStorage.setItem('me', JSON.stringify(body.data.user))
+      await AsyncStorage.setItem('me', JSON.stringify(body.data))
       this.props.navigation.navigate('Dashboard')
     } catch (error) {
       alert('Error', error.message)
@@ -89,7 +89,7 @@ export class Login extends Component {
     }
     let {loading} = this.state
 
-    let content = loading ? (<ActivityIndicator />) : (<BaseForm
+    let content = loading ? (<ActivityIndicator size='large' />) : (<BaseForm
       type={User}
       label={'Iniciar sesión'}
       options={this.state.options}

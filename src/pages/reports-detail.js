@@ -48,9 +48,15 @@ class Reports extends Component {
   async getToken () {
     let token = await AsyncStorage.getItem('jwt')
     this.setState({
-      token: token,
-      loading: false
+      token: token
     })
+
+
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 10000)
   }
 
   render () {
@@ -68,20 +74,24 @@ class Reports extends Component {
     }
 
     let url = `${appHost}/reports/${type}/${report.uuid}?token=${token}&isNative=1`
+    let height = loading ? 0 : 200
 
-    if (loading) {
-      return <ActivityIndicator />
-    }
     return (<View style={[styles.container]}>
-      <WebView
-        style={{width: width, height: 200, margin: 0}}
-        ref={(ref) => {
-          this.myWebView = ref
-        }}
-        initialScale={100}
-        scalesPageToFit
-        javaScriptEnabled
-        source={{uri: url}} />
+        {
+          loading && <ActivityIndicator size='large' />
+        }
+
+        <WebView
+          style={{height: height, padding: 20}}
+          ref={(ref) => {
+            this.myWebView = ref
+          }}
+          onLoadEnd={() => this.setState({loading: false})}
+          initialScale={100}
+          scalesPageToFit
+          javaScriptEnabled
+          source={{uri: url}} />
+
     </View>)
   }
 }

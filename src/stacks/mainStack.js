@@ -50,7 +50,7 @@ const Aplication = StackNavigator({
       }}>
       <View>
         <Octicon
-          style={{ color: '#0D4E78' }}
+          style={{ color: '#2771A2' }}
           size={24}
           name='three-bars'
         />

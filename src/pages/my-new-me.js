@@ -13,14 +13,12 @@ import api from '../core/api'
 import Panel from '../components/panel'
 import ModalContainer from '../components/modal'
 import Page from 'app/src/components/page'
-
-
 import nutritionBg from '../nutricion-fondo.jpg'
 import longevidadBg from '../longevidad-fondo.jpg'
 import estilodevidaBg from '../estilodevida-fondo.jpg'
 import suplementacionBg from '../suplementacion-fondo.png'
 import ejercicioBg from '../ejercicio-fondo.jpg'
-import styles from './styles'
+import styles from 'app/src/pages/styles'
 const {width} = Dimensions.get('window')
 
 const takeActions = [
@@ -103,8 +101,8 @@ class MyNewMe extends Component {
   render () {
     let { showRiskIndexModal } = this.state
 
-    let title = (<Text style={{color: 'white'}}>
-      <Text style={[{color: 'white', fontWeight: 'bold'}, styles.isGinoraFontRegular]}>
+    let title = (<Text style={[{color: 'white'}, styles.isAdamFontRegular]}>
+      <Text style={[{fontWeight: 'bold'}]}>
         MY
       </Text>
     NEWME
@@ -144,8 +142,8 @@ class MyNewMe extends Component {
       <Panel
         style={styles.isMarginSmall}
         title={title}
-        styleContainerTitle={{backgroundColor: '#2771A2'}}
-        borderColor='#2771A2' colorIcon='white'>
+        styleContainerTitle={{backgroundColor: '#16314E'}}
+        borderColor='#16314E' colorIcon='white'>
         <Text style={styles.isGinoraFontRegular}>
           En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
           pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
