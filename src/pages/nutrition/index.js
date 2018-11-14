@@ -46,8 +46,11 @@ class Nutrition extends Component {
 
   render() {
     let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>
+        ¿Qué encontrarás?
+      </Text>
     </View>)
+
     return (
       <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />

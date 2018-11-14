@@ -20,11 +20,11 @@ export default class SmartDiet extends Component {
 
         <Panel
           style={styles.isMarginSmall}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           PRODUCTOS NATURALES Y FRESCOS
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Cuida la calidad de los productos que eliges: inclínate por comprar y consumir alimentos naturales, frescos, sin aditivos
             ni conservadores; evita comer o tomar productos procesados y con ingredientes refinados como azúcar, edulcorantes,
@@ -34,11 +34,11 @@ export default class SmartDiet extends Component {
 
         <Panel
           style={styles.isMarginSmall}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           CUIDADO CON AZÚCAR DE MALA CALIDAD
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Evita o disminuye al mínimo el consumo de azúcar blanca (azúcar de caña en general), y todos los productos que
             contengan jarabe de alta fructuosa y jarabe de maíz. Así como los endulcorantes artificiales. Es mejor endulzar con poca
@@ -54,11 +54,11 @@ export default class SmartDiet extends Component {
 
         <Panel
           style={styles.isMarginSmall}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           ALTA EN ANTIOXIDANTES
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Es importante agregar antioxidantes a tu alimentación diaria como el cacao, té verde, té rojo, cúrcuma, vino tinto con
             moderación, frutas y verduras moradas (acai, uvas, moras, zarzamoras, cebolla morada, col, betabel) y rojas (granada,
@@ -72,11 +72,11 @@ export default class SmartDiet extends Component {
 
         <Panel
           style={[styles.isMarginSmall]}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           EQUILIBRADA Y VARIADA
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Una dieta saludable debe de ser equilibrada, adecuada a tus características personales y estilo de vida. Te
             recomendamos que elijas cereales integrales, alimentos altos en fibra, variedad de leguminosas, proteína animal magra -
@@ -98,11 +98,11 @@ export default class SmartDiet extends Component {
 
         <Panel
           style={[styles.isMarginSmall]}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           PORCIONES
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             La cantidad de lo que comes, es tan importante como la calidad y el equilibrio de tus alimentos.
             Para controlar el tamaño de tus porciones, te mostramos el Alchemy Plate. En él podrás crear tu propio plato de

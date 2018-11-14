@@ -10,10 +10,10 @@ export default class HealtyHeart extends Component {
   render () {
     return (
       <View style={{flex: 1}}>
-        <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
           Plan de Alimentación HEALTHY HEART
         </Text>
-        <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Identificamos tu área de oportunidad en cardiovascular. Esto significa que tienes predisposición a padecer
           enfermedades cardiacas y vasculares. Por ello, te queremos recomendar una dieta Healthy Heart, enfocada en cuidar tú
           corazón y vasos sanguíneos. En Healthy Heart pondremos especial interés en controlar el consumo de grasas y alimentos
@@ -21,12 +21,12 @@ export default class HealtyHeart extends Component {
         </Text>
 
         <Panel
-          style={styles.isMargin}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           ¡OJO CON LAS GRASAS DE ORIGEN ANIMAL!
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Disminuye al mínimo el consumo de carnes rojas, embutidos, vísceras y mariscos; son productos con alto contenido de
             grasas saturadas. Otros alimentos con alto contenido en grasas que también pueden dañar tú corazón y vasos
@@ -37,12 +37,12 @@ export default class HealtyHeart extends Component {
         </Panel>
 
         <Panel
-          style={styles.isMargin}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           ¡ADELANTE CON EL CONSUMO DE GRASAS SALUDABLES!
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Las grasas saludables contribuyen a funciones esenciales como el desarrollo del sistema nervioso central y la protección
             de órganos. Son indispensables como precursores de hormonas y transportadores de las vitaminas liposolubles A, D, E y
@@ -76,12 +76,12 @@ export default class HealtyHeart extends Component {
         </Panel>
 
         <Panel
-          style={styles.isMargin}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           AGREGA ANTIOXIDANTES
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             ¡Incrementa tú consumo de antioxidantes! La ciencia sugiere que el consumo de antioxidantes retrasa el proceso de
             oxidación de las grasas en el organismo, muy perjudicial para los vasos sanguíneos. Alimentos como el cacao, té verde,
@@ -98,12 +98,12 @@ export default class HealtyHeart extends Component {
         </Panel>
 
         <Panel
-          style={styles.isMargin}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           MÁS DE ESTOS ALIMENTOS
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             Se recomienda aumentar el consumo de:
           </Text>
@@ -144,12 +144,12 @@ export default class HealtyHeart extends Component {
         </Panel>
 
         <Panel
-          style={styles.isMargin}
-          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
           PORCIONES
           </Text>)}
-          styleContainerTitle={{backgroundColor: '#B9163B'}}
-          borderColor='#B9163B' colorIcon='white'>
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
           <Text style={styles.isGinoraFontRegular}>
             La cantidad de lo que comes, es tan importante como la calidad y el equilibrio de los alimentos.
           </Text>

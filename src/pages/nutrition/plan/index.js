@@ -81,10 +81,10 @@ export default class PlanAlimentation extends Component {
       content = <LongLife data={riskIndex} />
     }
 
-    content = <HealtyHeart data={riskIndex} />
+    content = <SmartDiet data={riskIndex} />
 
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isPadding, styles.isMarginSmallBottom]}>
         {content}
       </Page>
     )
