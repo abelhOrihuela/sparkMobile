@@ -9,6 +9,13 @@ const styles = StyleSheet.create({
   page: {
     flex: 1
   },
+  isFlex1: {
+    flex: 1
+  },
+  isFlexRow: {
+    flex: 1,
+    flexDirection: 'row'
+  },
   isAdamFontRegular: {
     fontFamily: 'adam',
     fontWeight: 'normal'
@@ -118,6 +125,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold'
   },
+  fontBlack18: {
+    color: '#000000',
+    fontSize: 18
+  },
   fontBlack18Bold: {
     color: '#000000',
     fontSize: 18,
@@ -169,6 +180,10 @@ const styles = StyleSheet.create({
   },
   status: {
     backgroundColor: '#2771A2'
+  },
+  doubleMarginSides: {
+    marginLeft: 20,
+    marginRight: 20
   },
   marginSides: {
     marginLeft: 10,
