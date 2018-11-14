@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/nutricion-fondo.jpg'
+// import header from 'app/src/nutricion-fondo.jpg'
+import header from 'app/src/suplementacion-fondo.png'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
 import iconSuplementation from 'app/src/icon-suplementacion.png'
@@ -75,7 +76,7 @@ class Suplementation extends Component {
             title='Actividades y estudios'
             colorIcon='#1E1B5D'
             subtitle='Recomendados para tu factor de riesgo'
-            to='PlanAlimentation' />
+            to='SuplementationActivities' />
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
@@ -84,7 +85,7 @@ class Suplementation extends Component {
             title='Suplementación'
             subtitle='Lo que te hace bien el tu día a día.'
             colorIcon='#1E1B5D'
-            to='AlchemyPlate' />
+            to='SuplementationDetail' />
 
         <CardItemSection
             style={styles.isMarginSmallTopBottom}
@@ -93,7 +94,7 @@ class Suplementation extends Component {
             title='Salud intestinal'
             subtitle='Lo que te hace bien el tu día a día.'
             colorIcon='#1E1B5D'
-            to='AlchemyPlate' />
+            to='SuplementatioIntestinal' />
 
           <CardTips
             style={styles.isMarginSmallTopBottom}

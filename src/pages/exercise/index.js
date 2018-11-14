@@ -3,7 +3,7 @@ import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollVie
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
-import ejercicioBg from '../ejercicio-fondo.jpg'
+import ejercicioBg from 'app/src/ejercicio-fondo.jpg'
 
 import bgTipsExercise from 'app/src/images/bg-tips-exercise.png'
 import icon from 'app/src/iconDna.png'
@@ -76,7 +76,7 @@ class Exercise extends Component {
             title='Ejercicio: '
             colorIcon='#FF974A'
             subtitle='Personalizado por tu factor de riesgo.'
-            to='PlanAlimentation' />
+            to='ExerciseDetail' />
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
@@ -85,7 +85,7 @@ class Exercise extends Component {
             title='Tipos de ejercicio'
             subtitle='Personalizado por tu factor de riesgo.'
             colorIcon='#FF974A'
-            to='AlchemyPlate' />
+            to='ExerciseTypes' />
 
           <CardTips
             style={styles.isMarginSmallTopBottom}

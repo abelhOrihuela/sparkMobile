@@ -66,7 +66,9 @@ export default class SmartDiet extends Component {
           </Text>
 
           <Text style={[styles.isMargin, styles.isLineHeight20, styles.isGinoraFontRegular, styles.textCenter]}>
-            El consumo de agua de acuerdo a tú peso deberá de ser de aproximadamente <Text style={styles.isBold}>{this.props.data.water} litros al día</Text>.
+            El consumo de agua de acuerdo a tú peso deberá de ser de aproximadamente <Text style={styles.isBold}>
+            {this.props.data.water} litros al día
+          </Text>.
           </Text>
 
           <View style={[styles.centered, styles.isMargin]}>
