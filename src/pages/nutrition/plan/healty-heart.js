@@ -27,7 +27,7 @@ export default class HealtyHeart extends Component {
           </Text>)}
           styleContainerTitle={{backgroundColor: 'white'}}
           borderColor='white' colorIcon='black'>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Disminuye al mínimo el consumo de carnes rojas, embutidos, vísceras y mariscos; son productos con alto contenido de
             grasas saturadas. Otros alimentos con alto contenido en grasas que también pueden dañar tú corazón y vasos
             sanguíneos son productos como: panadería dulce, repostería, comida frita,y lácteos o derivados con alto contenido en
@@ -43,32 +43,32 @@ export default class HealtyHeart extends Component {
           </Text>)}
           styleContainerTitle={{backgroundColor: 'white'}}
           borderColor='white' colorIcon='black'>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Las grasas saludables contribuyen a funciones esenciales como el desarrollo del sistema nervioso central y la protección
             de órganos. Son indispensables como precursores de hormonas y transportadores de las vitaminas liposolubles A, D, E y
             K. Se asocian a la reducción del colesterol malo (LDL) y a aumentar el colesterol bueno (HDL). Además, son una fuente
             fundamental de energía para el organismo.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Incluye a tu alimentación aceites vegetales crudos (oliva extra virgen, aguacate, linaza, semilla de uva), salmón salvaje,
             sardinas, aguacate y nueces.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             VITAMINA E
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Las grasas saludables contienen otro nutrimento importante para proteger tu sistema cardiovascular: vitamina
             E. Su principal función es proteger la membrana de las células. Es mejor consumirla a través de los alimentos, ya
             que, si se toma únicamente en cápsulas, el organismo no será capaz de absorberla de forma eficiente.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Te sugerimos consumir alimentos ricos en vitamina E como lo son: espinaca, brócoli, semillas de girasol,
             almendras, piñones, nueces de Brasil, salmón salvaje, albaricoques deshidratados, cereales integrales.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             OMEGA 3
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             ¡No todas las grasas son dañinas! algunos ácidos grasos como los denominados Omega 3 son benéficos para el
             corazón. Los puedes consumir a través de pescados como el salmón, sardina y bacalao, o a través de semillas
             como la chía.
@@ -82,14 +82,14 @@ export default class HealtyHeart extends Component {
           </Text>)}
           styleContainerTitle={{backgroundColor: 'white'}}
           borderColor='white' colorIcon='black'>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             ¡Incrementa tú consumo de antioxidantes! La ciencia sugiere que el consumo de antioxidantes retrasa el proceso de
             oxidación de las grasas en el organismo, muy perjudicial para los vasos sanguíneos. Alimentos como el cacao, té verde,
             té rojo, cúrcuma, vino tinto (con moderación), frutas y verduras moradas (açai, uvas, moras, zarzamoras, cebolla
             morada, col, betabel) y rojas (granada, fresas, frambuesa, arándanos, rábanos, jitomate) son excelente fuente de
             antioxidantes.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Las vitaminas E y C, además de tener propiedades antioxidantes, contribuyen a prevenir el desarrollo de enfermedades
             cardiovasculares y controlar la concentración de colesterol en sangre.
             Aumenta el consumo de kiwi, fresas, naranja, limón, guayaba, pimiento rojo, jitomate, fresa, grosella, perejil, col de
@@ -104,41 +104,41 @@ export default class HealtyHeart extends Component {
           </Text>)}
           styleContainerTitle={{backgroundColor: 'white'}}
           borderColor='white' colorIcon='black'>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Se recomienda aumentar el consumo de:
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Leguminosas ya que al ser una proteína de excelente calidad con poca grasa favorecen a controlar los niveles de
             colesterol en sangre. Hervidas o cocidas al vapor. No fritas.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Vegetales y hojas verdes frescos por su alto contenido en fibra, vitaminas y minerales.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Granos integrales su contenido rico en fibra ayuda al cuerpo a reducir la absorción de grasas.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             ¡Cuidado! la comida de restaurante tiene muchas calorías, sodio y grasas poco saludables. Elige comida casera y si vas a
             un restaurante es preferible pedir ensalada y proteína magra a la plancha. Otros métodos de cocción, generalmente
             incluyen manteca o margarina para potencializar el sabor de los alimentos, evita estos platillos.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             A pesar de que las frutas y las verduras son muy benéficas para tu corazón, evita consumirlas en las siguientes
             presentaciones:
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Verduras con salsas cremosas
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Verduras fritas o rebozadas
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Frutas enlatadas y conservadas en jarabe
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Frutas congeladas con azúcar agregada
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Disminuye al máximo el consumo de bebidas alcohólicas en especial los digestivos, bebidas con jarabes o altas en azúcar.
           </Text>
         </Panel>
@@ -150,16 +150,16 @@ export default class HealtyHeart extends Component {
           </Text>)}
           styleContainerTitle={{backgroundColor: 'white'}}
           borderColor='white' colorIcon='black'>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             La cantidad de lo que comes, es tan importante como la calidad y el equilibrio de los alimentos.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Come porciones más grandes de alimentos bajos en calorías y de buena calidad nutrimental, como verduras y frutas;
             come porciones más pequeñas de alimentos con alto contenido de calorías y de sodio, como las comidas rápidas,
             refinadas o procesadas.
           </Text>
-          <Text style={styles.isGinoraFontRegular}>
-            Para controlar el tamaño de tus porciones te mostramos Alchemy Plate, una herramienta en donde podrás crear tu
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            Para controlar el tamaño de tus porciones te mostramos <Text style={[styles.isAdamFontRegular]}>ALCHE<Text style={[styles.isBold]}>MY</Text>PLATE</Text>, una herramienta en donde podrás crear tu
             propio plato de acuerdo al porcentaje recomendado de cada grupo de alimentos.
           </Text>
         </Panel>

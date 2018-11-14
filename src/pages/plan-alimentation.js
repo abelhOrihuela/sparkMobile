@@ -79,7 +79,7 @@ Lo ideal es variar y rotar los productos que consumes para tener una mayor gama 
         </Text>
         <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>
           La cantidad de lo que comes, es tan importante como la calidad y el equilibrio de tus alimentos.
-Para controlar el tamaño de tus porciones, te mostramos el Alchemy Plate. En él podrás crear tu propio plato de acuerdo con el porcentaje recomendado de cada grupo de alimentos.
+Para controlar el tamaño de tus porciones, te mostramos el <Text style={[styles.isAdamFontRegular]}>ALCHE<Text style={[styles.isBold]}>MY</Text>PLATE</Text>. En él podrás crear tu propio plato de acuerdo con el porcentaje recomendado de cada grupo de alimentos.
         </Text>
       </Page>
     )
