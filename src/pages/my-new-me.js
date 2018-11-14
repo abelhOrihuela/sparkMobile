@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, FlatList, StyleSheet, Platform, Modal, Dimensions, ImageBackground, Image, ScrollView } from 'react-native'
+import { Text, View, TouchableOpacity, AsyncStorage, FlatList, StyleSheet, Platform, Modal, Dimensions, ImageBackground, Image, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios'
 import blood from '../Quimica.png'
@@ -20,6 +20,11 @@ import suplementacionBg from '../suplementacion-fondo.png'
 import ejercicioBg from '../ejercicio-fondo.jpg'
 import styles from 'app/src/pages/styles'
 const {width} = Dimensions.get('window')
+import { Constants, LinearGradient } from 'expo'
+import { get } from 'lodash'
+import Conditions from 'app/src/catalogs/conditions'
+
+import diabetesIcon from '../images/diabetes-icon.png'
 
 const takeActions = [
   {title: 'NUTRICIÓN', img: nutritionBg, icon: iconNutrition, style: 'nutritionOverlay', section: 'Nutrition'},
@@ -53,12 +58,14 @@ class MyNewMe extends Component {
     this.state = {
       notifications: [],
       showRiskIndexModal: false,
+      currentOrder: {},
       reports: []
     }
   }
 
   componentWillMount () {
     this.loadMyNewMe()
+    this.loadMe()
   }
 
   async loadMyNewMe () {
@@ -66,6 +73,17 @@ class MyNewMe extends Component {
       let body = await api.get('/customers/reports')
       this.setState({
         reports: body.data.data
+      })
+    } catch (e) {
+      alert('Error' + e.message)
+    }
+  }
+
+  async loadMe () {
+    try {
+      let me = JSON.parse(await AsyncStorage.getItem('me'))
+      this.setState({
+        currentOrder: me.currentOrder
       })
     } catch (e) {
       alert('Error' + e.message)
@@ -99,7 +117,12 @@ class MyNewMe extends Component {
   }
 
   render () {
-    let { showRiskIndexModal } = this.state
+    let { showRiskIndexModal, currentOrder } = this.state
+
+    const riskKey = get(currentOrder, 'riskIndex.key')
+    const riskIndex = get(currentOrder, 'riskIndex.value', 0.5)
+
+    const condition = Conditions[riskKey] || {}
 
     let title = (<Text style={[{color: 'white'}, styles.isAdamFontRegular]}>
       <Text style={[{fontWeight: 'bold'}]}>
@@ -114,14 +137,38 @@ class MyNewMe extends Component {
       <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
         <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
           <Text style={[styles.isGinoraFontRegular, {flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo:
-            <Text style={{color: 'white', fontWeight: 'bold'}}>
-              Diabetes
-            </Text>
+            <Text style={{color: 'white', fontWeight: 'bold'}}> {condition.label}</Text>
           </Text>
           <TouchableOpacity
             onPress={() => this.setModalVisible(!showRiskIndexModal)}>
             <Icon name='minus' size={20} color='#FFFFFF' />
           </TouchableOpacity>
+        </View>
+
+        <View style={[styles.isFlex1, styles.isMargin]}>
+          <View style={[styles.isLineHeight20, styles.centered]}>
+            <Image style={[{ width: 50, height: 57 }, styles.isMargin]} source={condition.icon} />
+            <Text style={[styles.fontBlack18, styles.isGinoraFontBold, styles.textCenter]}>
+            Déjanos tus datos , tu mensaje y nuestros asesores se encargarán de comunicarse contigo para responder todas tus dudas.
+            </Text>
+          </View>
+          <View style={styles.isMargin}>
+            <Text style={[styles.textCenter, styles.isGinoraFontBold, {color:'#009AA7', fontSize: 18}]}>NIVEL</Text>
+            <Text style={[styles.textCenter, styles.isGinoraFontBold, {color:'#009AA7', fontSize: 48}]}>{(riskIndex * 10).toFixed(2)}%</Text>
+          </View>
+
+          <LinearGradient
+            colors={['#d12134', '#7B6F94', '#2be1f1']}
+            start={{x: 0.0, y: 1.0}}
+            end={{x: 1.0, y: 1.0}}
+            locations={[0, riskIndex, 1]}
+            style={{ height: 10}}
+          />
+
+          <View style={[styles.isFlex, {flexDirection: 'row', justifyContent: 'space-between'}]}>
+            <Text>En riesgo</Text>
+            <Text>Saludable</Text>
+          </View>
         </View>
       </View>
     </ModalContainer>)
@@ -130,7 +177,7 @@ class MyNewMe extends Component {
       {modal}
       <View style={[stylesMyNewMe.headerRiskIndex]}>
         <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular]}>
-          Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>Diabetes</Text>
+          Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
         </Text>
         <TouchableOpacity
           style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
