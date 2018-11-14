@@ -12,11 +12,11 @@ import {
 import styles from 'app/src/pages/styles'
 import Page from 'app/src/components/page'
 import header from 'app/src/nutricion-fondo.jpg'
-import SmartDiet from 'app/src/pages/nutrition/smart-diet'
-import HealtyHeart from 'app/src/pages/nutrition/healty-heart'
-import SweetCare from 'app/src/pages/nutrition/sweet-care'
-import HappyShape from 'app/src/pages/nutrition/happy-shape'
-import LongLife from 'app/src/pages/nutrition/long-life'
+import SmartDiet from 'app/src/pages/nutrition/plate/smart-diet'
+import HealtyHeart from 'app/src/pages/nutrition/plate/healty-heart'
+import SweetCare from 'app/src/pages/nutrition/plate/sweet-care'
+import HappyShape from 'app/src/pages/nutrition/plate/happy-shape'
+import LongLife from 'app/src/pages/nutrition/plate/long-life'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import _ from 'lodash'
@@ -57,6 +57,7 @@ export default class AlchemyPlate extends Component {
       loading: false
     })
   }
+
   render () {
     let {loading, currentOrder} = this.state
     let riskIndex = _.get(currentOrder, 'riskIndex', null)

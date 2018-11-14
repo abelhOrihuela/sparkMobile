@@ -1,8 +1,6 @@
 import { DrawerNavigator, StackNavigator } from 'react-navigation'
 import Dashboard from '../pages/dashboard'
-import Todo from '../pages/todo'
 import Profile from '../pages/profile'
-import Notifications from '../pages/notifications'
 import Reports from '../pages/reports-list'
 import MyNewMe from '../pages/my-new-me'
 import ReportDetail from '../pages/reports-detail'
@@ -15,12 +13,15 @@ import SuplementationDetail from '../pages/suplementation/detail'
 import SuplementatioIntestinal from '../pages/suplementation/intestinal'
 import Longevity from '../pages/longevity'
 import Lifestyle from '../pages/lifestyle'
-import Logout from '../pages/logout'
+
 import Nutrition from '../pages/nutrition/index'
-import AlchemyPlate from '../pages/nutrition/plate'
-import PlanAlimentation from '../pages/plan-alimentation'
+import PlanAlimentation from '../pages/nutrition/plan/index'
+import AlchemyPlate from '../pages/nutrition/plate/index'
+
 import TipsNutrition from '../pages/tips-nutrition'
 import TipsDetail from '../pages/tips-detail'
+
+import Logout from '../pages/logout'
 
 // const StackNotifications = StackNavigator({
 //   Notifications: { screen: Notifications },
@@ -35,19 +36,24 @@ const StackMyNewMe = StackNavigator({
   Home: {screen: Dashboard},
   Reports: { screen: Reports },
   ReportDetail: {screen: ReportDetail},
+
   MyNewMe: { screen: MyNewMe },
+
   Nutrition: {screen: Nutrition},
+  PlanAlimentation: {screen: PlanAlimentation},
   AlchemyPlate: {screen: AlchemyPlate},
+
   Exercise: {screen: Exercise},
   ExerciseDetail: {screen: ExerciseDetail},
   ExerciseTypes: {screen: ExerciseTypes},
+
   Suplementation: {screen: Suplementation},
   SuplementationActivities: {screen: SuplementationActivities},
   SuplementationDetail: {screen: SuplementationDetail},
   SuplementatioIntestinal: {screen: SuplementatioIntestinal},
+
   Longevity: {screen: Longevity},
   Lifestyle: {screen: Lifestyle},
-  PlanAlimentation: {screen: PlanAlimentation},
   TipsNutrition: {screen: TipsNutrition},
   TipsDetail: {screen: TipsDetail}
 }, {

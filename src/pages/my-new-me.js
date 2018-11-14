@@ -105,7 +105,7 @@ class MyNewMe extends Component {
       <View style={[stylesMyNewMe[item.style], {height: 150}]} />
       <View style={[stylesMyNewMe.icons]}>
         <Image source={icon} style={{height: 70, width: 60}} />
-        <Text style={{color: 'white', textAlign: 'center'}}>{item.title}</Text>
+        <Text style={[styles.fontWhite16, styles.textCentered, styles.isGinoraFontRegular, styles.isMarginSmall]}>{item.title}</Text>
       </View>
     </TouchableOpacity>)
   }
@@ -124,7 +124,7 @@ class MyNewMe extends Component {
 
     const condition = Conditions[riskKey] || {}
 
-    let title = (<Text style={[{color: 'white'}, styles.isAdamFontRegular]}>
+    let title = (<Text style={[styles.fontWhite18, styles.isAdamFontRegular]}>
       <Text style={[{fontWeight: 'bold'}]}>
         MY
       </Text>
@@ -176,7 +176,7 @@ class MyNewMe extends Component {
     return (<Page>
       {modal}
       <View style={[stylesMyNewMe.headerRiskIndex]}>
-        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular]}>
+        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>
           Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
         </Text>
         <TouchableOpacity
