@@ -12,10 +12,10 @@ import {
   Dimensions
 } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
-import VideoContainer from '../components/video'
 import ModalContainer from '../components/modal'
 import api from '../core/api'
-import logoWhite from '../logoWhite.png'
+import logoWhite from 'app/src/images/logo-white.png'
+
 import people from '../people.png'
 import logo from '../logo.png'
 import myNewMeBg from '../my-new-me-fondo.jpg'
@@ -128,10 +128,10 @@ export default class Dashboard extends Component {
     let modalOne = modalIntro ? (<ModalContainer
       visible={modalIntro}>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
-        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontRegular]}>Bienvenido a</Text>
+        <Image source={logoWhite} resizeMode='contain' style={{width: 200}}/>
       </View>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
-        <Image source={logoWhite} />
+        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontRegular]}>Bienvenido a</Text>
       </View>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>

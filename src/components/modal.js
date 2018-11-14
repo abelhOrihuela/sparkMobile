@@ -11,7 +11,7 @@ const {height, width} = Dimensions.get('window')
 
 export default class ModalContainer extends Component {
   handleClose () {
-    alert('Modal has been closed.')
+    // alert('Modal has been closed.')
   }
   render () {
     let styleCustom = {
