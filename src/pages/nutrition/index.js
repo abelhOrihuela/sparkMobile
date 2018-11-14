@@ -62,8 +62,25 @@ class Nutrition extends Component {
             styleContainerTitle={{backgroundColor: '#B9163B'}}
             borderColor='#B9163B'
             colorIcon='#FFFFFF'>
-            <Text style={[styles.isGinoraFontRegular, styles.isLineHeight18]}>
-              Para conservar o alcanzar un estado óptimo de salud, es indispensable que tu alimentación cumpla con ciertos requerimientos generales, entre los que destacan: incluir todos los macronutrimentos (hidratos de carbono, proteína, grasas) y micronutrimentos (minerales y vitaminas); ser variada y balanceada en cuanto a tipos de alimentos; contar con una adecuada densidad nutricional, y de preferencia, que predominen los alimentos no procesados y de buena calidad. También es importante que comas de acuerdo a tus gustos y bioindividualidad, que considera: tu sexo, etapa de vida, características fisiológicas y creencias personales. Los requerimientos deben adaptarse a situaciones especiales de salud o enfermedad, predisposición genética, perfil de microbiota y sensibilidades alimentarias. Para que puedas alcanzar tu máximo potencial energético, físico y mental, debemos conocer cuáles son las áreas de oportunidad que pueden optimizar tu bienestar. Los take action de alimentación están basados en los factores de riesgo que desciframos y determinamos de acuerdo a la integración de tus análisis. Recuerda que una nutrición adecuada ayudará a mejorar tu estado de salud actual y reducir el riesgo a desarrollar enfermedades. placer y aporta vitalidad.
+            <Text style={[styles.isGinoraFontRegular, styles.isLineHeight18, styles.isMarginSmallTopBottom]}>
+              Para conservar o alcanzar un estado óptimo de salud, es indispensable que tu alimentación cumpla con ciertos
+              requerimientos generales, entre los que destacan: incluir todos los macronutrimentos (hidratos de carbono, proteína,
+              grasas) y micronutrimentos (minerales y vitaminas); ser variada y balanceada en cuanto a tipos de alimentos; contar con
+              una adecuada densidad nutricional, y de preferencia, que predominen los alimentos no procesados y de buena calidad.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isLineHeight18, styles.isMarginSmallTopBottom]}>
+              También es importante que comas de acuerdo a tus propios gustos y a tu bioindividualidad, la cual contempla: tu sexo,
+              etapa de vida, características fisiológicas y creencias personales. Los requerimientos deben adaptarse a situaciones
+              especiales de salud o enfermedad, predisposición genética, perfil de microbiota y sensibilidades alimentarias. Para que
+              puedas alcanzar tu máximo potencial energético, físico y mental.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isLineHeight18, styles.isMarginSmallTopBottom]}>
+              Por lo anterior, los take action de alimentación están basados en el área de oportunidad que desciframos y
+              determinamos de acuerdo a la integración de tus análisis.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isLineHeight18, styles.isMarginSmallTopBottom]}>
+              Recuerda que una nutrición adecuada ayudará a mejorar tu estado de salud actual y reducir el riesgo a desarrollar
+              enfermedades.
             </Text>
           </Panel>
 
