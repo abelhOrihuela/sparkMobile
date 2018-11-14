@@ -8,11 +8,25 @@ import {
 import styles from 'app/src/pages/styles'
 
 import header from 'app/src/nutricion-fondo.jpg'
+import Panel from 'app/src/components/panel'
 
 export default class SmartDiet extends Component {
   render () {
     return (
       <View style={{flex: 1}}>
+        <Panel
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'white'}, styles.isGinoraFontRegular]}>
+          PRODUCTOS NATURALES Y FRESCOS
+          </Text>)}
+          styleContainerTitle={{backgroundColor: '#16314E'}}
+          borderColor='#16314E' colorIcon='white'>
+          <Text style={styles.isGinoraFontRegular}>
+            Cuida la calidad de los productos que eliges: inclínate por comprar y consumir alimentos naturales, frescos, sin aditivos
+            ni conservadores; evita comer o tomar productos procesados y con ingredientes refinados como azúcar, edulcorantes,
+            harinas.
+          </Text>
+        </Panel>
         <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>Plan de Alimentación SMART DIET</Text>
         <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>La Smart Diet es perfecta para impulsar el bienestar de personas sanas y sin ninguna enfermedad o condición especial, ¡cómo tú! </Text>
         <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>Este tipo de alimentación es equilibrada, variada y contiene una elevada dosis de antioxidantes.</Text>

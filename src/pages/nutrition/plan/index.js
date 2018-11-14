@@ -80,7 +80,8 @@ export default class PlanAlimentation extends Component {
     } else if (riskIndex.key === 'longevity') {
       content = <LongLife data={riskIndex} />
     }
-    console.log('riskIndex.key', riskIndex.key);
+
+    content = <HealtyHeart data={riskIndex} />
 
     return (
       <Page style={[styles.isPaddingless]}>
