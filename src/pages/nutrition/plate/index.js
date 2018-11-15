@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import styles from 'app/src/pages/styles'
 import Page from 'app/src/components/page'
-import header from 'app/src/nutricion-fondo.jpg'
+import bgMyPlate from 'app/src/images/bg-my-plate.jpg'
 import SmartDiet from 'app/src/pages/nutrition/plate/smart-diet'
 import HealtyHeart from 'app/src/pages/nutrition/plate/healty-heart'
 import SweetCare from 'app/src/pages/nutrition/plate/sweet-care'
@@ -81,9 +81,11 @@ export default class AlchemyPlate extends Component {
       content = <LongLife data={riskIndex} />
     }
 
+    content = <HappyShape data={riskIndex} />
+
     return (
       <Page style={[styles.isPaddingless]}>
-        <ImageBackground style={[{height: 85}, styles.flexCentered, styles.hasShadow1]} source={header}>
+        <ImageBackground style={[{height: 85}, styles.flexCentered, styles.hasShadow1]} source={bgMyPlate}>
           <View style={[{height: 85, backgroundColor: '#911E38'}, styles.isOverlay, styles.isOpacity50]} />
           <Text style={[styles.textCentered, styles.fontWhite20]}>
             <Text style={[styles.isAdamFontRegular]}>ALCHE<Text style={styles.isBold}>MY</Text>PLATE</Text>
@@ -107,7 +109,7 @@ export default class AlchemyPlate extends Component {
           <Text style={[styles.isMarginSmall, styles.isLineHeight20, styles.isGinoraFontRegular]}>
             Te presentamos un gráfico personalizado que, basándose en tu factor de riesgo más alto, te indica la distribución de nutrimentos (proteínas, hidratos de carbono y lípidos) ideal para tu dieta.
           </Text>
-          
+
           <Text style={[styles.isMarginSmall, styles.isLineHeight20, styles.isGinoraFontRegular]}>
             El plato es orientativo de la combinación y cantidad de alimentos que te sugerimos incluir en cada tiempo de comida.
           </Text>
