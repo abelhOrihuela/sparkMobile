@@ -51,7 +51,7 @@ export default class HealtyHeart extends Component {
           </Text>
 
           <View style={[styles.centered, styles.isMargin]}>
-            <Image resizeMode='contain' style={[{ width: 300, height: 300 }]} source={condition.plate} />
+            <Image resizeMode='contain' style={[{ width: 400, height: 400 }]} source={condition.plate} />
           </View>
         </View>
       </View>
