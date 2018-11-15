@@ -81,6 +81,8 @@ export default class AlchemyPlate extends Component {
       content = <LongLife data={riskIndex} />
     }
 
+    content = <HappyShape data={riskIndex} />
+
     return (
       <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[{height: 85}, styles.flexCentered, styles.hasShadow1]} source={bgMyPlate}>
