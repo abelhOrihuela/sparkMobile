@@ -64,7 +64,7 @@ class BaseForm extends Component {
     const Model = t.struct(this.props.type)
 
     let label = this.props.label ? this.props.label : 'Guardar'
-    console.log('t.form.Form.stylesheet', t.form.Form.stylesheet)
+    
     return (
       <View style={styles.container}>
         <Form type={Model}

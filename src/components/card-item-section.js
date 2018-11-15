@@ -11,7 +11,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 export default class CardItemSection extends Component {
   goToSection () {
-    this.props.navigation.navigate(this.props.to)
+    let {params} = this.props || {}
+    this.props.navigation.navigate(this.props.to, params)
   }
   render () {
     return (

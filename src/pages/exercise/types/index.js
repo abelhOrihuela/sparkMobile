@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
@@ -16,9 +16,11 @@ import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
 let height = 215
 import { Card } from 'react-native-elements'
+import Cardiovascular from 'app/src/pages/exercise/types/cardiovascular'
+import Diabetes from 'app/src/pages/exercise/types/diabetes'
 
 import styles from 'app/src/pages/styles'
-class ExerciseDetail extends Component {
+class ExerciseTypes extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Exercise',
@@ -48,15 +50,23 @@ class ExerciseDetail extends Component {
   }
 
   render() {
-    let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
-    </View>)
+    const { navigation } = this.props
+    const currentOrder = navigation.getParam('currentOrder', null)
+    let {key} = currentOrder.riskIndex
+
+    let content
+
+    if (key === 'cardiovascular') {
+      content = <Cardiovascular />
+    }
+
+    content = <Diabetes />
     return (
       <Page style={[styles.isPaddingless]}>
-
+        {content}
       </Page>
     )
   }
 }
 
-export default ExerciseDetail
+export default ExerciseTypes
