@@ -136,7 +136,7 @@ class MyNewMe extends Component {
       visible={showRiskIndexModal}>
       <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
         <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
-          <Text style={[styles.isGinoraFontRegular, {flex: 4, color: 'white', alignItems: 'center'}]}>Factor de riesgo:
+          <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>Factor de riesgo:
             <Text style={{color: 'white', fontWeight: 'bold'}}> {condition.label}</Text>
           </Text>
           <TouchableOpacity
