@@ -11,6 +11,7 @@ import iconExercise from 'app/src/icon-exercise.png'
 import iconExerciseRun from 'app/src/icon-exercise-run.png'
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
+import Suggestions from 'app/src/components/suggestions'
 import CardItemSection from 'app/src/components/card-item-section'
 import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
@@ -77,6 +78,7 @@ class Detail extends Component {
           Si nuestro equipo de expertos determina la necesidad de incluir complementos y/o suplementos (vitaminas, minerales,
           antioxidantes, prebióticos y probióticos), se te darán recomendaciones en cuanto a tipo, cantidad y dosis.
         </Text>
+        <Suggestions {...this.props} section='health' tags='supplementation' />
       </View>
     )
   }

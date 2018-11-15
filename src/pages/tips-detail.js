@@ -55,9 +55,10 @@ class TipsDetail extends Component {
   render () {
     const { navigation } = this.props
     const suggestion = navigation.getParam('suggestion', null);
+    const section = navigation.getParam('section', null);
     let {loading, token} = this.state
 
-    let url = `${appHost}/suggestions/${suggestion.uuid}?token=${token}&isNative=1`
+    let url = `${appHost}/suggestions/${section}/${suggestion.uuid}?token=${token}&isNative=1`
 
     if (loading) {
       return <ActivityIndicator size='large' />

@@ -42,7 +42,6 @@ class Longevity extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
           Salud Óptima
         </Text>
