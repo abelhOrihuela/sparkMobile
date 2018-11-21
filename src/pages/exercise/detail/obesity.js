@@ -49,7 +49,6 @@ class Cardiovascular extends Component {
           En tu caso, el ejercicio se vuelve crucial para mantener tu cuerpo en condiciones óptimas de salud.
         </Text>
 
-
         <Panel
           style={styles.isMarginSmall}
           title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
@@ -92,7 +91,6 @@ class Cardiovascular extends Component {
           </Text>
         </Panel>
 
-
         <Panel
           style={styles.isMarginSmall}
           title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
@@ -105,7 +103,6 @@ class Cardiovascular extends Component {
             lograr esto, busca entrenamientos que disfrutes y en los que te sientas cómodo(a) practicando.
           </Text>
         </Panel>
-
 
         <Panel
           style={styles.isMarginSmall}
@@ -120,7 +117,6 @@ class Cardiovascular extends Component {
             excesivamente y escoger alimentos que den saciedad, pero que no te aporten suficientes nutrimentos.
           </Text>
         </Panel>
-
 
       </View>
     )

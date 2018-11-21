@@ -42,13 +42,13 @@ class Cardiovascular extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
+
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold]}>
           Ejercicio para área de oportunidad Diabetes
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           En tu caso, el tipo de ejercicio que realices debe de contribuir a regular los niveles de azúcar en tu sangre.
         </Text>
-
 
         <Panel
           style={styles.isMarginSmall}
@@ -86,7 +86,6 @@ class Cardiovascular extends Component {
           </Text>
         </Panel>
 
-
         <Panel
           style={styles.isMarginSmall}
           title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
@@ -111,7 +110,6 @@ class Cardiovascular extends Component {
             Y que no dejes pasar mucho tiempo entre tu entrenamiento y tu siguiente comida.
           </Text>
         </Panel>
-
 
       </View>
     )

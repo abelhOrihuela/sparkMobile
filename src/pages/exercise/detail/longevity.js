@@ -42,6 +42,7 @@ class Longevity extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
+
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
           Salud Óptima
         </Text>
@@ -57,7 +58,6 @@ class Longevity extends Component {
           De acuerdo con tu edad, toma a consideración la siguiente información. Te permitirá alcanzar un estado de longevidad
           ideal y una calidad de vida extraordinaria.
         </Text>
-
 
         <Panel
           style={styles.isMarginSmall}
@@ -113,8 +113,6 @@ class Longevity extends Component {
             después recuperarse por 90 segundos. Y repetir el ciclo hasta alcanzar un periodo de ejercicio de 20 a 30 minutos.
           </Text>
         </Panel>
-
-
 
         <Panel
           style={styles.isMarginSmall}

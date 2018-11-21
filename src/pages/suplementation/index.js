@@ -92,12 +92,14 @@ class Suplementation extends Component {
             colorIcon='#1E1B5D'
             to='SuplementatioIntestinal' />
 
-          <CardTips
-            style={styles.isMarginSmallTopBottom}
-            {...this.props}
-            img={header}
-            title='Tips de Salud Preventiva'
-            to='TipsNutrition' />
+          {
+            // <CardTips
+            //   style={styles.isMarginSmallTopBottom}
+            //   {...this.props}
+            //   img={header}
+            //   title='Tips de Salud Preventiva'
+            //   to='TipsNutrition' />
+          }
 
         </View>
       </Page>

@@ -66,7 +66,6 @@ class Cardiovascular extends Component {
           Algunos ejercicios cardiovasculares recomendados para tu área de oportunidad: caminatas, nadar, subir escaleras y
           andar en bici. Todo con una intensidad de baja a media y sin hacer picos de esfuerzo.
         </Text>
-
       </View>
     )
   }

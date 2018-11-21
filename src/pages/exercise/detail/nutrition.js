@@ -54,7 +54,6 @@ class Nutrition extends Component {
           tus hábitos de actividad física.
         </Text>
 
-
         <Panel
           style={styles.isMarginSmall}
           title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>

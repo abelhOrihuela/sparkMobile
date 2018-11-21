@@ -42,14 +42,15 @@ class Cardiovascular extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
+
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
           Ejercicio para área de oportunidad Cardiovascular
         </Text>
+        
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Recuerda que los problemas cardiovasculares suelen estar vinculados con una acumulación de grasa en arterías. Por lo
           que es indispensable hacer ejercicio para mantener un peso adecuado.
         </Text>
-
 
         <Panel
           style={styles.isMarginSmall}
@@ -95,7 +96,6 @@ class Cardiovascular extends Component {
           </Text>
         </Panel>
 
-
         <Panel
           style={styles.isMarginSmall}
           title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
@@ -111,7 +111,6 @@ class Cardiovascular extends Component {
             hacer estiramientos profundos. Para esto, tomar una clase de yoga, pilates reformer o streching resulta una gran opción.
           </Text>
         </Panel>
-
 
       </View>
     )
