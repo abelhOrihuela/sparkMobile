@@ -12,7 +12,7 @@ class Panel extends Component {
     super(props)
     this.state = {
       title: props.title,
-      expanded: true,
+      expanded: false,
       animation: new Animated.Value()
     }
   }
