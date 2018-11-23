@@ -18,6 +18,9 @@ export default class Layout extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10
+    marginTop: 10,
+    marginBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10
   }
 })

@@ -79,7 +79,7 @@ class Exercise extends Component {
 
 
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={ejercicioBg} />
         <View style={[{ height: height, backgroundColor: '#DC6B18'}, styles.isOverlay, styles.isOpacity50]} />
 
