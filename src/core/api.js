@@ -1,6 +1,8 @@
 import {AsyncStorage} from 'react-native'
 
 import axios from 'axios'
+// import qs from 'querystring'
+
 // const host = 'https://b34fa2ab.ngrok.io/api'
 const host = 'https://api.dev.ac.commonsense.io/api'
 
@@ -15,7 +17,9 @@ async function get (url, body) {
     }
   })
 
-  return instance.get(`${host}${url}`, body)
+
+
+  return instance.get(`${host}${url}`)
 }
 
 async function post (url, body) {

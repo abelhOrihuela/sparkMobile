@@ -12,6 +12,7 @@ import iconExerciseRun from 'app/src/icon-exercise-run.png'
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
+import Suggestions from 'app/src/components/suggestions'
 import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
 let height = 215
@@ -55,6 +56,7 @@ class Activities extends Component {
           A continuación, se te recomiendan algún (os) estudio (s) complementario (s) que consideramos necesario que realices
           para dar seguimiento a alguna área específica de tu salud.
         </Text>
+        <Suggestions {...this.props} section='health' tags='activities' />
       </View>
     )
   }
