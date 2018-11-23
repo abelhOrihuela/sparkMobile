@@ -41,7 +41,7 @@ export default class TipsNutrition extends Component {
 
   async load () {
     try {
-      let body = await api.get('/customers/suggestions')
+      let body = await api.get('/customers/suggestions/nutrition')
       this.setState({
         items: body.data.data
       })

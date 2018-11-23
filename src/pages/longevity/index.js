@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/nutricion-fondo.jpg'
+import header from 'app/src/images/longevidad-tips.png'
+import headerLongevidad from 'app/src/images/longevidad-fondo.jpg'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
-import iconLongevity from 'app/src/icon-suplementacion.png'
 import iconIntestinal from 'app/src/icon-salud-intestinal.png'
-import iconHealthLongevity from 'app/src/icon-salud-suplementacion.png'
+
+import iconAntiaging from 'app/src/icon-antiaging.png'
+import iconAntioxidants from 'app/src/icon-antioxidantes.png'
+
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
@@ -48,14 +51,16 @@ class Longevity extends Component {
 
   render() {
     let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
     </View>)
     return (
       <Page style={[styles.isPaddingless]}>
-        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
+        <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={headerLongevidad} />
         <View style={[{ height: height, backgroundColor: '#715200'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, stylesNutrition.title]}>LONGEVIDAD</Text>
+          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
+            LONGEVIDAD
+          </Text>
           <Panel
             title={title}
             style={styles.isMarginSmallTopBottom}
@@ -63,43 +68,33 @@ class Longevity extends Component {
             borderColor='#A78220'
             colorIcon='#FFFFFF'>
             <Text>
-              La Organización Mundial de la Salud (OMS) define al envejecimiento saludable como la capacidad de hacer, durante el mayor tiempo posible, las cosas que disfrutamos. El concepto de vejez saludable incluye tres componentes principales: baja probabilidad de padecer enfermedades, elevada capacidad funcional física y cognitiva y mantener una vida activa en la sociedad.” Es importante considerar que nuestros hábitos actuales influyen en la manera en la que vivimos nuestras últimas décadas de vida. Es por eso que conocer nuestro código genético puede darnos información relevante para tomar decisiones preventivas a favor de nuestra salud. En ALCHEMYCODE medimos las variantes genéticas vinculadas a envejecimiento y longevidad. Tener una vejez sana después de los 75 años está directamente relacionada con el tamaño en los telómeros (extremos de los cromosomas) y la capacidad antioxidante de nuestras células.
+              El envejecimiento es el resultado de alteraciones celulares debidas a la acumulación de radicales libres. Los radicales
+              libres oxidan nuestras células y ocasionan daños que afectan a nuestros tejidos, en especial en la piel; pero también los
+              órganos se ven afectados, originando algunas de las enfermedades crónicas que se asocian a la
+              vejez. Los antioxidantes son sustancias químicas que ayudan a detener o limitar el daño causado por los radicales libres,
+              protegiendo y en ocasiones contrarrestando algunos de los procesos de oxidación.
+            </Text>
+            <Text>
+              Aunque envejecer es una consecuencia natural de los procesos fisiológicos del organismo, hoy en día los malos hábitos,
+              la contaminación, la falta de densidad nutrimental en los alimentos que consumimos y el estrés, están acelerando este
+              proceso.
             </Text>
           </Panel>
 
-
-          <CardItemSection
-            style={[styles.isMarginSmallTopBottom]}
-            {...this.props}
-            icon={iconHealthLongevity}
-            title='Actividades y estudios'
-            colorIcon='#A78220'
-            subtitle='Recomendados para tu factor de riesgo'
-            to='PlanAlimentation' />
-
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
             {...this.props}
-            icon={iconLongevity}
-            title='Suplementación'
-            subtitle='Lo que te hace bien el tu día a día.'
+            icon={iconAntioxidants}
+            title='Envejecimiento saludable'
+            subtitle='Incrementa tu vitalidad.'
             colorIcon='#A78220'
-            to='AlchemyPlate' />
-
-        <CardItemSection
-            style={styles.isMarginSmallTopBottom}
-            {...this.props}
-            icon={iconIntestinal}
-            title='Salud intestinal'
-            subtitle='Lo que te hace bien el tu día a día.'
-            colorIcon='#A78220'
-            to='AlchemyPlate' />
+            to='LongevityAntioxidants' />
 
           <CardTips
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={header}
-            title='Tips de Salud Preventiva'
+            title='Tips de Longevidad'
             to='TipsNutrition' />
 
         </View>

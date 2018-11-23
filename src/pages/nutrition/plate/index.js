@@ -98,7 +98,7 @@ export default class AlchemyPlate extends Component {
 
           <View style={[styles.isMarginSmall, styles.isMarginlessTop, { borderBottomColor: '#D5D5D5', borderBottomWidth: 1 }]}>
             <Text style={[styles.doubleMarginTopBottom, styles.isLineHeight20, styles.fontGray16, styles.isGinoraFontRegular]}>
-              Una herramienta que te sirve en el día a día.
+              La guía para diseñar tus comidas.
             </Text>
           </View>
 
@@ -115,7 +115,9 @@ export default class AlchemyPlate extends Component {
           </Text>
 
           <Text style={[styles.isMarginSmall, styles.isLineHeight20, styles.isGinoraFontRegular]}>
-            Los ingredientes de las listas fueron seleccionados por su calidad y variedad. Va a resultarte muy fácil probar cosas nuevas todos los días y con la alimentación que se te recomienda, lograr un estado óptimo de bienestar.
+            Los ingredientes de las listas fueron seleccionados por su calidad y variedad. Ahora tienes muchas opciones para crear
+            tus comidas diarias, por lo que va a resultarte muy fácil probar cosas nuevas. Con la alimentación que se te recomienda
+            estamos seguros de que vas a lograr un estado óptimo de bienestar.
           </Text>
         </View>
         {content}

@@ -1,7 +1,7 @@
 import React from 'react'
 import {AsyncStorage, Text, View, StyleSheet, ImageBackground, Image} from 'react-native'
-import background from 'app/src/bg.png'
-import logo from '../images/logo.png'
+import background from 'app/src/images/textura.png'
+import logo from 'app/src/images/logo.png'
 
 class Splash extends React.Component {
   static navigationOptions = {

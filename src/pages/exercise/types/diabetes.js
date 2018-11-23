@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native'
+import React, { Component } from 'react';
+import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
@@ -14,21 +14,14 @@ import Panel from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
 import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
-let height = 215
 import { Card } from 'react-native-elements'
-
 import styles from 'app/src/pages/styles'
-class ExerciseTypes extends Component {
+
+let height = 215
+
+class Diabetes extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Exercise',
-      drawerIcon: () => (
-        <Icon name='file' size={20} color='#FFFFFF' />
-      ),
-
-      drawerLabel: () => {
-        return 'Exercise'
-      },
       headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
         }}>
@@ -36,7 +29,6 @@ class ExerciseTypes extends Component {
       </TouchableOpacity>)
     }
   }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -48,15 +40,19 @@ class ExerciseTypes extends Component {
   }
 
   render() {
-    let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
-    </View>)
     return (
-      <Page style={[styles.isPaddingless]}>
-
-      </Page>
+      <View style={styles.isMarginSmall}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
+          Tipos de ejercicio
+        </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+          Para tu condición los ejercicios cardiovasculares pueden resultar muy positivos. Este tipo de ejercicio ayuda a tu cuerpo
+          a utilizar mejor la insulina. Sobre todo, cuando logras aumentar la intensidad de tu entrenamiento a un nivel medio –
+          alto, en el que permites que tu cuerpo aproveche la glucosa de tu sangre como fuente de energía.
+        </Text>
+      </View>
     )
   }
 }
 
-export default ExerciseTypes
+export default Diabetes

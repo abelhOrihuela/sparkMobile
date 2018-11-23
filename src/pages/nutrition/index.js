@@ -54,7 +54,8 @@ class Nutrition extends Component {
     return (
       <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
-        <View style={stylesNutrition.nutritionOverlay} />
+        <View style={[{ height: height, backgroundColor: '#911E38'}, styles.isOverlay, styles.isOpacity50]} />
+
         <View style={[styles.isMargin]}>
           <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
             NUTRICIÓN
@@ -94,7 +95,7 @@ class Nutrition extends Component {
             icon={iconFish}
             title='Plan de alimentación'
             colorIcon='#911E38'
-            subtitle='Tu salud, en tus manos.'
+            subtitle='Nutrición personalizada.'
             to='PlanAlimentation' />
 
           <CardItemSection

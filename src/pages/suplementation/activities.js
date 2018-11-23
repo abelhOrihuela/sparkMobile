@@ -48,13 +48,14 @@ class Activities extends Component {
   }
 
   render() {
-    let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
-    </View>)
-    return (
-      <Page style={[styles.isPaddingless]}>
 
-      </Page>
+    return (
+      <View style={{flex: 1}}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
+          A continuación, se te recomiendan algún (os) estudio (s) complementario (s) que consideramos necesario que realices
+          para dar seguimiento a alguna área específica de tu salud.
+        </Text>
+      </View>
     )
   }
 }
