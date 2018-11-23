@@ -80,25 +80,13 @@ class Longevity extends Component {
               proceso.
             </Text>
           </Panel>
-          {
-            // <CardItemSection
-            //   style={[styles.isMarginSmallTopBottom]}
-            //   {...this.props}
-            //   icon={iconAntiaging}
-            //   title='Consejos anti-aging'
-            //   colorIcon='#A78220'
-            //   subtitle='Recomendados para tu factor de riesgo'
-            //   to='LongevitySuggestions' />
-          }
-
-
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             icon={iconAntioxidants}
-            title='Alimentos antioxidantes'
-            subtitle='Recomendados para tu factor de riesgo'
+            title='Envejecimiento saludable'
+            subtitle='Incrementa tu vitalidad.'
             colorIcon='#A78220'
             to='LongevityAntioxidants' />
 

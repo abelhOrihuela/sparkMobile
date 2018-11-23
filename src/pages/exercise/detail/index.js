@@ -55,8 +55,6 @@ class Index extends Component {
       content = <Longevity />
     }
 
-    content = <Longevity />
-
     return (<Page>
       {content}
     </Page>)

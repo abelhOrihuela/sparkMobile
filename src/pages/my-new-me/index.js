@@ -149,7 +149,7 @@ class MyNewMe extends Component {
           <View style={[styles.isLineHeight20, styles.centered]}>
             <Image style={[{ width: 50, height: 57 }, styles.isMargin]} source={condition.icon} />
             <Text style={[styles.fontBlack18, styles.isGinoraFontBold, styles.textCenter]}>
-            Déjanos tus datos , tu mensaje y nuestros asesores se encargarán de comunicarse contigo para responder todas tus dudas.
+              Esta escala mide el nivel de tu factor de riesgo / área de oportunidad
             </Text>
           </View>
           <View style={styles.isMargin}>
@@ -191,13 +191,20 @@ class MyNewMe extends Component {
         title={title}
         styleContainerTitle={{backgroundColor: '#16314E'}}
         borderColor='#16314E' colorIcon='white'>
-        <Text style={styles.isGinoraFontRegular}>
-          En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-          pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-          para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-          motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-          algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-          microbios que pueden ayudarnos a alcanzar un peso más saludable
+        <Text style={[styles.isGinoraFontRegular, styles.isMarginSmall]}>
+          Este programa se generó integrando la
+          información de tus Reportes Específicos junto con el Reporte
+          Integrado.
+        </Text>
+        <Text style={[styles.isGinoraFontRegular, styles.isMarginSmall]}>
+          El propósito de My New Me es darte recomendaciones únicas enfocadas en el factor de riesgo y/o áreas
+          de oportunidad que detectamos prioritario. Es fundamental conocer qué aspectos pueden
+          tener más impacto para optimizar tu bienestar.
+        </Text>
+        <Text style={[styles.isGinoraFontRegular, styles.isMarginSmall]}>
+          My New me es la herramienta a través de la cual el Alchemy Advisor te recomendará planes de nutrición, estrategias de
+          cambio de hábitos, sugerencias de actividad física, entre otros tips prácticos que te ayudarán a optimizar tu estado de
+          salud y bienestar.
         </Text>
       </Panel>
 

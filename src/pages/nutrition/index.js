@@ -95,7 +95,7 @@ class Nutrition extends Component {
             icon={iconFish}
             title='Plan de alimentación'
             colorIcon='#911E38'
-            subtitle='Tu salud, en tus manos.'
+            subtitle='Nutrición personalizada.'
             to='PlanAlimentation' />
 
           <CardItemSection

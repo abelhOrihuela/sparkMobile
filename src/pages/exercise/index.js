@@ -133,9 +133,9 @@ class Exercise extends Component {
             style={[styles.isMarginSmallTopBottom]}
             {...this.props}
             icon={iconExercise}
-            title='Ejercicio: '
+            title='Entrenamiento'
             colorIcon='#FF974A'
-            subtitle='Personalizado por tu factor de riesgo.'
+            subtitle='Basado en tus resultados.'
             to='ExerciseDetail'
             params={{currentOrder}} />
 
@@ -143,8 +143,8 @@ class Exercise extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             icon={iconExerciseRun}
-            title='Tipos de ejercicio'
-            subtitle='Personalizado por tu factor de riesgo.'
+            title='Generales'
+            subtitle='Complementa tu actividad física.'
             colorIcon='#FF974A'
             to='ExerciseTypes'
             params={{currentOrder}} />

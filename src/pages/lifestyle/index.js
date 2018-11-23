@@ -99,7 +99,7 @@ class Lifestyle extends Component {
             icon={iconHidratation}
             title='Hidratación'
             colorIcon='#949B55'
-            subtitle='Tu salud, en tus manos.'
+            subtitle='Mantente hidratado.'
             to='LifestyleHidratation' />
 
           <CardItemSection
@@ -108,7 +108,7 @@ class Lifestyle extends Component {
             icon={iconSueno}
             title='Sueño'
             colorIcon='#949B55'
-            subtitle='Lo que te hace bien el tu día a día.'
+            subtitle='Incrementa tu descanso.'
             to='LifestyleSleep' />
 
           <CardItemSection
@@ -117,7 +117,7 @@ class Lifestyle extends Component {
             icon={iconRespiracion}
             title='Respiración'
             colorIcon='#949B55'
-            subtitle='Tips para una mejor calidad de vida.'
+            subtitle='Oxigénate bien.'
             to='LifestyleBreathing' />
 
           <CardItemSection
@@ -126,7 +126,7 @@ class Lifestyle extends Component {
             icon={iconEstres}
             title='Estrés'
             colorIcon='#949B55'
-            subtitle='¿Qué tiene tu cuerpo?'
+            subtitle='Una vida más tranquila.'
             to='LifestylePsychological' />
 
           <CardItemSection
@@ -134,7 +134,7 @@ class Lifestyle extends Component {
             {...this.props}
             icon={iconBienestar}
             title='Bienestar psicológico'
-            subtitle='¿Qué tiene tu cuerpo?'
+            subtitle='Para tu cuidado emocional.'
             colorIcon='#949B55'
             to='AlchemyPlate' />
 
@@ -142,7 +142,7 @@ class Lifestyle extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={header}
-            title='Conoce los mejores tips de nutrición especializados para ti'
+            title='Tips de hábitos saludables'
             to='TipsNutrition' />
 
         </View>

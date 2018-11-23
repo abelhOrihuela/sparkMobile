@@ -71,7 +71,7 @@ class Suplementation extends Component {
             icon={iconActividades}
             title='Actividades y estudios'
             colorIcon='#1E1B5D'
-            subtitle='Recomendados para tu factor de riesgo'
+            subtitle='Recomendados para ti.'
             to='SuplementationActivities' />
 
           <CardItemSection
@@ -79,7 +79,7 @@ class Suplementation extends Component {
             {...this.props}
             icon={iconSuplementation}
             title='Suplementación'
-            subtitle='Lo que te hace bien el tu día a día.'
+            subtitle='Fortalece tu salud.'
             colorIcon='#1E1B5D'
             to='SuplementationDetail' />
 
@@ -88,19 +88,17 @@ class Suplementation extends Component {
             {...this.props}
             icon={iconIntestinal}
             title='Salud intestinal'
-            subtitle='Lo que te hace bien el tu día a día.'
+            subtitle='Cuida tu microbiota.'
             colorIcon='#1E1B5D'
             to='SuplementatioIntestinal' />
 
-          {
-            // <CardTips
-            //   style={styles.isMarginSmallTopBottom}
-            //   {...this.props}
-            //   img={header}
-            //   title='Tips de Salud Preventiva'
-            //   to='TipsNutrition' />
-          }
 
+        <CardTips
+          style={styles.isMarginSmallTopBottom}
+          {...this.props}
+          img={header}
+          title='Tips de salud y suplementación'
+          to='TipsNutrition' />
         </View>
       </Page>
     )
