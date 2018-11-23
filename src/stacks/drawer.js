@@ -2,17 +2,26 @@ import { DrawerNavigator, StackNavigator } from 'react-navigation'
 import Dashboard from '../pages/dashboard'
 import Profile from '../pages/profile'
 import Reports from '../pages/reports-list'
-import MyNewMe from '../pages/my-new-me'
+import MyNewMe from '../pages/my-new-me/index'
 import ReportDetail from '../pages/reports-detail'
 import Exercise from '../pages/exercise/index'
-import ExerciseDetail from '../pages/exercise/detail'
-import ExerciseTypes from '../pages/exercise/types'
+import ExerciseDetail from '../pages/exercise/detail/index'
+import ExerciseTypes from '../pages/exercise/types/index'
 import Suplementation from '../pages/suplementation/index'
 import SuplementationActivities from '../pages/suplementation/activities'
 import SuplementationDetail from '../pages/suplementation/detail'
 import SuplementatioIntestinal from '../pages/suplementation/intestinal'
-import Longevity from '../pages/longevity'
-import Lifestyle from '../pages/lifestyle'
+
+import Longevity from '../pages/longevity/index'
+import LongevityAntioxidants from '../pages/longevity/antioxidants'
+import LongevitySuggestions from '../pages/longevity/suggestions'
+
+import Lifestyle from '../pages/lifestyle/index'
+import LifestyleHidratation from '../pages/lifestyle/hidratation'
+import LifestyleSleep from '../pages/lifestyle/sleep'
+import LifestyleBreathing from '../pages/lifestyle/breathing'
+import LifestyleStress from '../pages/lifestyle/stress'
+import LifestylePsychological from '../pages/lifestyle/psychological'
 
 import Nutrition from '../pages/nutrition/index'
 import PlanAlimentation from '../pages/nutrition/plan/index'
@@ -53,7 +62,16 @@ const StackMyNewMe = StackNavigator({
   SuplementatioIntestinal: {screen: SuplementatioIntestinal},
 
   Longevity: {screen: Longevity},
+  LongevityAntioxidants: {screen: LongevityAntioxidants},
+  LongevitySuggestions: {screen: LongevitySuggestions},
+
   Lifestyle: {screen: Lifestyle},
+  LifestyleHidratation: {screen: LifestyleHidratation},
+  LifestyleSleep: {screen: LifestyleSleep},
+  LifestyleBreathing: {screen: LifestyleBreathing},
+  LifestyleStress: {screen: LifestyleStress},
+  LifestylePsychological: {screen: LifestylePsychological},
+
   TipsNutrition: {screen: TipsNutrition},
   TipsDetail: {screen: TipsDetail}
 }, {

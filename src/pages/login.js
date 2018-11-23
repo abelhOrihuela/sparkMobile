@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { View, KeyboardAvoidingView, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native'
-import BaseForm from '../components/base-form'
+import BaseForm from 'app/src/components/base-form'
 import t from 'tcomb-form-native'
-import background from '../bg.png'
-import logo from '../images/logo.png'
-import people from '../people.png'
-import api from '../core/api'
+import background from 'app/src/images/textura.png'
+import logo from 'app/src/images/logo.png'
+import people from 'app/src/people.png'
+import api from 'app/src/core/api'
 import styles from 'app/src/pages/styles'
 const {height, width} = Dimensions.get('window')
 

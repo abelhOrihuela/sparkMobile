@@ -14,7 +14,7 @@ export default class SmartDiet extends Component {
   render () {
     return (
       <View style={{flex: 1}}>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold]}>
           Plan de Alimentación HAPPY SHAPE
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>

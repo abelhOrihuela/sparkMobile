@@ -16,6 +16,7 @@ import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
 let height = 215
 import { Card } from 'react-native-elements'
+import _ from 'lodash'
 
 import styles from 'app/src/pages/styles'
 class Exercise extends Component {
@@ -40,7 +41,23 @@ class Exercise extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentOrder: null,
+      user: null,
+      loading: false
     }
+  }
+
+  componentDidMount () {
+    this.load()
+  }
+
+  async load () {
+    let me = JSON.parse(await AsyncStorage.getItem('me'))
+    this.setState({
+      currentOrder: me.currentOrder,
+      user: me.user,
+      loading: false
+    })
   }
 
   goToSection (section) {
@@ -48,44 +65,89 @@ class Exercise extends Component {
   }
 
   render() {
+    let {currentOrder} = this.state
     let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>
+        ¿Qué encontrarás?
+      </Text>
     </View>)
+
+    let content
+    // .key === 'diabetes'
+
+    let {key} = _.get(this.state, 'currentOrder.riskIndex', {})
+
+
     return (
       <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={ejercicioBg} />
         <View style={[{ height: height, backgroundColor: '#DC6B18'}, styles.isOverlay, styles.isOpacity50]} />
+
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, stylesExercise.title]}>EJERCICIO</Text>
+          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
+            EJERCICIO
+          </Text>
+
           <Panel
             title={title}
             style={{marginBottom: 30}}
             styleContainerTitle={{backgroundColor: '#FF974A'}}
             borderColor='#FF974A'
             colorIcon='#FFFFFF'>
-            <Text>
-              Hacer ejercicio representa un factor diferencial entre vivir altamente propenso a desarrollar enfermedades o alcanzar un estado ideal de bienestar. Debes enfocar tu actividad física en función de tu estilo de vida, gustos, necesidades y genética. Acuérdate que existen muchos tipos de entrenamientos, clases y estilos de ejercicio. No te cierres solo a una forma y encuentra tu entrenamiento ideal. Realizar ejercicio de manera habitual mantiene nuestro sistema inmunológico fuerte, contribuye a metabolizar nuestros alimentos, disminuye la acumulación excesiva de grasa, mejora las condiciones cardiacas y hace más efectiva la oxigenación del cuerpo. Produce hormonas asociadas a estados de placer y bienestar y sirve para canalizar emociones; por lo que ayuda a que tengamos mejor manejo de estrés. Inclusive impacta sobre nuestra autopercepción física. De acuerdo con la categoría de riesgo que obtuvimos integrando los resultados de tu genética, microbiota, química sanguínea y hábitos de vida, generamos los siguientes take actions para que puedas sacarle el máximo provecho al ejercicio que realices. Las notas de ejercicio están orientadas a tiempos, intensidad, frecuencia y variedad de actividades físicas pensadas para mantener y mejorar tus aptitudes físicas. Ten presente que hacer ejercicio no debe de ser una actividad cansada ni desagradable, por lo contrario, si lo haces adecuadamente produce placer y aporta vitalidad.
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              Hacer ejercicio representa un factor diferencial entre vivir propenso a desarrollar enfermedades o alcanzar un estado
+              ideal de bienestar.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              Debes enfocar tu actividad física en función de tu estilo de vida, gustos, necesidades y genética. Acuérdate que existen
+              muchos tipos de entrenamientos, clases y estilos de ejercicio. No te cierres solo a una forma y encuentra tu
+              entrenamiento perfecto.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              Realizar ejercicio de manera habitual mantiene nuestro sistema inmunológico fuerte, contribuye a metabolizar nuestros
+              alimentos, disminuye la acumulación excesiva de grasa, mejora las condiciones cardiacas y hace más efectiva la
+              oxigenación del cuerpo. Produce hormonas asociadas a estados de placer y bienestar y sirve para canalizar emociones;
+              por lo que ayuda a manejar mejor los niveles de estrés. Inclusive impacta sobre nuestra autopercepción física.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              De forma más específica, el ejercicio ayuda a establecer un equilibrio en la microbiota, contribuye a regular la energía,
+              reduce los mediadores inflamatorios, aumenta las enzimas antioxidantes, ayuda a evitar cambios en las vellosidades
+              intestinales, apoya en la prevención de enfermedades crónico-degenerativas, aumenta las proteínas relacionadas con el
+              control en los procesos de muerte celular y disminuye funciones proinflamatorios.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              De acuerdo al área de oportunidad determinada, generamos los siguientes take actions para que puedas sacarle el
+              máximo provecho al ejercicio que realices.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              Las notas de ejercicio están orientadas a tiempos, intensidad, frecuencia y variedad de actividades físicas. Están
+              pensadas tanto para mantener como paramejorar tus aptitudes físicas.
+            </Text>
+            <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+              Ten presente que hacer ejercicio no debe de ser una actividad cansada ni desagradable, por lo contrario, si lo haces
+              adecuadamente produce placer y aporta vitalidad.
             </Text>
           </Panel>
-
 
           <CardItemSection
             style={[styles.isMarginSmallTopBottom]}
             {...this.props}
             icon={iconExercise}
-            title='Ejercicio: '
+            title='Entrenamiento'
             colorIcon='#FF974A'
-            subtitle='Personalizado por tu factor de riesgo.'
-            to='ExerciseDetail' />
+            subtitle='Basado en tus resultados.'
+            to='ExerciseDetail'
+            params={{currentOrder}} />
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             icon={iconExerciseRun}
-            title='Tipos de ejercicio'
-            subtitle='Personalizado por tu factor de riesgo.'
+            title='Generales'
+            subtitle='Complementa tu actividad física.'
             colorIcon='#FF974A'
-            to='ExerciseTypes' />
+            to='ExerciseTypes'
+            params={{currentOrder}} />
 
           <CardTips
             style={styles.isMarginSmallTopBottom}

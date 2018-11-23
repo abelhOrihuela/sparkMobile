@@ -8,7 +8,7 @@ import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
 import iconSuplementation from 'app/src/icon-suplementacion.png'
 import iconIntestinal from 'app/src/icon-salud-intestinal.png'
-import iconHealthSuplementation from 'app/src/icon-salud-suplementacion.png'
+import iconActividades from 'app/src/icon-actividades.png'
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
 import CardItemSection from 'app/src/components/card-item-section'
@@ -21,14 +21,6 @@ import styles from 'app/src/pages/styles'
 class Suplementation extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'MYNEWME',
-      drawerIcon: () => (
-        <Icon name='check' size={20} color='#FFFFFF' />
-      ),
-
-      drawerLabel: () => {
-        return 'MYNEWME'
-      },
       headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
         }}>
@@ -49,22 +41,26 @@ class Suplementation extends Component {
 
   render() {
     let title = (<View>
-      <Text style={styles.fontWhite18}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
     </View>)
     return (
       <Page style={[styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
         <View style={[{ height: height, backgroundColor: '#1E1B5D'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, stylesNutrition.title]}>SALUD PREVENTIVA</Text>
+          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
+            SALUD Y SUPLEMENTACIÓN
+          </Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={{marginBottom: 30}}
             styleContainerTitle={{backgroundColor: '#6865A1'}}
             borderColor='#6865A1'
             colorIcon='#FFFFFF'>
             <Text>
-              Recordemos que tus hábitos de vida pueden modificar la expresión de tus genes, regular el equilibrio de tu microbiota y cambiar las proporciones de tu química sanguínea. De igual forma, tus hábitos reflejan decisiones que has tomado en diferentes etapas y que están impactando tu salud actual y la de tu futuro. Los take actions de hábitos saludables están basados en todos los resultados de los estudios y cuestionario que te pedimos. Te presentamos notas y recomendaciones hechas en función de aspectos clave para tu salud integral: calidad de sueño, relajación, hidratación, niveles de energía, manejo de estrés, estado anímico, técnicas de cocina… Tenemos la intención de que a partir de estos take actions puedas sumarle a tu vida un significado de bienestar basado en el conocimiento de tu bio-individualidad y en las necesidades metabólicas que todo ser humano experimenta.
+              De acuerdo con los resultados de tus distintos análisis y al área de oportunidad determinada, hay diversas acciones que
+              puedes llevar a cabo para enriquecer las valoraciones que te hicimos. Por ejemplo, análisis de sangre específicos,
+              revisiones médicas, terapias alternativas, suplementación, entre otras.
             </Text>
           </Panel>
 
@@ -72,10 +68,10 @@ class Suplementation extends Component {
           <CardItemSection
             style={[styles.isMarginSmallTopBottom]}
             {...this.props}
-            icon={iconHealthSuplementation}
+            icon={iconActividades}
             title='Actividades y estudios'
             colorIcon='#1E1B5D'
-            subtitle='Recomendados para tu factor de riesgo'
+            subtitle='Recomendados para ti.'
             to='SuplementationActivities' />
 
           <CardItemSection
@@ -83,7 +79,7 @@ class Suplementation extends Component {
             {...this.props}
             icon={iconSuplementation}
             title='Suplementación'
-            subtitle='Lo que te hace bien el tu día a día.'
+            subtitle='Fortalece tu salud.'
             colorIcon='#1E1B5D'
             to='SuplementationDetail' />
 
@@ -92,17 +88,17 @@ class Suplementation extends Component {
             {...this.props}
             icon={iconIntestinal}
             title='Salud intestinal'
-            subtitle='Lo que te hace bien el tu día a día.'
+            subtitle='Cuida tu microbiota.'
             colorIcon='#1E1B5D'
             to='SuplementatioIntestinal' />
 
-          <CardTips
-            style={styles.isMarginSmallTopBottom}
-            {...this.props}
-            img={header}
-            title='Tips de Salud Preventiva'
-            to='TipsNutrition' />
 
+        <CardTips
+          style={styles.isMarginSmallTopBottom}
+          {...this.props}
+          img={header}
+          title='Tips de salud y suplementación'
+          to='TipsNutrition' />
         </View>
       </Page>
     )

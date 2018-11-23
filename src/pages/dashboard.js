@@ -13,7 +13,7 @@ import {
 } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import ModalContainer from '../components/modal'
-import api from '../core/api'
+import api from 'app/src/core/api'
 import logoWhite from 'app/src/images/logo-white.png'
 
 import people from '../people.png'

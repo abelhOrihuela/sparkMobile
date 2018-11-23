@@ -5,7 +5,7 @@ import t from 'tcomb-form-native'
 import background from '../bg.png'
 import logo from '../logo.png'
 import people from '../people.png'
-import api from '../core/api'
+import api from 'app/src/core/api'
 const {height, width} = Dimensions.get('window')
 import Icon from 'react-native-vector-icons/FontAwesome'
 
