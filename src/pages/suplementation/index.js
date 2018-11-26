@@ -44,7 +44,7 @@ class Suplementation extends Component {
       <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
     </View>)
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
         <View style={[{ height: height, backgroundColor: '#1E1B5D'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>

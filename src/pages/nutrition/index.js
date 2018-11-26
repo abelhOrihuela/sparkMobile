@@ -52,7 +52,7 @@ class Nutrition extends Component {
     </View>)
 
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
         <View style={[{ height: height, backgroundColor: '#911E38'}, styles.isOverlay, styles.isOpacity50]} />
 

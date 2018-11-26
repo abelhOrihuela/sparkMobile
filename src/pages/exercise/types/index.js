@@ -62,7 +62,7 @@ class ExerciseTypes extends Component {
 
     content = <Diabetes />
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isMarginless, styles.isPaddingless]}>
         {content}
       </Page>
     )

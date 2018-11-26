@@ -52,7 +52,7 @@ class Lifestyle extends Component {
       <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
     </View>)
     return (
-      <Page style={[styles.isPaddingless]}>
+      <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={headerLifeStyle} />
         <View style={[{ height: height, backgroundColor: '#535B06'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
@@ -127,7 +127,7 @@ class Lifestyle extends Component {
             title='Estrés'
             colorIcon='#949B55'
             subtitle='Una vida más tranquila.'
-            to='LifestylePsychological' />
+            to='LifestyleStress' />
 
           <CardItemSection
             style={styles.isMarginSmallTopBottom}
@@ -136,7 +136,7 @@ class Lifestyle extends Component {
             title='Bienestar psicológico'
             subtitle='Para tu cuidado emocional.'
             colorIcon='#949B55'
-            to='AlchemyPlate' />
+            to='LifestylePsychological' />
 
           <CardTips
             style={styles.isMarginSmallTopBottom}

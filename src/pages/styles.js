@@ -211,10 +211,18 @@ const styles = StyleSheet.create({
     flex: 1, flexDirection: 'row', padding: 20
   },
   isPaddingless: {
-    padding: 0
+    padding: 0,
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
+    paddingBottom: 0
   },
   isMarginless: {
-    margin: 0
+    margin: 0,
+    marginTop: 0,
+    marginRight: 0,
+    marginLeft: 0,
+    marginBottom: 0
   },
   isMarginlessTop: {
     marginTop: 0
