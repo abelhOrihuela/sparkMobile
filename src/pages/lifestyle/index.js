@@ -142,8 +142,9 @@ class Lifestyle extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={header}
+            params={{section: 'lifestyle'}}
             title='Tips de hábitos saludables'
-            to='TipsNutrition' />
+            to='TipsSection' />
 
         </View>
       </Page>

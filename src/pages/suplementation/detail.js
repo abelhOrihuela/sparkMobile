@@ -12,8 +12,6 @@ import iconExerciseRun from 'app/src/icon-exercise-run.png'
 import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
 import Suggestions from 'app/src/components/suggestions'
-import CardItemSection from 'app/src/components/card-item-section'
-import CardTips from 'app/src/components/card-tips'
 import Page from 'app/src/components/page'
 let height = 215
 import { Card } from 'react-native-elements'

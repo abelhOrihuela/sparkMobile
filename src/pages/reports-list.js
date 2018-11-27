@@ -11,7 +11,13 @@ import iconDna from '../iconDna.png'
 import iconBlood from '../iconBlood.png'
 import iconMicrobiome from '../iconMicrobiome.png'
 import iconSensibilities from '../iconSensibilities.png'
+// import risk from '../images/reportes.png'
+import risk from '../reportes-fondo.jpg'
+
+import iconRisk from '../icon-risk.png'
+
 import sensibilities from '../Sensibilidades.png'
+
 import api from 'app/src/core/api'
 import Panel from '../components/panel'
 import Page from 'app/src/components/page'
@@ -88,7 +94,11 @@ class Reports extends Component {
     } else if (item.type=== 'microbiome') {
       backgroundImage = microbiome
       icon = iconMicrobiome
-      title = 'Microbiota'
+      title = 'MICROBIOMA'
+    } else if (item.type=== 'risk') {
+      backgroundImage = risk
+      icon = iconRisk
+      title = 'INTEGRADOR'
     }
     return (<TouchableOpacity
       style={{flex: 1, height: 150, backgroundColor: 'white', margin: 10}}
@@ -123,13 +133,12 @@ class Reports extends Component {
           title={title}
           styleContainerTitle={{backgroundColor: '#2771A2'}}
           borderColor='#2771A2' colorIcon='white'>
-          <Text style={styles.isLineHeight18, styles.isGinoraFontRegular}>
-            En su informe de nutrición aprenderá cómo sus variantes genéticas individuales
-            pueden afectar su respuesta nutricional única y cómo tomar las decisiones correctas
-            para usted. Tiempo difícil para mantener un peso saludable, incluso cuando nuestra
-            motivación es alta (y el suministro de donas de oficina es bajo). Pero he aquí
-            algunas buenas noticias: vivir en nuestras entrañas es un surtido de aliados:
-            microbios que pueden ayudarnos a alcanzar un peso más saludable
+          <Text style={[styles.isLineHeight18, styles.isGinoraFontRegular, styles.isMarginSmall]}>
+            En los siguientes reportes vas a encontrar los resultados de tus estudios y su integración.
+          </Text>
+          <Text style={[styles.isLineHeight18, styles.isGinoraFontRegular, styles.isMarginSmall]}>
+            De cada prueba decodificamos, valoramos y correlacionamos los datos, para poder entender tu estado actual de salud, recopilar información útil para prevenir condiciones a las que
+             te podrías enfrentar y generar tu programa personalizado de bienestar.
           </Text>
         </Panel>
         <FlatList
@@ -192,6 +201,15 @@ const stylesReports = StyleSheet.create({
     opacity: 0.75,
     backgroundColor: '#009AA7',
     right: 0,
+  },
+  riskOverlay: {
+    flex: 1,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    opacity: 0.75,
+    backgroundColor: '#0D4E78',
+    right: 0
   }
 })
 

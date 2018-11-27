@@ -9,7 +9,8 @@ import {
 
 export default class CardTips extends Component {
   goToSection () {
-    this.props.navigation.navigate(this.props.to)
+    let {params} = this.props || {}
+    this.props.navigation.navigate(this.props.to, params)
   }
   render () {
     return (

@@ -94,8 +94,9 @@ class Longevity extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={header}
+            params={{section: 'longevity'}}
             title='Tips de Longevidad'
-            to='TipsNutrition' />
+            to='TipsSection' />
 
         </View>
       </Page>

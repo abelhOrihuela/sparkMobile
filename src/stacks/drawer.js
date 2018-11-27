@@ -27,7 +27,7 @@ import Nutrition from '../pages/nutrition/index'
 import PlanAlimentation from '../pages/nutrition/plan/index'
 import AlchemyPlate from '../pages/nutrition/plate/index'
 
-import TipsNutrition from '../pages/tips-nutrition'
+import TipsSection from '../pages/tips-list'
 import TipsDetail from '../pages/tips-detail'
 
 import Logout from '../pages/logout'
@@ -72,7 +72,7 @@ const StackMyNewMe = StackNavigator({
   LifestyleStress: {screen: LifestyleStress},
   LifestylePsychological: {screen: LifestylePsychological},
 
-  TipsNutrition: {screen: TipsNutrition},
+  TipsSection: {screen: TipsSection},
   TipsDetail: {screen: TipsDetail}
 }, {
   headerMode: 'none'
