@@ -1,35 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/nutricion-fondo.jpg'
-import ejercicioBg from 'app/src/ejercicio-fondo.jpg'
+import React, { Component } from 'react'
+import { View,
+  Text
+} from 'react-native'
 
-import bgTipsExercise from 'app/src/images/bg-tips-exercise.png'
-import icon from 'app/src/iconDna.png'
-import iconExercise from 'app/src/icon-exercise.png'
-import iconExerciseRun from 'app/src/icon-exercise-run.png'
-import iconMyPlate from 'app/src/iconMyPlate.png'
 import Panel from 'app/src/components/panel'
-import CardTips from 'app/src/components/card-tips'
-import Page from 'app/src/components/page'
-import { Card } from 'react-native-elements'
 import styles from 'app/src/pages/styles'
 
-let height = 215
-
 class Cardiovascular extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
-        navigation.goBack()
-        }}>
-        <Icon name={'arrow-left'} size={20} color='#2771A2' />
-      </TouchableOpacity>)
-    }
-  }
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
     }
   }
@@ -38,7 +17,7 @@ class Cardiovascular extends Component {
     this.props.navigation.navigate(section)
   }
 
-  render() {
+  render () {
     return (
       <View style={{flex: 1}}>
 
@@ -67,7 +46,7 @@ class Cardiovascular extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad y tu área de oportunidad, te recomendamos que cuides y mantengas tú frecuencia cardiaca
-            mientras haces ejercicio en un rango de XXX a XXX latidos por minuto.
+            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto.
           </Text>
         </Panel>
 
