@@ -8,11 +8,13 @@ import {
   Animated,
   ActivityIndicator,
   AsyncStorage,
-  TouchableOpacity
+  TouchableOpacity,
+  Text
 } from 'react-native'
 
 const {width} = Dimensions.get('window')
 const appHost = 'https://customers.dev.ac.commonsense.io'
+import styles from 'app/src/pages/styles'
 
 class Reports extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -50,13 +52,13 @@ class Reports extends Component {
     this.setState({
       token: token
     })
-
-
+  }
+  onLoadEnd () {
     setTimeout(() => {
       this.setState({
         loading: false
       })
-    }, 10000)
+    }, 7000)
   }
 
   render () {
@@ -71,38 +73,39 @@ class Reports extends Component {
       type = 'blood'
     } else if (report.type === 'sensibilities') {
       type = 'sensibilities'
+    } else if (report.type === 'microbiome') {
+      type = 'microbiome'
+    } else if (report.type === 'risk') {
+      type = 'risk'
     }
 
     let url = `${appHost}/reports/${type}/${report.uuid}?token=${token}&isNative=1`
-    let height = loading ? 0 : 200
+    let height = 5000
 
-    return (<View style={[styles.container]}>
-        {
-          loading && <ActivityIndicator size='large' />
-        }
+    return (<View style={[styles.isFlex1]}>
+      {
+        loading && (<View style={[{flex: 5000}, {justifyContent: 'center'}]}>
+           <ActivityIndicator size='large' />
+             <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14, styles.textCentered]}>
+               Preparando información...
+             </Text>
+        </View>)
+      }
 
         <WebView
           style={{height: height, padding: 20}}
           ref={(ref) => {
             this.myWebView = ref
           }}
-          onLoadEnd={() => this.setState({loading: false})}
+          onLoad={() => this.onLoadEnd()}
+          startOn
           initialScale={100}
           scalesPageToFit
           javaScriptEnabled
+          startInLoadingState
           source={{uri: url}} />
-
     </View>)
   }
 }
 
 export default Reports
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: 'red',
-    margin: 0,
-    padding: 0
-  }
-})

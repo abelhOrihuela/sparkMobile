@@ -7,8 +7,6 @@ import iconExercise from 'app/src/icon-exercise.png'
 import iconExerciseRun from 'app/src/icon-exercise-run.png'
 import Panel from 'app/src/components/panel'
 import Page from 'app/src/components/page'
-import CardItemSection from 'app/src/components/card-item-section'
-import CardTips from 'app/src/components/card-tips'
 import styles from 'app/src/pages/styles'
 
 import Cardiovascular from 'app/src/pages/exercise/detail/cardiovascular'

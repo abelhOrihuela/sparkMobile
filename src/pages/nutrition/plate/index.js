@@ -7,10 +7,12 @@ import {
   ImageBackground,
   AsyncStorage,
   ActivityIndicator,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList
 } from 'react-native'
 import styles from 'app/src/pages/styles'
 import Page from 'app/src/components/page'
+import Tabs from 'app/src/components/tabs'
 import bgMyPlate from 'app/src/images/bg-my-plate.jpg'
 import SmartDiet from 'app/src/pages/nutrition/plate/smart-diet'
 import HealtyHeart from 'app/src/pages/nutrition/plate/healty-heart'
@@ -18,6 +20,8 @@ import SweetCare from 'app/src/pages/nutrition/plate/sweet-care'
 import HappyShape from 'app/src/pages/nutrition/plate/happy-shape'
 import LongLife from 'app/src/pages/nutrition/plate/long-life'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import equivalents from '../equivalents_by_diet.json';
+import { Card } from 'react-native-elements'
 
 import _ from 'lodash'
 export default class AlchemyPlate extends Component {
@@ -58,6 +62,22 @@ export default class AlchemyPlate extends Component {
     })
   }
 
+  renderItem = ({item, index}) => {
+    return (<View style={[{flex: 1, margin: 10}]} key={index}>
+    <Text style={[styles.isGinoraFontRegular]}>{item}</Text>
+  </View>)
+  }
+
+  getContent (type) {
+    return (
+        <FlatList
+          numColumns={2}
+          data={equivalents['happy_shape'][type]}
+          keyExtractor={(x, i) => i}
+          renderItem={this.renderItem} />
+    )
+  }
+
   render () {
     let {loading, currentOrder} = this.state
     let riskIndex = _.get(currentOrder, 'riskIndex', null)
@@ -81,7 +101,39 @@ export default class AlchemyPlate extends Component {
       content = <LongLife data={riskIndex} />
     }
 
-    content = <HappyShape data={riskIndex} />
+
+    let routes = [
+      {
+        title: 'Verduras',
+        styleActive: {backgroundColor: '#90A94D'},
+        styleActiveLabel: {color: 'white'},
+        Content: () => this.getContent('verduras')
+    },
+      {
+        title: 'Cereales',
+        styleActive: {backgroundColor: '#6E3C65'},
+        styleActiveLabel: {color: 'white'},
+        Content: () => this.getContent('cereales')
+    },
+      {
+        title: 'Proteinas',
+        styleActive: {backgroundColor: '#F04E53'},
+        styleActiveLabel: {color: 'white'},
+        Content: () => this.getContent('proteinas')
+      },
+      {
+        title: 'Grasas',
+        styleActive: {backgroundColor: '#FFBC40'},
+        styleActiveLabel: {color: 'white'},
+        Content: () => this.getContent('grasas')
+      },
+      {
+        title: 'Frutas',
+        styleActive: {backgroundColor: '#B75A74'},
+        styleActiveLabel: {color: 'white', fontFamily: 'ginora-regular', fontWeight: 'normal'},
+        Content: () => this.getContent('frutas')
+      }
+    ]
 
     return (
       <Page style={[styles.isMarginless, styles.isPaddingless]}>
@@ -121,6 +173,8 @@ export default class AlchemyPlate extends Component {
           </Text>
         </View>
         {content}
+
+        <Tabs config={{routes: routes}}/>
       </Page>
     )
   }

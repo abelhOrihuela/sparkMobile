@@ -62,7 +62,7 @@ class Nutrition extends Component {
           </Text>
           <Panel
             title={title}
-            style={{marginBottom: 30}}
+            style={styles.isMarginSmallTopBottom}
             styleContainerTitle={{backgroundColor: '#B9163B'}}
             borderColor='#B9163B'
             colorIcon='#FFFFFF'>
@@ -111,8 +111,9 @@ class Nutrition extends Component {
             style={styles.isMarginSmallTopBottom}
             {...this.props}
             img={bgTipsNutrition}
+            params={{section: 'nutrition'}}
             title='Tips de nutrición'
-            to='TipsNutrition' />
+            to='TipsSection' />
 
         </View>
       </Page>

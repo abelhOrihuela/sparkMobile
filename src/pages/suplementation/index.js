@@ -53,7 +53,7 @@ class Suplementation extends Component {
           </Text>
           <Panel
             title={title}
-            style={{marginBottom: 30}}
+            style={styles.isMarginSmallTopBottom}
             styleContainerTitle={{backgroundColor: '#6865A1'}}
             borderColor='#6865A1'
             colorIcon='#FFFFFF'>
@@ -98,7 +98,8 @@ class Suplementation extends Component {
           {...this.props}
           img={header}
           title='Tips de salud y suplementación'
-          to='TipsNutrition' />
+          params={{section: 'supplementation'}}
+          to='TipsSection' />
         </View>
       </Page>
     )

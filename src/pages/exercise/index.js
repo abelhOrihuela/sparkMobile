@@ -73,8 +73,6 @@ class Exercise extends Component {
     </View>)
 
     let content
-    // .key === 'diabetes'
-
     let {key} = _.get(this.state, 'currentOrder.riskIndex', {})
 
 
@@ -90,7 +88,7 @@ class Exercise extends Component {
 
           <Panel
             title={title}
-            style={{marginBottom: 30}}
+            style={styles.isMarginSmallTopBottom}
             styleContainerTitle={{backgroundColor: '#FF974A'}}
             borderColor='#FF974A'
             colorIcon='#FFFFFF'>
@@ -154,7 +152,8 @@ class Exercise extends Component {
             {...this.props}
             img={bgTipsExercise}
             title='Tips de ejercicio'
-            to='TipsExercise' />
+            params={{section: 'exercise'}}
+            to='TipsSection' />
 
         </View>
       </Page>

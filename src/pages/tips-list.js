@@ -40,8 +40,12 @@ export default class TipsNutrition extends Component {
   }
 
   async load () {
+    const { navigation } = this.props
+
+    const section = navigation.getParam('section', null);
+
     try {
-      let body = await api.get('/customers/suggestions/nutrition')
+      let body = await api.get('/customers/suggestions/' + section)
       this.setState({
         items: body.data.data
       })
@@ -75,10 +79,14 @@ export default class TipsNutrition extends Component {
     let {items} = this.state
     return (
       <Page>
-        <FlatList
-          data={items}
-          keyExtractor={(x, i) => i}
-          renderItem={this.renderItem} />
+        {
+          items.length ? <FlatList
+            data={items}
+            keyExtractor={(x, i) => i}
+            renderItem={this.renderItem} /> : <Text style={[stylesNutrition.fontBlack16Bold, {textAlign: 'center'}]}>
+            No existen tips para esta sección
+          </Text>
+        }
       </Page>
     )
   }
