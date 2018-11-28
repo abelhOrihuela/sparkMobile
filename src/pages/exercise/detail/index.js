@@ -44,13 +44,13 @@ class Index extends Component {
     let content
 
     if (key === 'cardiovascular') {
-      content = <Cardiovascular />
+      content = <Cardiovascular data={currentOrder.riskIndex} />
     } else if (key === 'obesity') {
-      content = <Obesity />
+      content = <Obesity data={currentOrder.riskIndex} />
     } else if (key === 'nutrition') {
-      content = <Nutrition />
+      content = <Nutrition data={currentOrder.riskIndex} />
     } else if (key === 'longevity') {
-      content = <Longevity />
+      content = <Longevity data={currentOrder.riskIndex} />
     }
 
     return (<Page>
