@@ -18,7 +18,7 @@ export default class SweetCare extends Component {
           Plan de Alimentación SWEET CARE
         </Text>
         <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          Identificamos tu área de oportunidad en diabetes. Esto significa que a tu cuerpo le podría costar trabajo procesar
+          Identificamos tu factor de riesgo en diabetes. Esto significa que a tu cuerpo le podría costar trabajo procesar
           adecuadamente la glucosa o “azúcar” en la sangre. Por ello, te proponemos una alimentación Sweet Care, enfocada en
           controlar los niveles de glucosa.
         </Text>
@@ -71,7 +71,7 @@ export default class SweetCare extends Component {
           borderColor='white' colorIcon='black'>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Todos los alimentos con hidratos de carbono tienen un índice glucémico (IG). El IG hace referencia a la rapidez con la
-|           que un alimento puede elevar el nivel de glucosa (azúcar) en la sangre.
+            que un alimento puede elevar el nivel de glucosa (azúcar) en la sangre.
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             El índice glucémico puede ser bajo, medio u alto. El consumo de alimentos con un IG medio y bajo puede ayudarte a

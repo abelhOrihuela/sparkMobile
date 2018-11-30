@@ -69,13 +69,18 @@ export default class AlchemyPlate extends Component {
   }
 
   getContent (type) {
-    return (
-        <FlatList
-          numColumns={2}
-          data={equivalents['happy_shape'][type]}
-          keyExtractor={(x, i) => i}
-          renderItem={this.renderItem} />
-    )
+    let {currentOrder} = this.state
+    if (currentOrder) {
+      return (
+          <FlatList
+            numColumns={2}
+            data={equivalents[currentOrder.riskIndex.diet][type]}
+            keyExtractor={(x, i) => i}
+            renderItem={this.renderItem} />
+      )
+    }
+    return <View />
+
   }
 
   render () {

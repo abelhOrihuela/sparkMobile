@@ -171,7 +171,7 @@ export default class SmartDiet extends Component {
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Las hojas verdes oscuras, así como las verduras y frutas crudas también son excelentes alimentos antiinflamatorios. Solo
             procura que las frutas que escojas tengan un bajo índice glucémico. Pon atención y vigila la calidad de tus alimentos y
-            bebidas: busca que sean producto lo más naturales posible. Recomendamos que leas las etiquetas de lo que compras;
+            bebidas: busca que sean productos lo más naturales posible. Recomendamos que leas las etiquetas de lo que compras;
             procura que tus productos tengan la menor cantidad de aditivos, conservadores y colorantes. Evita los alimentos con
             muchas calorías y poco o nada de nutrimentos. Como los refrescos y muchos de los alimentos procesados.
           </Text>

@@ -11,13 +11,9 @@ import iconDna from '../iconDna.png'
 import iconBlood from '../iconBlood.png'
 import iconMicrobiome from '../iconMicrobiome.png'
 import iconSensibilities from '../iconSensibilities.png'
-// import risk from '../images/reportes.png'
 import risk from '../reportes-fondo.jpg'
-
 import iconRisk from '../icon-risk.png'
-
 import sensibilities from '../Sensibilidades.png'
-
 import api from 'app/src/core/api'
 import Panel from '../components/panel'
 import Page from 'app/src/components/page'
@@ -27,13 +23,13 @@ const {height, width} = Dimensions.get('window')
 class Reports extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Reports',
+      title: 'Reportes',
       drawerIcon: () => (
         <Icon name='file' size={20} color='#FFFFFF' />
       ),
 
       drawerLabel: () => {
-        return 'Reports'
+        return 'Reportes'
       },
       headerLeft: (<TouchableOpacity style={{padding: 10}}onPress={ () => {
         navigation.goBack()
@@ -90,7 +86,7 @@ class Reports extends Component {
     } else if (item.type=== 'sensibilities') {
       backgroundImage = sensibilities
       icon = iconSensibilities
-      title = 'SENSIBILIDADES ALIMENTICIAS'
+      title = 'SENSIBILIDADES ALIMENTARIAS'
     } else if (item.type=== 'microbiome') {
       backgroundImage = microbiome
       icon = iconMicrobiome
@@ -147,7 +143,7 @@ class Reports extends Component {
           keyExtractor={(x, i) => i}
           renderItem={this.renderItem}/>
       </Page>)
-}
+    }
 }
 
 

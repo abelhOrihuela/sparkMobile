@@ -88,13 +88,12 @@ export default class SmartDiet extends Component {
             Lo ideal es variar y rotar los productos que consumes para tener una mayor gama de vitaminas, minerales, fibra,
             antioxidantes, en tu cuerpo. Y para que no desarrolles ninguna sensibilidad alimentaria.
           </Text>
+          <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>
+            Tu alimentación tiene que proveer la energía necesaria para que tu cuerpo funcione adecuadamente y para que cumplas
+            con todas las actividades que te propongas. Pero sumamente importante, no olvides que debes disfrutar lo que comes y
+            que se adapte a tu estilo de vida, así podrás seguir tu dieta fácilmente.
+          </Text>
         </Panel>
-
-        <Text style={[styles.isMargin, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          Tu alimentación tiene que proveer la energía necesaria para que tu cuerpo funcione adecuadamente y para que cumplas
-          con todas las actividades que te propongas. Pero sumamente importante, no olvides que debes disfrutar lo que comes y
-          que se adapte a tu estilo de vida, así podrás seguir tu dieta fácilmente.
-        </Text>
 
         <Panel
           style={[styles.isMarginSmall]}

@@ -41,7 +41,7 @@ class Obesity extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad y tu área de oportunidad, te recomendamos que cuides y mantengas tú frecuencia cardiaca
-            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency} a {this.props.data.heartFrequency} latidos por minuto.
+            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.heartFrequency || 0} latidos por minuto.
 
           </Text>
         </Panel>

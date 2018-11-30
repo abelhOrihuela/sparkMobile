@@ -51,6 +51,8 @@ class Index extends Component {
       content = <Nutrition data={currentOrder.riskIndex} />
     } else if (key === 'longevity') {
       content = <Longevity data={currentOrder.riskIndex} />
+    } else if (key === 'diabetes'){
+      content = <Diabetes data={currentOrder.riskIndex} />
     }
 
     return (<Page>

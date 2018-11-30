@@ -50,7 +50,7 @@ class Cardiovascular extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad y tu área de oportunidad, te recomendamos que cuides y mantengas tú frecuencia cardiaca
-            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto.
+            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.maxHeartFrequency} latidos por minuto.
           </Text>
         </Panel>
 

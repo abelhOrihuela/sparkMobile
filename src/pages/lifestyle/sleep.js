@@ -67,21 +67,42 @@ class Hidratation extends Component {
 
       <Paragraph>
         <Text>{
-`\u2022  No se procesa eficazmente la glucosa, lo que da como resultado altos niveles de azúcar en la sangre, lo cualpodría incidir en el desarrollo de diabetes o aumento de peso.
+`\u2022  Respetar ritmo bio-circadiano.
 
-\u2022  Baja temperatura corporal, generando el riesgo de afectar el ritmo cardiaco y ocasionar arritmias o paradas cardio-respiratorias nocturnas.
+\u2022  Dormir cuando hay cansancio.
 
-\u2022  El sueño limpia la memoria a corto plazo y deja espacio para más información.  Si pasamos muchas noches sin dormir, se puede reducir la capacidad de asimilar conocimientos en casi un 40%.
+\u2022  No tomar mucha agua cerca de la hora de acostarse.
 
-\u2022  Se baja el sistema inmunológico y por consiguiente hay más probabilidad de contraer infecciones.
+\u2022  Desconectarse de la tecnología, la luz blanca disminuye la melatonina.
 
-\u2022  Cuando una persona tiene una enfermedad psiquiátrica los problemas para dormir aumentan un gran porcentaje.
+\u2022  Técnicas de respiración para relajar.
 
-\u2022  Fluctuación emocional - cambios repentinos de humor, tristeza, irritabilidad, actitud pesimista y aumento de estrés y ansiedad.`
+\u2022  Tomar magnesio 250 mg.
+
+\u2022  Té de flores (azhares, tila, manzanilla, etc.).
+
+\u2022  Té de toronjil relaja el aparato digestivo.
+
+\u2022  Usar aceites esenciales como la lavanda, para relajar.
+
+\u2022  Cenar comida caliente y dar tiempo de digestión antes de acostarse.
+
+\u2022  No tener frío al dormir.
+
+\u2022  Consumir alimentos altos en triptófano, ya que éste se transforma en serotonina y a su vez en melatonina,
+como el huevo, pescado, soya, frutos secos, frutas (plátano, piña, aguacate).
+
+\u2022  Alimentos que favorecen el sueño: kiwi 4 horas antes, lechuga, capulín (prunus serotonin).
+`
         }</Text>
       </Paragraph>
     </Page>)
   }
 }
+
+
+//  Consumir alimentos altos en triptófano, ya que éste se transforma en serotonina y a su vez en melatonina.
+// Como el huevo, pescado, soya, frutos secos, frutas (plátano, piña, aguacate).
+//  Alimentos que favorecen el sueño: kiwi 4 horas antes, lechuga, capulín (prunus serotonin).
 
 export default Hidratation

@@ -58,7 +58,7 @@ class Suplementation extends Component {
             borderColor='#6865A1'
             colorIcon='#FFFFFF'>
             <Text>
-              De acuerdo con los resultados de tus distintos análisis y al área de oportunidad determinada, hay diversas acciones que
+              De acuerdo con los resultados de tus distintos análisis y al área de oportunidad/factor de riesgo determinado, hay diversas acciones que
               puedes llevar a cabo para enriquecer las valoraciones que te hicimos. Por ejemplo, análisis de sangre específicos,
               revisiones médicas, terapias alternativas, suplementación, entre otras.
             </Text>

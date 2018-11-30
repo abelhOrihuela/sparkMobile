@@ -119,7 +119,7 @@ class Exercise extends Component {
             </Text>
             <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
               Las notas de ejercicio están orientadas a tiempos, intensidad, frecuencia y variedad de actividades físicas. Están
-              pensadas tanto para mantener como paramejorar tus aptitudes físicas.
+              pensadas tanto para mantener como para mejorar tus aptitudes físicas.
             </Text>
             <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
               Ten presente que hacer ejercicio no debe de ser una actividad cansada ni desagradable, por lo contrario, si lo haces

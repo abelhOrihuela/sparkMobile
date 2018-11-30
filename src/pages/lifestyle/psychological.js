@@ -17,6 +17,7 @@ class Psychological extends Component {
     }
   }
 
+
   constructor (props) {
     super(props)
     this.state = {
@@ -38,35 +39,26 @@ class Psychological extends Component {
       </Paragraph>
 
       <Paragraph>
-        <Text>El control de pensamientos negativos y obsesivos que te impiden enfocar tu atención a lo que te produce mayor bienestar.</Text>
-      </Paragraph>
+        <Text>{
+`\u2022  El control de pensamientos negativos y obsesivos que te impiden enfocar tu atención a lo que te produce mayor bienestar.
 
-      <Paragraph>
-        <Text>Tener un propósito personal alineado con lo que te genera gozo en la vida.</Text>
-      </Paragraph>
+\u2022  Tener un propósito personal alineado con lo que te genera gozo en la vida..
 
-      <Paragraph>
-        <Text>Trabajar en una actividad y ambiente laboral que te permitan alcanzar un sentido de realización personal y lograr sustentabilidad económica.</Text>
-      </Paragraph>
+\u2022  Fisiológicamente necesario: regulador de los biorritmos.
 
-      <Paragraph>
-        <Text>Generar un equilibrio en las distintas áreas de tu vida; integrando tus responsabilidades laborales con el tiempo destinado a actividades recreativas y de saludables.</Text>
-      </Paragraph>
+\u2022  Trabajar en una actividad y ambiente laboral que te permitan alcanzar un sentido de realización personal y lograr sustentabilidad económica.
 
-      <Paragraph>
-        <Text>Debido a las hormonas que se liberan, una vida sexual activa, está directamente relacionada a la sensación de vitalidad y bienestar.</Text>
-      </Paragraph>
+\u2022  Generar un equilibrio en las distintas áreas de tu vida; integrando tus responsabilidades laborales con el tiempo destinado a actividades recreativas y de saludables.
 
-      <Paragraph>
-        <Text>La calidad tus relaciones interpersonales y de tu vida social son aspectos muy importantes que influyen en tu sentido de plenitud.</Text>
-      </Paragraph>
+\u2022  Debido a las hormonas que se liberan, una vida sexual activa, está directamente relacionada a la sensación de vitalidad y bienestar.
 
-      <Paragraph>
-        <Text>Un manejo emocional adecuado implica reconocer y tener la capacidad de expresar tus sentimientos con el fin de liberarte de cargas emocionales que drenen tu energía.</Text>
-      </Paragraph>
+\u2022  La calidad tus relaciones interpersonales y de tu vida social son aspectos muy importantes que influyen en tu sentido de plenitud.
 
-      <Paragraph>
-        <Text>La capacidad de observar tus pensamientos, acciones y emociones te ayuda a conocerte mejor y saber en qué áreas debes enfocarte para tener un mayor equilibrio físico, mental y emocional.</Text>
+\u2022  Un manejo emocional adecuado implica reconocer y tener la capacidad de expresar tus sentimientos con el fin de liberarte de cargas emocionales que drenen tu energía.
+
+\u2022  La capacidad de observar tus pensamientos, acciones y emociones te ayuda a conocerte mejor y saber en qué áreas debes enfocarte para tener un mayor equilibrio físico, mental y emocional.
+`
+        }</Text>
       </Paragraph>
     </Page>)
   }

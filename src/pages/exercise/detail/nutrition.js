@@ -28,7 +28,7 @@ class Nutrition extends Component {
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Recuerda que las consecuencias se manifiestan a largo plazo. Y lo que hagas hoy por tu cuerpo, repercutirá mañana. Así
-          que te recomendamos que tomes en cuenta los TIPS de ejercicio para agregar o modificar cualquier información nueva a
+          que te recomendamos que tomes en cuenta los consejos generales de ejercicio para agregar o modificar cualquier información nueva a
           tus hábitos de actividad física.
         </Text>
 
@@ -103,7 +103,7 @@ class Nutrition extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad, te recomendamos que cuides y mantengas tú frecuencia cardiaca mientras haces ejercicio en un
-            rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto, con un máximo de {this.props.data.heartFrequency} latidos por minuto.
+            rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.maxHeartFrequency} latidos por minuto, con un máximo de {this.props.data.heartFrequency || 0} latidos por minuto.
           </Text>
         </Panel>
 
