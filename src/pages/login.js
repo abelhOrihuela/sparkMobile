@@ -107,7 +107,9 @@ export class Login extends Component {
         <Image  source={logo} />
       </View>
       <View style={stylesLogin.section}>
-        <Text style={[stylesLogin.fontBlue16, styles.textCentered, styles.isGinoraFontRegular]}>Estas por descubrir aspectos de tu cuerpo, mente y emociones que no se creían posibles de explorar.</Text>
+        <Text style={[stylesLogin.fontBlue16, styles.textCentered, styles.isGinoraFontRegular]}>
+          Estas por descubrir aspectos de ti que no se creían posibles de explorar.
+        </Text>
       </View>
       <View style={stylesLogin.section}>
         <Image source={people} style={stylesLogin.imagePeople} resizeMode='contain' />

@@ -10,7 +10,7 @@ class Logout extends Component {
         ),
 
         drawerLabel: () => {
-            return 'Logout'
+            return 'Cerrar sesión'
         },
     }
   constructor(props) {

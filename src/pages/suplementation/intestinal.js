@@ -14,6 +14,7 @@ import Panel from 'app/src/components/panel'
 import Page from 'app/src/components/page'
 let height = 215
 import { Card } from 'react-native-elements'
+import Paragraph from 'app/src/components/paragraph'
 
 import styles from 'app/src/pages/styles'
 class Intestinal extends Component {
@@ -90,8 +91,10 @@ class Intestinal extends Component {
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Hay 4 tipos de alimentos que ayudan a que las bacterias buenas proliferen.
         </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontBold, styles.fontBlack14]}>
+          1.- Alimentos fermentados.
+        </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          1.- Alimentos fermentados
           Son productos que se transformaron debido a la acción de los microorganismos. Entre los que se encuentran el yogurt
           de búlgaros, la kombucha de hongo manchuriano, el agua de tíbicos, el sauerkraut de col, el kimchi de col, el vinagre de
           manzana de piloncillo, el pozol de cacao y maíz, el cacao fermentado con Acetobacter y café con bacterias de mucílago.
@@ -102,20 +105,23 @@ class Intestinal extends Component {
           Desafortunadamente los productos fermentados que después pasaron por un proceso de pasteurización ya no
           contienen microorganismos, debido a que no sobreviven las altas temperaturas del proceso.
         </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontBold, styles.fontBlack14]}>
           2.- Prebióticos
+        </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Prebióticos – son sustancias metabolizadas por las bacterias. Inulina, fructooligosacáridos (FOS) y galacto-
           oligosacáridos (GOS), entre otros.
         </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          GOS - son polvos derivados de la lactosa que alimentan a las bacterias que apoyan el fortalecimiento del sistema
-          inmune, mejoran la absorción del calcio y contrarrestan los procesos inflamatorios. Los GOS se encuentran en la leche
-          materna y en suplementos.
-        </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          FOS – es fibra soluble que contiene fructosa y se encuentra en una gran variedad de plantas y frutas como la cebolla, ajo,
-          espárrago, alcachofa, jitomate, alfalfa, plátano, entre otros.
-        </Text>
+        <Paragraph>
+          <Text>{
+            `
+\u2022  GOS - son polvos derivados de la lactosa que alimentan a las bacterias que apoyan el fortalecimiento del sistema
+inmune, mejoran la absorción del calcio y contrarrestan los procesos inflamatorios. Los GOS se encuentran en la leche materna y en suplementos..
+
+\u2022  FOS – es fibra soluble que contiene fructosa y se encuentra en una gran variedad de plantas y frutas como la cebolla, ajo, espárrago, alcachofa, jitomate, alfalfa, plátano, entre otros.
+            `
+          }</Text>
+        </Paragraph>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           La mayoría de las bacterias del colon utilizan hidratos de carbono como fuente de energía para reproducirse.
           Especialmente abundante es el género Bifidobacterium, que constituye aproximadamente el 25% de la población
@@ -129,8 +135,10 @@ class Intestinal extends Component {
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Otros alimentos prebióticos son la cerveza artesanal, la miel de abeja cruda y la miel maple natural.
         </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontBold, styles.fontBlack14]}>
           3.- Probióticos
+        </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Se encuentran como suplementos alimenticios o en la comida que contienen bacterias buenas. Los probióticos
           pueden ser de origen bacteriano y de levadura.
         </Text>
@@ -147,6 +155,9 @@ class Intestinal extends Component {
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Se encuentran en alimentos fermentados que contienen bacterias como parte de su composición alimenticia.
+        </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontBold, styles.fontBlack14]}>
+          Alimentos fermentados
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Miso
@@ -184,8 +195,10 @@ class Intestinal extends Component {
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           También se pueden adquirir en forma de suplementos en cápsulas, píldoras o polvos
         </Text>
+        <Text style={[styles.isMarginSmall, styles.isGinoraFontBold, styles.fontBlack14]}>
+          4.- Postbióticos
+        </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
-          3.- Postbióticos
           Son los metabolitos que las bacterias producen. Estos microorganismos sintetizan multitud de compuestos en los
           procesos de transformación de los alimentos en energía. Se han identificado más de 800 compuestos bioquímicos
           producidos por los microorganismos e investigaciones recientes indican que se puede influir en la producción de

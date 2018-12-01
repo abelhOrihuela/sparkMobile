@@ -197,12 +197,17 @@ class MyNewMe extends Component {
           Integrado.
         </Text>
         <Text style={[styles.isGinoraFontRegular, styles.isMarginSmall]}>
-          El propósito de My New Me es darte recomendaciones únicas enfocadas en el factor de riesgo y/o áreas
+          El propósito de
+          <Text style={[styles.isAdamFontRegular]}>
+          <Text style={[styles.isBold]}>MY</Text>NEWME
+          </Text> es darte recomendaciones únicas enfocadas en el factor de riesgo y/o áreas
           de oportunidad que detectamos prioritario. Es fundamental conocer qué aspectos pueden
           tener más impacto para optimizar tu bienestar.
         </Text>
         <Text style={[styles.isGinoraFontRegular, styles.isMarginSmall]}>
-          My New me es la herramienta a través de la cual el Alchemy Advisor te recomendará planes de nutrición, estrategias de
+          <Text style={[styles.isAdamFontRegular]}>
+          <Text style={[styles.isBold]}>MY</Text>NEWME
+          </Text> es la herramienta a través de la cual el Alchemy Advisor te recomendará planes de nutrición, estrategias de
           cambio de hábitos, sugerencias de actividad física, entre otros tips prácticos que te ayudarán a optimizar tu estado de
           salud y bienestar.
         </Text>

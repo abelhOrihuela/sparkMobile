@@ -21,14 +21,14 @@ class Longevity extends Component {
     return (
       <View style={{flex: 1}}>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack16Bold, styles.fontGinora]}>
-          Salud Óptima
+          Longevidad
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Tu salud está en buenas condiciones. Lo que estás haciendo te ha funcionado muy bien.
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
           Lo que hagas hoy por tu cuerpo, repercutirá mañana. Si ya prácticas algún ejercicio o entrenamiento, te recomendamos
-          que tomes en cuenta los TIPS de ejercicio para agregar o modificar cualquier información nueva a tus hábitos de
+          que tomes en cuenta los consejos generales de ejercicio para agregar o modificar cualquier información nueva a tus hábitos de
           actividad física.
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
@@ -151,7 +151,7 @@ class Longevity extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad, te recomendamos que cuides y mantengas tú frecuencia cardiaca mientras haces ejercicio en un
-            rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto, con un máximo de {this.props.data.heartFrequency} latidos por minuto.
+            rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.maxHeartFrequency} latidos por minuto, con un máximo de {this.props.data.heartFrequency || 0} latidos por minuto.
           </Text>
         </Panel>
 

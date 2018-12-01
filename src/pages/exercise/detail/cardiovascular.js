@@ -50,7 +50,7 @@ class Cardiovascular extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad y tu área de oportunidad, te recomendamos que cuides y mantengas tú frecuencia cardiaca
-            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto.
+            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.maxHeartFrequency} latidos por minuto.
           </Text>
         </Panel>
 
@@ -85,6 +85,36 @@ class Cardiovascular extends Component {
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Es importante que realices estiramientos después de hacer ejercicio y que dediques por lo menos un día de ejercicio a
             hacer estiramientos profundos. Para esto, tomar una clase de yoga, pilates reformer o streching resulta una gran opción.
+          </Text>
+        </Panel>
+
+        <Panel
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
+          TIPOS DE EJERCICIO
+          </Text>)}
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            En cuanto a ejercicios de fuerza y cardiovasculares, todo depende de qué tan elevado sea tu factor de riesgo. Pero una
+            de las recomendaciones principales es que tu respiración sea continua y tu ritmo cardiaco controlado.
+          </Text>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            Alterna los tipos de ejercicio que realices, un día fuerza, otro día cardiovascular (cuidando tu ritmo cardiaco y
+            respiración), y otro estiramiento profundo.
+          </Text>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            Cuando hagas fuerza, alterna los grupos de músculos que trabajes por día (ver tabla de grupos de músculos). Lo mejor es
+            que descanses entre cada serie de ejercicio de 2 a 3 minutos, cuidando que no se aumente mucho tu frecuencia
+            cardiaca.
+          </Text>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            No te recomendamos los entrenamientos HIIT, ya que consisten en aumentar el ritmo cardiaco intensamente. Práctica
+            actividades que te permitan controlar tu frecuencia cardiaca, así como oxigenarte adecuadamente.
+          </Text>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            Algunos ejercicios cardiovasculares recomendados para tu área de oportunidad: caminatas, nadar, subir escaleras y
+            andar en bici. Todo con una intensidad de baja a media y sin hacer picos de esfuerzo.
           </Text>
         </Panel>
 

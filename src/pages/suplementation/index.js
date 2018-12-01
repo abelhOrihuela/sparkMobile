@@ -3,7 +3,7 @@ import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollVie
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 // import header from 'app/src/nutricion-fondo.jpg'
-import header from 'app/src/suplementacion-fondo.png'
+import header from 'app/src/suplementacion-bg.png'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
 import iconSuplementation from 'app/src/icon-suplementacion.png'
@@ -58,7 +58,7 @@ class Suplementation extends Component {
             borderColor='#6865A1'
             colorIcon='#FFFFFF'>
             <Text>
-              De acuerdo con los resultados de tus distintos análisis y al área de oportunidad determinada, hay diversas acciones que
+              De acuerdo con los resultados de tus distintos análisis y al área de oportunidad/factor de riesgo determinado, hay diversas acciones que
               puedes llevar a cabo para enriquecer las valoraciones que te hicimos. Por ejemplo, análisis de sangre específicos,
               revisiones médicas, terapias alternativas, suplementación, entre otras.
             </Text>

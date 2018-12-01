@@ -46,7 +46,7 @@ class Cardiovascular extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Considerando tú edad y tu área de oportunidad, te recomendamos que cuides y mantengas tú frecuencia cardiaca
-            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency} a {this.props.data.maxHeartFrequency} latidos por minuto.
+            mientras haces ejercicio en un rango de {this.props.data.minHeartFrequency || 0} a {this.props.data.maxHeartFrequency || 0} latidos por minuto.
           </Text>
         </Panel>
 
@@ -86,6 +86,20 @@ class Cardiovascular extends Component {
           </Text>
           <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
             Y que no dejes pasar mucho tiempo entre tu entrenamiento y tu siguiente comida.
+          </Text>
+        </Panel>
+
+        <Panel
+          style={styles.isMarginSmall}
+          title={(<Text style={[{color: 'black'}, styles.isGinoraFontRegular]}>
+          TIPOS DE EJERCICIO
+          </Text>)}
+          styleContainerTitle={{backgroundColor: 'white'}}
+          borderColor='white' colorIcon='black'>
+          <Text style={[styles.isGinoraFontRegular, styles.isMarginSmallTopBottom]}>
+            Para tu condición los ejercicios cardiovasculares pueden resultar muy positivos. Este tipo de ejercicio ayuda a tu cuerpo
+            a utilizar mejor la insulina. Sobre todo, cuando logras aumentar la intensidad de tu entrenamiento a un nivel medio –
+            alto, en el que permites que tu cuerpo aproveche la glucosa de tu sangre como fuente de energía.
           </Text>
         </Panel>
 

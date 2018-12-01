@@ -30,13 +30,13 @@ import styles from 'app/src/pages/styles'
 export default class Dashboard extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Home',
+      title: 'Inicio',
       drawerIcon: () => (
         <Icon name='home' size={20} color='#FFFFFF' />
       ),
 
       drawerLabel: () => {
-        return 'Home'
+        return 'Inicio'
       },
       headerLeft: null
     }
@@ -135,7 +135,7 @@ export default class Dashboard extends Component {
       </View>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>
-          Bienvenido a AlcheMycode, este será tu espacio personal para conocerte y poder cambiar tu vida.
+          En este espacio encontrarás la información necesaria para empezar a hacer cambios en tu vida.
         </Text>
       </View>
       <TouchableOpacity

@@ -28,7 +28,7 @@ class Profile extends Component {
     ),
 
     drawerLabel: () => {
-      return 'Profile'
+      return 'Mi perfil'
     },
   }
 
@@ -37,9 +37,9 @@ class Profile extends Component {
     this.state = {
       user: null,
       value: {
-        email: 'abel@happy.com',
-        name: 'Abel',
-        telephone: '7224666201'
+        email: '',
+        name: '',
+        telephone: ''
       },
       options:{
         fields: {
@@ -71,7 +71,6 @@ class Profile extends Component {
   async load () {
     let user = JSON.parse(await AsyncStorage.getItem('user'))
     this.setState({user})
-    console.log('User ===>', user)
   }
 
   handleOnChange = (e) => {

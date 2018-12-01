@@ -32,15 +32,6 @@ import TipsDetail from '../pages/tips-detail'
 
 import Logout from '../pages/logout'
 
-// const StackNotifications = StackNavigator({
-//   Notifications: { screen: Notifications },
-//   NotificationDetail: { screen: NotificationDetail }
-// })
-// const StackReports = StackNavigator({
-//   Reports: { screen: Reports },
-//   ReportDetail: {screen: ReportDetail}
-// })
-
 const StackMyNewMe = StackNavigator({
   Home: {screen: Dashboard},
   Reports: { screen: Reports },

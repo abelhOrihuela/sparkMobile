@@ -53,19 +53,19 @@ class Stress extends Component {
 
       <Paragraph>
         <Text>{
-`\u2022  debilitar nuestro sistema inmunológico.
+`\u2022  Debilitar nuestro sistema inmunológico.
 
-\u2022  desbalancear las bacterias de nuestra microbiota.
+\u2022  Desbalancear las bacterias de nuestra microbiota.
 
-\u2022  aumentar la presión sanguínea.
+\u2022  Aumentar la presión sanguínea.
 
-\u2022  incrementar los problemas del corazón.
+\u2022  Incrementar los problemas del corazón.
 
-\u2022  desequilibrar la forma en la que nos alimentamos, generando antojos.`
+\u2022  Desequilibrar la forma en la que nos alimentamos, generando antojos.`
         }</Text>
       </Paragraph>
 
-      <Paragraph>
+      <Paragraph style={[styles.isBold]}>
         <Text>Buenos hábitos para liberar el estrés del día:</Text>
       </Paragraph>
 
@@ -88,7 +88,9 @@ Disfrutar de la naturaleza y de momentos al aire libre
 Pasatiempos o actividades que den placer o servicio a los demás
 
 Escuchar música
-En especial escuchar música clásica y de sonidos naturales es una herramienta terapéutica para el manejo del estrés, ya que las vibraciones de las notas musicales ayudan a equilibrar los ritmos cardíacos, a reducir los niveles de cortisol y a crear mayor armonía física, emocional y mental.`
+
+\u2022  En especial escuchar música clásica y de sonidos naturales es una herramienta terapéutica para el manejo del estrés, ya que las vibraciones de las notas musicales ayudan a equilibrar los ritmos cardíacos, a reducir los niveles de cortisol y a crear mayor armonía física, emocional y mental.
+`
         }</Text>
       </Paragraph>
 
