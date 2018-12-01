@@ -12,7 +12,7 @@ import styles from 'app/src/pages/styles'
 import Cardiovascular from 'app/src/pages/exercise/detail/cardiovascular'
 import Diabetes from 'app/src/pages/exercise/detail/diabetes'
 import Obesity from 'app/src/pages/exercise/detail/obesity'
-import Nutrition from 'app/src/pages/exercise/detail/nutrition'
+import OptimalWellness from 'app/src/pages/exercise/detail/optimal-wellness'
 import Longevity from 'app/src/pages/exercise/detail/longevity'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -47,13 +47,14 @@ class Index extends Component {
       content = <Cardiovascular data={currentOrder.riskIndex} />
     } else if (key === 'obesity') {
       content = <Obesity data={currentOrder.riskIndex} />
-    } else if (key === 'nutrition') {
-      content = <Nutrition data={currentOrder.riskIndex} />
+    } else if (key === 'optimal_wellness') {
+      content = <OptimalWellness data={currentOrder.riskIndex} />
     } else if (key === 'longevity') {
       content = <Longevity data={currentOrder.riskIndex} />
     } else if (key === 'diabetes'){
       content = <Diabetes data={currentOrder.riskIndex} />
     }
+    content = <Longevity data={currentOrder.riskIndex} />
 
     return (<Page>
       {content}

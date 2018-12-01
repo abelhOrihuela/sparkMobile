@@ -54,11 +54,8 @@ class ExerciseTypes extends Component {
     const currentOrder = navigation.getParam('currentOrder', null)
     let {key} = currentOrder.riskIndex
 
-    let content = <Diabetes />
+    let content = <Cardiovascular />
 
-    if (key === 'cardiovascular') {
-      content = <Cardiovascular />
-    }
     return (
       <Page style={[styles.isMarginless, styles.isPaddingless]}>
         {content}

@@ -3,7 +3,7 @@ import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollVie
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
 // import header from 'app/src/nutricion-fondo.jpg'
-import header from 'app/src/suplementacion-fondo.png'
+import header from 'app/src/suplementacion-bg.png'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
 import iconSuplementation from 'app/src/icon-suplementacion.png'

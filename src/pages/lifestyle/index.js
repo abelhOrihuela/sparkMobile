@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/nutricion-fondo.jpg'
+import header from 'app/src/lifestyle-fondo.png'
 import headerLifeStyle from 'app/src/estilodevida-fondo.jpg'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
