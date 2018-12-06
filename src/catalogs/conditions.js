@@ -1,6 +1,6 @@
 const conditions = {
-  nutrition: {
-    label: 'Nutrición',
+  optimal_wellness: {
+    label: 'Salud Optima',
     icon: require('../images/nutrition-icon.png'),
     headerPlate: require('../images/header-plate-nutrition.png'),
     plate: require('../images/plate-nutrition.png')

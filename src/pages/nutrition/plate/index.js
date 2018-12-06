@@ -94,7 +94,7 @@ export default class AlchemyPlate extends Component {
       </View>
     }
 
-    if (riskIndex.key === 'nutrition') {
+    if (riskIndex.key === 'optimal_wellness') {
       content = <SmartDiet data={riskIndex} />
     } else if (riskIndex.key === 'cardiovascular') {
       content = <HealtyHeart data={riskIndex} />
