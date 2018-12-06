@@ -91,7 +91,7 @@ class Reports extends Component {
       backgroundImage = microbiome
       icon = iconMicrobiome
       title = 'MICROBIOMA'
-    } else if (item.type=== 'risk') {
+    } else if (item.type=== 'risk-index') {
       backgroundImage = risk
       icon = iconRisk
       title = 'INTEGRADOR'
@@ -198,7 +198,7 @@ const stylesReports = StyleSheet.create({
     backgroundColor: '#009AA7',
     right: 0,
   },
-  riskOverlay: {
+  'risk-indexOverlay': {
     flex: 1,
     position: 'absolute',
     left: 0,

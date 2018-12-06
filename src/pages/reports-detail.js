@@ -75,8 +75,8 @@ class Reports extends Component {
       type = 'sensibilities'
     } else if (report.type === 'microbiome') {
       type = 'microbiome'
-    } else if (report.type === 'risk') {
-      type = 'risk'
+    } else if (report.type === 'risk-index') {
+      type = 'integrator'
     }
 
     let url = `${appHost}/reports/${type}/${report.uuid}?token=${token}&isNative=1`
