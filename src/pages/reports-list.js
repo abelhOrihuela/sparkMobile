@@ -90,7 +90,7 @@ class Reports extends Component {
     } else if (item.type=== 'microbiome') {
       backgroundImage = microbiome
       icon = iconMicrobiome
-      title = 'MICROBIOMA'
+      title = 'MICROBIOTA'
     } else if (item.type=== 'risk-index') {
       backgroundImage = risk
       icon = iconRisk

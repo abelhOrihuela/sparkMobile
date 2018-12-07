@@ -127,11 +127,9 @@ export default class Dashboard extends Component {
 
     let modalOne = modalIntro ? (<ModalContainer
       visible={modalIntro}>
+
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Image source={logoWhite} resizeMode='contain' style={{width: 200}}/>
-      </View>
-      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
-        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontRegular]}>Bienvenido a</Text>
       </View>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>
@@ -145,27 +143,26 @@ export default class Dashboard extends Component {
       </TouchableOpacity>
     </ModalContainer>) : <View />
 
-    let modalTwo = modalTwo ? (<ModalContainer
+    let modalTwo = modalStatus ? (<ModalContainer
       visible={modalStatus}>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
-        <Image source={logoWhite} />
-      </View>
-      <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
-        <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontBold]}>Estamos preparando tus resultados.</Text>
+        <Image source={logoWhite} resizeMode='contain' style={{width: 200}}/>
       </View>
       <View style={[stylesDashboard.sectionColumn, stylesDashboard.doubleMarginTopBottom]}>
-        { actions.length ?
-          actions.map((item, index) => {
-            return (<View style={[stylesDashboard.sectionRow]}>
-              <Icon name='check' size={20} color='#FFFFFF' />
-              <Text style={[stylesDashboard.fontWhite18, styles.isGinoraFontBold, stylesDashboard.marginSides]}>
-                {
-                  Orders.find(l => l.key === item.data.status) ? Orders.find(l => l.key === item.data.status).label : 'N/A'
-                }
-              </Text>
-            </View>)
-          }) : <View />
-        }
+
+        <View style={[stylesDashboard.sectionRow]}>
+          <Icon name='check' size={20} color='#FFFFFF' />
+          <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontBold, stylesDashboard.marginSides]}>
+            Estamos preparando tus resultados.
+          </Text>
+        </View>
+        <View style={[stylesDashboard.sectionRow]}>
+          <Icon name='check' size={20} color='#FFFFFF' />
+          <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontBold, stylesDashboard.marginSides]}>
+            Pronto lograrás los cambios que deseas en tu vida.
+          </Text>
+        </View>
+
       </View>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Text style={[stylesDashboard.fontWhite16, styles.isGinoraFontRegular]}>¡Pronto iniciarás un nuevo estilo de vida!</Text>
