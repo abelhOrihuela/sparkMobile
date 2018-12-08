@@ -29,19 +29,42 @@ class Hidratation extends Component {
         <Text>Respiración</Text>
       </Paragraph>
 
-      <Paragraph>
-        <Text>{
-`\u2022  Respiración y energía: Gracias al oxígeno que obtienes con tu respiración tus células pueden producir energía. Mientras más consciente y profundo respires, más energía tendrás para sentirte bien.
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Respiración y energía:
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        Gracias al oxígeno que obtienes con tu respiración tus células pueden producir energía. Mientras más consciente y profundo respires, más energía tendrás para sentirte bien.
+      </Text>
 
-\u2022  Respiración y atención: Tu cerebro es un órgano que utiliza mucho oxígeno para funcionar. Una respiración adecuada mejora tus capacidades cognitivas.
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Respiración y atención:
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        Tu cerebro es un órgano que utiliza mucho oxígeno para funcionar. Una respiración adecuada mejora tus capacidades cognitivas.
+      </Text>
 
-\u2022  Respiración y relajación: A través de una respiración profunda, fluida y consciente, es posible alcanzar estados de relajación que equilibran el funcionamiento de tu cuerpo.
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Respiración y relajación:
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        A través de una respiración profunda, fluida y consciente, es posible alcanzar estados de relajación que equilibran el funcionamiento de tu cuerpo.
+      </Text>
 
-\u2022  Respiración y calorías: La quema de calorías y tu respiración son proporcionales. Para quemar calorías necesitas oxígeno. Por eso cuando haces ejercicio tus respiraciones se vuelven más profundas. En consecuencia, una buena respiración es fundamental para que alcances tus metas físicas y/o deportivas.
-
-\u2022  Respiración y emociones: Nuestra respiración es la única función involuntaria que se puede también controlar de forma voluntaria. Su relación con nuestras emociones es muy estrecha. Así como reflejan inmediatamente un cambio de estado de ánimo, como cuando nos sentimos ansiosos, estresados o enojados, también mediante técnicas de respiración consciente puedes aprender a controlar e inducir estados emocionales positivos.`
-        }</Text>
-      </Paragraph>
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Respiración y calorías:
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        La quema de calorías y tu respiración son proporcionales. Para quemar calorías necesitas oxígeno. Por eso cuando haces ejercicio tus respiraciones se vuelven más profundas. En consecuencia, una buena respiración es fundamental para que alcances tus metas físicas y/o deportivas.
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Respiración y emociones:
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        Nuestra respiración es la única función involuntaria que se puede también controlar de forma voluntaria.
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular, styles.fontBlack14]}>
+        Su relación con nuestras emociones es muy estrecha. Así como reflejan inmediatamente un cambio de estado de ánimo, como cuando nos sentimos ansiosos, estresados o enojados, también mediante técnicas de respiración consciente puedes aprender a controlar e inducir estados emocionales positivos.
+      </Text>
     </Page>)
   }
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/images/longevidad-tips.png'
+// import header from 'app/src/images/longevidad-tips.png'
+import header from 'app/src/images/longevidad-bg.png'
 import headerLongevidad from 'app/src/images/longevidad-fondo.jpg'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
@@ -51,19 +52,18 @@ class Longevity extends Component {
 
   render() {
     let title = (<View>
-      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
+        <Text style={[styles.fontWhite18, styles.isGinoraFontBold]}>
+          LONGEVIDAD
+        </Text>
     </View>)
     return (
       <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={headerLongevidad} />
         <View style={[{ height: height, backgroundColor: '#715200'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
-            LONGEVIDAD
-          </Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={[styles.isMarginSmallTopBottom, styles.isMarginTopXL]}
             styleContainerTitle={{backgroundColor: '#A78220'}}
             borderColor='#A78220'
             colorIcon='#FFFFFF'>

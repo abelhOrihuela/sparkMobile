@@ -121,6 +121,7 @@ class MyNewMe extends Component {
 
     const riskKey = get(currentOrder, 'riskIndex.key')
     const riskIndex = get(currentOrder, 'riskIndex.value', 0.5)
+    const risk = get(currentOrder, 'riskIndex.risk', '')
 
     const condition = Conditions[riskKey] || {}
 
@@ -131,12 +132,20 @@ class MyNewMe extends Component {
     NEWME
     </Text>)
 
+
+    let description = 'Área de oportunidad'
+
+    if (risk === 'diabetes' || risk === 'cardiovascular' || risk === 'obesity') {
+      description = 'Factor de riesgo'
+    }
+
     let modal = (<ModalContainer
       backgroundColor='black'
       visible={showRiskIndexModal}>
       <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
         <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
-          <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>Factor de riesgo:
+          <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite16]}>
+            {description}:
             <Text style={{color: 'white', fontWeight: 'bold'}}> {condition.label}</Text>
           </Text>
           <TouchableOpacity
@@ -148,8 +157,11 @@ class MyNewMe extends Component {
         <View style={[styles.isFlex1, styles.isMargin]}>
           <View style={[styles.isLineHeight20, styles.centered]}>
             <Image style={[{ width: 50, height: 57 }, styles.isMargin]} source={condition.icon} />
+            <Text style={[styles.fontBlack18, styles.isGinoraFontRegular, styles.textCenter]}>
+              Esta escala mide tu {description.toLowerCase()} principal:
+            </Text>
             <Text style={[styles.fontBlack18, styles.isGinoraFontBold, styles.textCenter]}>
-              Esta escala mide el nivel de tu factor de riesgo / área de oportunidad
+              {condition.label}
             </Text>
           </View>
           <View style={styles.isMargin}>
@@ -175,17 +187,6 @@ class MyNewMe extends Component {
 
     return (<Page>
       {modal}
-      <View style={[stylesMyNewMe.headerRiskIndex]}>
-        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>
-          Factor de riesgo: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
-        </Text>
-        <TouchableOpacity
-          style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
-          onPress={() => this.setModalVisible(!showRiskIndexModal)}>
-          <Icon name='eye' size={20} color='#FFFFFF' />
-        </TouchableOpacity>
-      </View>
-
       <Panel
         style={styles.isMarginSmall}
         title={title}
@@ -212,6 +213,18 @@ class MyNewMe extends Component {
           salud y bienestar.
         </Text>
       </Panel>
+
+      { risk != 'optimal_wellness' && (<View style={[stylesMyNewMe.headerRiskIndex]}>
+        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite16]}>
+          {description}: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
+        </Text>
+        <TouchableOpacity
+          style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
+          onPress={() => this.setModalVisible(!showRiskIndexModal)}>
+          <Icon name='eye' size={20} color='#FFFFFF' />
+        </TouchableOpacity>
+      </View>)
+      }
 
       <View style={styles.isMarginSmallBottom}>
         <FlatList
