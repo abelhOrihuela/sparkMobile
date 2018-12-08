@@ -5,7 +5,7 @@ import { NavigationActions, StackActions } from 'react-navigation'
 import header from 'app/src/nutricion-fondo.jpg'
 import ejercicioBg from 'app/src/ejercicio-fondo.jpg'
 
-import bgTipsExercise from 'app/src/images/bg-tips-exercise.png'
+import bgTipsExercise from 'app/src/lifestyle-fondo.png'
 import icon from 'app/src/iconDna.png'
 import iconExercise from 'app/src/icon-exercise.png'
 import iconExerciseRun from 'app/src/icon-exercise-run.png'
@@ -67,8 +67,8 @@ class Exercise extends Component {
   render() {
     let {currentOrder} = this.state
     let title = (<View>
-      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>
-        ¿Qué encontrarás?
+      <Text style={[styles.fontWhite18, styles.isGinoraFontBold]}>
+        EJERCICIO
       </Text>
     </View>)
 
@@ -82,13 +82,9 @@ class Exercise extends Component {
         <View style={[{ height: height, backgroundColor: '#DC6B18'}, styles.isOverlay, styles.isOpacity50]} />
 
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
-            EJERCICIO
-          </Text>
-
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={[styles.isMarginSmallTopBottom, styles.isMarginTopXL]}
             styleContainerTitle={{backgroundColor: '#FF974A'}}
             borderColor='#FF974A'
             colorIcon='#FFFFFF'>

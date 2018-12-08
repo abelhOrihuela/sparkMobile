@@ -48,7 +48,7 @@ class Detail extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <Page style={{flex: 1}}>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
           La suplementación va a servir como una excelente herramienta de apoyo a tu alimentación personalizada.
         </Text>
@@ -56,28 +56,27 @@ class Detail extends Component {
           Para entender la importancia de la suplementación, te explicamos un poco del contexto hoy en día.
         </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
-          Los estilos de vida actuales, en especial los urbanos, con un consumo de alimentos altamente procesados, comida
-          rápida, inhalación de aire contaminado y una pobre rutina de horarios, han generado graves deficiencias alimenticias. En
-          especial la producción masiva e industrializada de alimentos ha demeritado la calidad de las propiedades nutrimentales
-          de estos.
-        </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
-          Sumado a lo anterior, los altos y crónicos niveles de estrés suscitan procesos oxidativos acelerados, por lo que nuestro
-          cuerpo demanda mayores dosis de antioxidantes; la poca exposición al sol en horas de baja radiación solar ha traído
-          como consecuencia una deficiencia común de vitamina D, nutrimento crucial para la fijación de calcio en nuestros
-          huesos.
-        </Text>
-        <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
-          De igual forma, el consumo excesivo de productos empaquetados, antibióticos y laxantes perjudican a nuestra
-          microbiota. Más allá de los alimentos de tu dieta, la suplementación ayuda a recuperar la población y mejorar la salud
-          de nuestra flora intestinal.
-        </Text>
+          {
+`\u2022  Los estilos de vida actuales, en especial los urbanos, con un consumo de alimentos altamente procesados, comida
+rápida, inhalación de aire contaminado y una pobre rutina de horarios, han generado graves deficiencias alimenticias. En
+especial la producción masiva e industrializada de alimentos ha demeritado la calidad de las propiedades nutrimentales
+de estos.
+
+\u2022  Los altos y crónicos niveles de estrés suscitan procesos oxidativos acelerados, por lo que nuestro cuerpo demanda mayores dosis de antioxidantes; la poca exposición al sol en horas de baja radiación solar ha traído como consecuencia una deficiencia común de vitamina D, nutrimento crucial para la fijación de calcio en nuestros huesos.
+
+\u2022  El consumo excesivo de productos empaquetados, antibióticos y laxantes perjudican a nuestra microbiota. Más allá de los alimentos de tu dieta, la suplementación ayuda a recuperar la población y mejorar la salud de nuestra flora intestinal.
+`
+        }
+      </Text>
         <Text style={[styles.isMarginSmall, styles.isGinoraFontRegular]}>
           Si nuestro equipo de expertos determina la necesidad de incluir complementos y/o suplementos (vitaminas, minerales,
           antioxidantes, prebióticos y probióticos), se te darán recomendaciones en cuanto a tipo, cantidad y dosis.
         </Text>
+        <Text style={[styles.isMarginSmall, styles.isBold]}>
+          Lista de suplementos y complementos recomendados:
+        </Text>
         <Suggestions {...this.props} section='health' tags='supplementation' />
-      </View>
+      </Page>
     )
   }
 }

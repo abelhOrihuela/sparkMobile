@@ -276,6 +276,9 @@ const styles = StyleSheet.create({
   },
   isLineHeight18: {
     lineHeight: 18
+  },
+  isMarginTopXL:{
+    marginTop: 115
   }
 })
 

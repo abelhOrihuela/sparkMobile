@@ -69,35 +69,61 @@ class Stress extends Component {
         <Text>Buenos hábitos para liberar el estrés del día:</Text>
       </Paragraph>
 
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Realizar ejercicio
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Hacer respiración profunda:
+      </Text>
       <Paragraph>
         <Text>{
-`Realizar ejercicio
-
-Hacer respiración profunda
-
+`
 \u2022  La respiración ayuda a generar una adecuada oxigenación celular, regula los ritmos de inhalación y exhalación y tiene un impacto directo en el sistema nervioso.
-
-Momento de silencio o meditación
-
-\u2022  Un espacio diario de mínimo 10 minutos sin distracciones para observar cómo se sienten nuestras sensaciones corporales, las emociones y los pensamientos, nos ayuda a conocernos y a entrar a estados de conexión interior más profunda. Si al principio necesitas apoyarte de música tranquila, relajaciones guiadas, meditaciones grabadas o mantras, es un buen comienzo para entrar en estados de relajación.
-
-Disfrutar de la naturaleza y de momentos al aire libre
-
-\u2022  Está comprobado que el contacto con la naturaleza ayuda a reducir el estrés y calma el sistema nervioso ya que libera oxcitocina y endorfinas, que son las hormonas de la felicidad.
-
-Pasatiempos o actividades que den placer o servicio a los demás
-
-Escuchar música
-
-\u2022  En especial escuchar música clásica y de sonidos naturales es una herramienta terapéutica para el manejo del estrés, ya que las vibraciones de las notas musicales ayudan a equilibrar los ritmos cardíacos, a reducir los niveles de cortisol y a crear mayor armonía física, emocional y mental.
 `
         }</Text>
       </Paragraph>
 
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Momento de silencio o meditación
+      </Text>
+      <Text>
+        {
+`
+\u2022  Un espacio diario de mínimo 10 minutos sin distracciones para observar cómo se sienten nuestras sensaciones corporales, las emociones y los pensamientos, nos ayuda a conocernos y a entrar a estados de conexión interior más profunda. Si al principio necesitas apoyarte de música tranquila, relajaciones guiadas, meditaciones grabadas o mantras, es un buen comienzo para entrar en estados de relajación.
+`
+        }
+      </Text>
+
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Disfrutar de la naturaleza y de momentos al aire libre
+      </Text>
+      <Text>
+        {
+`
+\u2022  Está comprobado que el contacto con la naturaleza ayuda a reducir el estrés y calma el sistema nervioso ya que libera oxcitocina y endorfinas, que son las hormonas de la felicidad.
+`
+        }
+      </Text>
+
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Pasatiempos o actividades que den placer o servicio a los demás
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Escuchar música
+      </Text>
+      <Text>
+        {
+`
+\u2022  En especial escuchar música clásica y de sonidos naturales es una herramienta terapéutica para el manejo del estrés, ya que las vibraciones de las notas musicales ayudan a equilibrar los ritmos cardíacos, a reducir los niveles de cortisol y a crear mayor armonía física, emocional y mental.
+`
+        }
+      </Text>
+      <Text style={[styles.isMarginSmall, styles.isBold]}>
+        Consumir alimentos antiestrés:
+      </Text>
       <Paragraph>
         <Text>{
-`Alimentos antiestrés
-
+`
 \u2022  Maca – aumenta la energía y la vitalidad considerablemente y mejora la concentración.
 
 \u2022  Cacao – al ser rico en magnesio y triptófano aumenta la serotonina, causando mayor sensación de bienestar.

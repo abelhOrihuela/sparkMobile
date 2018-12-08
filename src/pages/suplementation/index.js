@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-// import header from 'app/src/nutricion-fondo.jpg'
-import header from 'app/src/suplementacion-bg.png'
+// import bgTips from 'app/src/suplementacion-bg.png'
+import bgTips from 'app/src/images/bg-tips-exercise.png'
+
+import header from 'app/src/suplementacion-fondo.png'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
 import iconSuplementation from 'app/src/icon-suplementacion.png'
@@ -41,19 +43,19 @@ class Suplementation extends Component {
 
   render() {
     let title = (<View>
-      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontBold]}>
+        SALUD Y SUPLEMENTACIÓN
+      </Text>
     </View>)
     return (
       <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={header} />
         <View style={[{ height: height, backgroundColor: '#1E1B5D'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
-            SALUD Y SUPLEMENTACIÓN
-          </Text>
+
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={[styles.isMarginSmallTopBottom, styles.isMarginTopXL]}
             styleContainerTitle={{backgroundColor: '#6865A1'}}
             borderColor='#6865A1'
             colorIcon='#FFFFFF'>
@@ -96,7 +98,7 @@ class Suplementation extends Component {
         <CardTips
           style={styles.isMarginSmallTopBottom}
           {...this.props}
-          img={header}
+          img={bgTips}
           title='Tips de salud y suplementación'
           params={{section: 'supplementation'}}
           to='TipsSection' />

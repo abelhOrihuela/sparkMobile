@@ -46,8 +46,8 @@ class Nutrition extends Component {
 
   render() {
     let title = (<View>
-      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>
-        ¿Qué encontrarás?
+      <Text style={[styles.fontWhite18, styles.isGinoraFontBold]}>
+        NUTRICIÓN
       </Text>
     </View>)
 
@@ -57,12 +57,9 @@ class Nutrition extends Component {
         <View style={[{ height: height, backgroundColor: '#911E38'}, styles.isOverlay, styles.isOpacity50]} />
 
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
-            NUTRICIÓN
-          </Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={[styles.isMarginSmallTopBottom, styles.isMarginTopXL]}
             styleContainerTitle={{backgroundColor: '#B9163B'}}
             borderColor='#B9163B'
             colorIcon='#FFFFFF'>

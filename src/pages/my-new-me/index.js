@@ -144,7 +144,7 @@ class MyNewMe extends Component {
       visible={showRiskIndexModal}>
       <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'white', margin: 20}}>
         <View style={{flexDirection: 'row', backgroundColor: '#009AA7', alignItems: 'center', height: 70, padding: 20}}>
-          <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>
+          <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite16]}>
             {description}:
             <Text style={{color: 'white', fontWeight: 'bold'}}> {condition.label}</Text>
           </Text>
@@ -157,8 +157,11 @@ class MyNewMe extends Component {
         <View style={[styles.isFlex1, styles.isMargin]}>
           <View style={[styles.isLineHeight20, styles.centered]}>
             <Image style={[{ width: 50, height: 57 }, styles.isMargin]} source={condition.icon} />
+            <Text style={[styles.fontBlack18, styles.isGinoraFontRegular, styles.textCenter]}>
+              Esta escala mide tu {description.toLowerCase()} principal:
+            </Text>
             <Text style={[styles.fontBlack18, styles.isGinoraFontBold, styles.textCenter]}>
-              Esta escala mide el nivel de tu {description}
+              {condition.label}
             </Text>
           </View>
           <View style={styles.isMargin}>
@@ -184,17 +187,6 @@ class MyNewMe extends Component {
 
     return (<Page>
       {modal}
-      <View style={[stylesMyNewMe.headerRiskIndex]}>
-        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite18]}>
-          {description}: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
-        </Text>
-        <TouchableOpacity
-          style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
-          onPress={() => this.setModalVisible(!showRiskIndexModal)}>
-          <Icon name='eye' size={20} color='#FFFFFF' />
-        </TouchableOpacity>
-      </View>
-
       <Panel
         style={styles.isMarginSmall}
         title={title}
@@ -221,6 +213,18 @@ class MyNewMe extends Component {
           salud y bienestar.
         </Text>
       </Panel>
+
+      { risk != 'optimal_wellness' && (<View style={[stylesMyNewMe.headerRiskIndex]}>
+        <Text style={[stylesMyNewMe.title, styles.isGinoraFontRegular, styles.fontWhite16]}>
+          {description}: <Text style={{color: 'white', fontWeight: 'bold'}}>{condition.label}</Text>
+        </Text>
+        <TouchableOpacity
+          style={{flex: 1, height: 70, justifyContent: 'center', alignItems: 'center'}}
+          onPress={() => this.setModalVisible(!showRiskIndexModal)}>
+          <Icon name='eye' size={20} color='#FFFFFF' />
+        </TouchableOpacity>
+      </View>)
+      }
 
       <View style={styles.isMarginSmallBottom}>
         <FlatList

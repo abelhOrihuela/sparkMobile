@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, AsyncStorage, ImageBackground, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { NavigationActions, StackActions } from 'react-navigation'
-import header from 'app/src/lifestyle-fondo.png'
+import header from 'app/src/suplementacion-bg.png'
 import headerLifeStyle from 'app/src/estilodevida-fondo.jpg'
 import icon from 'app/src/iconDna.png'
 import iconFish from 'app/src/icon-exercise.png'
@@ -49,19 +49,18 @@ class Lifestyle extends Component {
 
   render() {
     let title = (<View>
-      <Text style={[styles.fontWhite18, styles.isGinoraFontRegular]}>¿Qué encontrarás?</Text>
+      <Text style={[styles.fontWhite18, styles.isGinoraFontBold]}>
+        HÁBITOS SALUDABLES
+      </Text>
     </View>)
     return (
       <Page style={[styles.isMarginless, styles.isPaddingless]}>
         <ImageBackground style={[StyleSheet.absoluteFill, {height: height}, styles.flexCenter]} source={headerLifeStyle} />
         <View style={[{ height: height, backgroundColor: '#535B06'}, styles.isOverlay, styles.isOpacity50]} />
         <View style={[styles.isMargin]}>
-          <Text style={[styles.textCentered, styles.fontWhite18, styles.isMarginDoubleTopBottom, styles.isGinoraFontBold]}>
-            HÁBITOS SALUDABLES
-          </Text>
           <Panel
             title={title}
-            style={styles.isMarginSmallTopBottom}
+            style={[styles.isMarginSmallTopBottom, styles.isMarginTopXL]}
             styleContainerTitle={{backgroundColor: '#949B55'}}
             borderColor='#949B55'
             colorIcon='#FFFFFF'>

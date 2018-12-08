@@ -42,6 +42,7 @@ export default class AlchemyPlate extends Component {
       </TouchableOpacity>)
     }
   }
+
   constructor(props) {
     super(props)
     this.state = {
