@@ -143,7 +143,7 @@ export default class Dashboard extends Component {
       </TouchableOpacity>
     </ModalContainer>) : <View />
 
-    let modalTwo = modalTwo ? (<ModalContainer
+    let modalTwo = modalStatus ? (<ModalContainer
       visible={modalStatus}>
       <View style={[stylesDashboard.sectionRow, stylesDashboard.doubleMarginTopBottom]}>
         <Image source={logoWhite} resizeMode='contain' style={{width: 200}}/>
