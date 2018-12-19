@@ -4,7 +4,7 @@ import axios from 'axios'
 // import qs from 'querystring'
 
 // const host = 'https://b34fa2ab.ngrok.io/api'
-const host = 'https://api.dev.ac.commonsense.io/api'
+const host = 'https://api.staging.ac.commonsense.io/api'
 
 async function get (url, body) {
   let token = await getToken()
