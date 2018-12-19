@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, TouchableOpacity,TouchableHighlight, FlatList, StyleSheet, Platform, Modal, Dimensions, ImageBackground, Image, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import axios from 'axios'
+import Toast, {DURATION} from 'react-native-easy-toast'
 import reportesBg from '../reportes-fondo.jpg'
 import myNewMeBg from '../my-new-me-fondo.jpg'
 import blood from '../Quimica.png'
@@ -44,7 +45,8 @@ class Reports extends Component {
     this.state = {
       notifications: [],
       modalVisible: false,
-      reports: []
+      reports: [],
+      isConnected: true
     }
   }
 
@@ -54,6 +56,14 @@ class Reports extends Component {
 
   componentWillMount () {
     this.loadReports()
+    NetInfo.isConnected.fetch().then(isConnected => {
+      console.log('isConnected', isConnected )
+      if (isConnected === false) {
+        this.setState({
+          isConnected: false
+        })
+      }
+    })
   }
 
   async loadReports () {
@@ -68,6 +78,9 @@ class Reports extends Component {
   }
 
   goToReportDetail (report) {
+    if (!this.state.isConnected) {
+      return this.refs.toast.show('Por favor, revisa tu conexión a Internet.', 5000)
+    }
     this.props.navigation.navigate('ReportDetail', {report})
   }
 
@@ -124,6 +137,7 @@ class Reports extends Component {
   </Text>)
   return (
       <Page>
+        <Toast ref='toast'/>
         <Panel
           style={styles.isMarginSmall}
           title={title}

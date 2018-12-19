@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {NetInfo} from 'react-native';
+import Toast, {DURATION} from 'react-native-easy-toast'
 import { View, KeyboardAvoidingView, StyleSheet, Dimensions, Image, AsyncStorage, Text, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native'
 import BaseForm from 'app/src/components/base-form'
 import t from 'tcomb-form-native'
@@ -22,6 +24,7 @@ export class Login extends Component {
     super(props)
     this.state = {
       loading: false,
+      isConnected: true,
       value: {
         email: '',
         password: ''
@@ -54,10 +57,28 @@ export class Login extends Component {
   resetPassword (e) {
     this.props.navigation.navigate('ResetPassword')
   }
+  
+  componentDidMount() {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      console.log('isConnected', isConnected )
+      if (isConnected === false) {
+        this.refs.toast.show('Por favor, revisa tu conexión a Internet.', 5000);
+        this.setState({
+          isConnected: false
+        })
+      }
+    })
+    
+  }
 
   async handleSubmit (data) {
+
+    if (!this.state.isConnected) {
+      return this.refs.toast.show('Por favor, revisa tu conexión a Internet.', 5000);
+    }
     this.setState({
-      loading: true
+      loading: true,
+      
     })
     try {
       let body = await api.post('/user/login', data)
@@ -65,7 +86,7 @@ export class Login extends Component {
       await AsyncStorage.setItem('jwt', body.data.jwt)
       await this.me()
     } catch (error) {
-      alert('Error', error.message)
+      this.refs.toast.show('Usuario o contraseña incorrectos, intenta de nuevo', 5000);
     }
     this.setState({
       loading: false
@@ -88,6 +109,9 @@ export class Login extends Component {
       password: t.String
     }
     let {loading} = this.state
+    let {isConnected} = this.state
+    
+
 
     let content = loading ? (<ActivityIndicator size='large' />) : (<BaseForm
       type={User}
@@ -102,6 +126,8 @@ export class Login extends Component {
       style={styles.centered}
       behavior='padding'
     >
+      
+      <Toast ref='toast'/>
       <Image source={background} style={[StyleSheet.absoluteFill, stylesLogin.background]} />
       <View style={stylesLogin.section}>
         <Image  source={logo} />
