@@ -57,7 +57,6 @@ class Reports extends Component {
   componentWillMount () {
     this.loadReports()
     NetInfo.isConnected.fetch().then(isConnected => {
-      console.log('isConnected', isConnected )
       if (isConnected === false) {
         this.setState({
           isConnected: false

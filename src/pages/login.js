@@ -60,7 +60,6 @@ export class Login extends Component {
   
   componentDidMount() {
     NetInfo.isConnected.fetch().then(isConnected => {
-      console.log('isConnected', isConnected )
       if (isConnected === false) {
         this.refs.toast.show('Por favor, revisa tu conexión a Internet.', 5000);
         this.setState({
@@ -151,7 +150,8 @@ export class Login extends Component {
         onPress={() => this.resetPassword()}>
         <Text style={[stylesLogin.fontBlue16, styles.isGinoraFontRegular]}>¿Olvidaste tu contraseña?</Text>
       </TouchableOpacity>
-    </KeyboardAvoidingView>)
+    </KeyboardAvoidingView>
+    )
   }
 }
 

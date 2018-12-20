@@ -3,6 +3,7 @@ import BaseForm from '../components/base-form'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card, ListItem, Button } from 'react-native-elements'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
+import Toast, {DURATION} from 'react-native-easy-toast'
 
 import {
   View,
@@ -47,10 +48,12 @@ class Profile extends Component {
             editable: false,
           },
           name: {
-            error: 'Insert a valid name'
+            label: 'Nombre',
+            error: 'Inserta un nombre válido'
           },
           telephone: {
-            error: 'Insert a valid name'
+            label: 'Teléfono',
+            error: 'Inserta un teléfono válido'
           }
         }
       },
