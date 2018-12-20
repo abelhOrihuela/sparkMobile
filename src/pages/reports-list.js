@@ -71,6 +71,33 @@ class Reports extends Component {
     this.props.navigation.navigate('ReportDetail', {report})
   }
 
+  orderReports (reports) {
+    let list = []
+
+    let exist = reports.find(l=> l.type === 'dna')
+
+    if (exist) {
+      list.push(exist)
+    }
+    exist = reports.find(l=> l.type === 'microbiome')
+    if (exist) {
+      list.push(exist)
+    }
+    exist = reports.find(l=> l.type === 'blood')
+    if (exist) {
+      list.push(exist)
+    }
+    exist = reports.find(l=> l.type === 'sensibilities')
+    if (exist) {
+      list.push(exist)
+    }
+    exist = reports.find(l=> l.type === 'risk-index')
+    if (exist) {
+      list.push(exist)
+    }
+    return list 
+  }
+
   renderItem = ({item, index}) => {
     let backgroundImage = blood
     let icon = iconBlood
@@ -138,7 +165,7 @@ class Reports extends Component {
           </Text>
         </Panel>
         <FlatList
-          data={reports}
+          data={this.orderReports(reports)}
           numColumns={2}
           keyExtractor={(x, i) => i}
           renderItem={this.renderItem}/>
