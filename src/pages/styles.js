@@ -7,7 +7,8 @@ const {height, width} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   page: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   isFlex1: {
     flex: 1
@@ -167,6 +168,9 @@ const styles = StyleSheet.create({
   },
   isMarginSmallBottom: {
     marginBottom: 10
+  },
+  isMarginMediumBottom: {
+    marginBottom: 30
   },
   isMarginSmall: {
     margin: 10

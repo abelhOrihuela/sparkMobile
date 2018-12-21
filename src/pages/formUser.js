@@ -71,15 +71,21 @@ class FormUser extends Component {
   }
 
   onSubmit (e) {
+    this.setState({
+      loading: true
+    })
     try {
       let body = api.post('/user/me/update', e)
-      this.refs.toast.show('Información actualizada.', 5000);
-      console.log('pito')
-
+      this.setState({
+        success: true,
+        loading: false
+      })
     } catch (e) {
-      this.refs.toast.show('Error: no se pudo actualizar la información', 5000);
+      alert('Error: no se pudo actualizar la información')
     }
-
+    this.setState({
+      loading: false
+    })
   }
 
   render() {
@@ -95,7 +101,7 @@ class FormUser extends Component {
 
     return (
       <View style={styles.page}>
-        <Toast ref='toast'/>  
+        <Toast ref='toast'/>
         <ScrollView>
           <Card title={this.state.user.name}>
             <BaseForm
@@ -105,6 +111,11 @@ class FormUser extends Component {
               onChange={this.handleOnChange}
               onSubmit={(e) => this.onSubmit(e)}
               />
+              {
+                 this.state.success && (<View style={{margin: 10}}>
+                   <Text style={{color: 'green', textAlign: 'center'}}>Información actualizada</Text>
+                   </View>)
+               }
           </Card>
         </ScrollView>
       </View>
