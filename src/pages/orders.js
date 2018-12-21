@@ -102,13 +102,13 @@ class Orders extends Component {
             </View>
             <View>
               <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold, styles.isGinoraFontBold, styles.isMarginMediumBottom]}>
-                Alejandra Zarco
+                {/* Alejandra Zarco */}
               </Text>
             </View>
             <Divider style={{ backgroundColor: '#D3D3D3' }} />
             <View>
               <View>
-                <Text style={[styles.textCenter, styles.fontBlue16, styles.isMarginMediumBottom]}>
+                <Text style={[styles.textCenter, styles.fontBlue16, styles.isMarginSmallBottom]}>
                   Detalle de tu programa:
                 </Text>
               </View>
@@ -119,15 +119,15 @@ class Orders extends Component {
                 <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold, styles.isGinoraFontBold, styles.isMarginSmallBottom]}>
                   Nombre del producto:
                 </Text>
-                <Text style={[styles.textCenter, styles.isGinoraFontRegular]}>
+                <Text style={[styles.textCenter, styles.isGinoraFontRegular, styles.isMarginSmallBottom]}>
                   {this.state.orders.metaData.product.name}
                 </Text>
 
-                <Text style={[styles.textCenter, styles.fontBlack16, styles.isGinoraFontBold]}>
+                <Text style={[styles.textCenter, styles.fontBlack16, styles.isGinoraFontBold, styles.isMarginSmallBottom]}>
                   Status: 
                 </Text>
 
-                <Text style={[styles.textCenter, styles.isGinoraFontRegular]}>
+                <Text style={[styles.textCenter, styles.isGinoraFontRegular, styles.isMarginSmallBottom]}>
                   Activo <Icon name='check' size={20} color='green' />
                 </Text>
               </View>
