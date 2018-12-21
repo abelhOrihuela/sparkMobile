@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import BaseForm from '../components/base-form'
+import background from 'app/src/images/textura.png'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card, ListItem, Button } from 'react-native-elements'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
+import Toast, {DURATION} from 'react-native-easy-toast'
 
 import {
   View,
   Text,
   TextInput,
+  StyleSheet,
   ScrollView,
   TouchableHighlight,
   Dimensions,
   TouchableOpacity,
   AsyncStorage,
-  Animated
+  Animated,
+  ImageBackground
 } from 'react-native'
 import t from 'tcomb-form-native'
 import FormUser from './formUser'
@@ -47,10 +51,12 @@ class Profile extends Component {
             editable: false,
           },
           name: {
-            error: 'Insert a valid name'
+            label: 'Nombre',
+            error: 'Inserta un nombre válido'
           },
           telephone: {
-            error: 'Insert a valid name'
+            label: 'Teléfono',
+            error: 'Inserta un teléfono válido'
           }
         }
       },
@@ -121,6 +127,8 @@ class Profile extends Component {
 
     return (
       <View style={styles.page}>
+        <Text style={[styles.fontBlue20, stylesProfile.title]} >Mi perfil</Text>
+        <ImageBackground style={[StyleSheet.absoluteFill]} source={background} />
         <TabView
           navigationState={this.state.tabs}
           renderScene={SceneMap({
@@ -135,5 +143,15 @@ class Profile extends Component {
     )
   }
 }
+
+const stylesProfile = StyleSheet.create({
+  title: {
+    marginTop: 20,
+    marginBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20
+  }
+})
+
 
 export default Profile

@@ -96,35 +96,39 @@ class Orders extends Component {
         <ScrollView>
           <Card>
             <View>
-              <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold]}>
-                ALCHEMY ADVISOR
+              <Text style={[styles.textCenter, styles.fontBlue16, styles.isGinoraFontRegular, styles.isMarginSmallBottom]}>
+                Mi ALCHEMY ADVISOR asignado:
               </Text>
             </View>
-            <Divider style={{ backgroundColor: '#000000' }} />
-
+            <View>
+              <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold, styles.isGinoraFontBold, styles.isMarginMediumBottom]}>
+                {/* Alejandra Zarco */}
+              </Text>
+            </View>
+            <Divider style={{ backgroundColor: '#D3D3D3' }} />
             <View>
               <View>
-                <Text style={[styles.textCenter, styles.fontBlue16]}>
+                <Text style={[styles.textCenter, styles.fontBlue16, styles.isMarginSmallBottom]}>
                   Detalle de tu programa:
                 </Text>
               </View>
-              <View style={{flex: 1, alignItems: 'center'}}>
+              {/* <View style={{flex: 1, alignItems: 'center'}}>
                 <Image source={logo}/>
-              </View>
+              </View> */}
               <View>
-                <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold]}>
+                <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold, styles.isGinoraFontBold, styles.isMarginSmallBottom]}>
                   Nombre del producto:
                 </Text>
-                <Text style={[styles.textCenter]}>
+                <Text style={[styles.textCenter, styles.isGinoraFontRegular, styles.isMarginSmallBottom]}>
                   {this.state.orders.metaData.product.name}
                 </Text>
 
-                <Text style={[styles.textCenter, styles.fontBlack16, styles.isBold]}>
-                  Status
+                <Text style={[styles.textCenter, styles.fontBlack16, styles.isGinoraFontBold, styles.isMarginSmallBottom]}>
+                  Status: 
                 </Text>
 
-                <Text style={[styles.textCenter]}>
-                  Activa <Icon name='check' size={20} color='green' />
+                <Text style={[styles.textCenter, styles.isGinoraFontRegular, styles.isMarginSmallBottom]}>
+                  Activo <Icon name='check' size={20} color='green' />
                 </Text>
               </View>
             </View>

@@ -1,10 +1,10 @@
 {
-  "name": "sparkMobile",
-  "displayName": "sparkMobile",
+  "name": "MYCODE",
+  "displayName": "MYCODE",
   "expo": {
-    "name": "sparkMobile",
-    "description": "This project is really great.",
-    "slug": "sparkMobile",
+    "name": "MYCODE",
+    "description": "Tu propio código de bienestar al alcance de tus manos. Explora tu genética, microbiota, química sanguínea, sensibilidades alimentarias y hábitos; lleva contigo el programa personalizado MYNEWME, y mejora tu calidad vida. ",
+    "slug": "MYCODE",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],

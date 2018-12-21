@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BaseForm from '../components/base-form'
+import Toast, {DURATION} from 'react-native-easy-toast'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Card, ListItem, Button } from 'react-native-elements'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
@@ -32,10 +33,12 @@ class FormUser extends Component {
             editable: false,
           },
           name: {
-            error: 'Ingresar un nombre valido'
+            error: 'Ingresar un nombre valido',
+            label: 'Nombre'
           },
           phone: {
-            error: 'Ingresar un numero valido'
+            error: 'Ingresar un numero valido',
+            label: 'Teléfono',
           }
         }
       }
@@ -68,15 +71,21 @@ class FormUser extends Component {
   }
 
   onSubmit (e) {
+    this.setState({
+      loading: true
+    })
     try {
       let body = api.post('/user/me/update', e)
       this.setState({
-        success: true
+        success: true,
+        loading: false
       })
     } catch (e) {
       alert('Error: no se pudo actualizar la información')
     }
-
+    this.setState({
+      loading: false
+    })
   }
 
   render() {
@@ -92,6 +101,7 @@ class FormUser extends Component {
 
     return (
       <View style={styles.page}>
+        <Toast ref='toast'/>
         <ScrollView>
           <Card title={this.state.user.name}>
             <BaseForm
@@ -102,10 +112,10 @@ class FormUser extends Component {
               onSubmit={(e) => this.onSubmit(e)}
               />
               {
-                this.state.success && (<View style={{margin: 10}}>
-                  <Text style={{color: 'green', textAlign: 'center'}}>Información actualizada</Text>
-                  </View>)
-              }
+                 this.state.success && (<View style={{margin: 10}}>
+                   <Text style={{color: 'green', textAlign: 'center'}}>Información actualizada</Text>
+                   </View>)
+               }
           </Card>
         </ScrollView>
       </View>
